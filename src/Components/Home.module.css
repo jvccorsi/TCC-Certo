@@ -1,10 +1,9 @@
 .grid{
-  margin: '40px 0';
-  background-color: red;
+background-color: red;
+min-height: 100vh;
 }
 
-.grid_component{
-  background-color: black;
-  text-align: 'center';
-  margin: '0 auto';
-}
+.grid2{
+  background-color: purple;
+  
+  }
