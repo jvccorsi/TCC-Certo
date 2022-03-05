@@ -1,0 +1,15 @@
+.error_img{
+  object-fit: cover;
+  background-repeat: no-repeat ;
+  background-size: cover;
+  width: 40%;
+  height: 40%;
+}
+.container_error{
+  min-height: 100vh;
+}
+
+.button_error{
+  width: 30%;
+  background-color: #0072FF
+}
