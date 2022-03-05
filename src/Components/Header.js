@@ -7,7 +7,7 @@ import { ReactComponent as Logo } from '../Assets/logo.svg'; // Transformar o sv
 const Header = () => {
   return (
     <header className={styles.header}>
-      <Container maxWidth="lg" className={styles.container} fixed>
+      <Container maxWidth="xl" className={styles.container} fixed>
         <nav className={styles.nav}>
           <Link className={styles.logo} to="/">
             <Logo />
