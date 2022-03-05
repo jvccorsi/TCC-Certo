@@ -1,13 +1,13 @@
 import React from 'react';
-import minhaImagem from '../Assets/Research_Undraw.svg';
+import minhaImagem from '../../Assets/Research_Undraw.svg';
 import Grid from '@mui/material/Grid';
-import styles from './Home.module.css';
+import styles from './LoginForm.module.css';
 import GoogleIcon from '@mui/icons-material/Google';
 import { Link } from 'react-router-dom';
-import { TextField, Button, Container } from '@mui/material';
+import { TextField, Button, Container, Box, Divider } from '@mui/material';
 import Checkbox from '@mui/material/Checkbox';
 
-const Home = () => {
+const LoginForm = () => {
   return (
     <Container maxWidth="xl">
       <Grid container className={styles.grid_content}>
@@ -28,7 +28,9 @@ const Home = () => {
                 <h1 className={styles.text}>Welcome to DataTox</h1>
                 <h3 className={styles.text}>
                   New to DataTox?{' '}
-                  <span style={{ color: 'blue' }}> Create an account</span>
+                  <Link className={styles.styles_link} to="/create-account">
+                    Create an account{' '}
+                  </Link>
                 </h3>
                 <Button
                   style={{
@@ -43,6 +45,11 @@ const Home = () => {
                 >
                   Google
                 </Button>
+                <Box mt={3}>
+                  <Divider className={styles.Divider}>
+                    Or sing up with email address
+                  </Divider>
+                </Box>
               </div>
 
               <div className={styles.form_login}>
@@ -59,14 +66,16 @@ const Home = () => {
                     className={styles.textfield_options}
                   />
 
-                  <TextField
-                    label="Senha"
-                    margin="normal"
-                    variant="standard"
-                    type="password"
-                    required
-                    className={styles.textfield_options}
-                  />
+                  <Box mb={3} mt={0}>
+                    <TextField
+                      label="Senha"
+                      margin="normal"
+                      variant="standard"
+                      type="password"
+                      required
+                      className={styles.textfield_options}
+                    />
+                  </Box>
 
                   <Grid container className={styles.button}>
                     <Grid item xs={7} sm={6}>
@@ -82,7 +91,7 @@ const Home = () => {
                       </div>
                     </Grid>
                     <Grid item xs={5} sm={6}>
-                      <Link to="/login/perdeu">Perdeu a senha? </Link>
+                      <Link to="/reset-password">Perdeu a senha? </Link>
                     </Grid>
                   </Grid>
 
@@ -107,4 +116,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default LoginForm;
