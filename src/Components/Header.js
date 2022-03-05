@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './Header.module.css';
 import { Link } from 'react-router-dom';
 import Container from '@mui/material/Container';
-import { ReactComponent as Logo } from '../Assets/dogs.svg'; // Transformar o svg em components
+import { ReactComponent as Logo } from '../Assets/logo.svg'; // Transformar o svg em components
 
 const Header = () => {
   return (
