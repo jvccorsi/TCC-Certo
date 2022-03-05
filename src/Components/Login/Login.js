@@ -3,6 +3,8 @@ import LoginForm from './LoginForm';
 import ResetPassword from './ResetPassword';
 import { Route, Routes } from 'react-router-dom';
 import CreateAccount from './CreateAccount';
+import Error404 from '../Error404';
+import Home from '../Home/Home';
 // import style_login from './Login.module.css';
 
 const Login = () => {
@@ -18,6 +20,8 @@ const Login = () => {
           path="reset-password"
           element={<ResetPassword></ResetPassword>}
         ></Route>
+        <Route path="home/*" element={<Home></Home>}></Route>
+        <Route path="*" element={<Error404></Error404>}></Route>{' '}
       </Routes>
     </section>
   );

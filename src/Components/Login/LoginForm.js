@@ -3,11 +3,17 @@ import minhaImagem from '../../Assets/Research_Undraw.svg';
 import Grid from '@mui/material/Grid';
 import styles from './LoginForm.module.css';
 import GoogleIcon from '@mui/icons-material/Google';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { TextField, Button, Container, Box, Divider } from '@mui/material';
 import Checkbox from '@mui/material/Checkbox';
 
 const LoginForm = () => {
+  const navigate = useNavigate();
+
+  function handleSubmit(event) {
+    event.preventDefault();
+    navigate('/home');
+  }
   return (
     <Container maxWidth="xl">
       <Grid container className={styles.grid_content}>
@@ -53,7 +59,7 @@ const LoginForm = () => {
               </div>
 
               <div className={styles.form_login}>
-                <form>
+                <form onSubmit={handleSubmit}>
                   <TextField
                     id="Username"
                     label="Username"

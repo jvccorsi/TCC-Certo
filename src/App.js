@@ -3,7 +3,7 @@ import Header from './Components/Header';
 import Login from './Components/Login/Login';
 
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Error404 from './Components/Error404';
+import Home from './Components/Home/Home';
 
 function App() {
   return (
@@ -13,7 +13,6 @@ function App() {
         <main>
           <Routes>
             <Route path="/*" element={<Login></Login>}></Route>{' '}
-            <Route path="*" element={<Error404></Error404>}></Route>{' '}
           </Routes>
         </main>
       </BrowserRouter>
