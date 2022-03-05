@@ -10,7 +10,6 @@ import {
   Box,
 } from '@mui/material';
 import GoogleIcon from '@mui/icons-material/Google';
-import Checkbox from '@mui/material/Checkbox';
 import undraw_create from '../../Assets/undraw_medical_research_qg4d 1.svg';
 
 const CreateAccount = () => {
