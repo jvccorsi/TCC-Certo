@@ -77,28 +77,30 @@ const CreateAccount = () => {
                         </Box>
                       </Grid>
                       <Grid item sm={6}>
-                        <Box mr={2}>
-                          <TextField
-                            id="last_name"
-                            label="Last name"
-                            variant="standard"
-                            type="text"
-                            margin="normal"
-                            required
-                            className={styles.textfield_options}
-                          />
-                        </Box>
+                        <TextField
+                          id="last_name"
+                          label="Last name"
+                          variant="standard"
+                          type="text"
+                          margin="normal"
+                          required
+                          fullWidth
+                          className={styles.textfield_options}
+                        />
                       </Grid>
                     </Grid>
-                    <TextField
-                      id="email"
-                      label="Email Address"
-                      placeholder="Enter your username"
-                      variant="standard"
-                      type="email"
-                      required
-                      className={styles.textfield_options}
-                    />
+                    <Box mt={2} mb={4}>
+                      <TextField
+                        id="email"
+                        label="Email Address"
+                        placeholder="Enter your username"
+                        variant="standard"
+                        type="email"
+                        required
+                        className={styles.textfield_options}
+                      />
+                    </Box>
+
                     <Box mt={2} mb={4}>
                       <TextField
                         label="Password"
