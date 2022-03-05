@@ -119,7 +119,7 @@ const CreateAccount = () => {
                       size="large"
                       className={styles.textfield_options}
                     >
-                      Login
+                      Register
                     </Button>
                   </form>
                 </div>
