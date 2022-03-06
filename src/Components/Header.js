@@ -47,13 +47,13 @@ const Header = () => {
       <Container maxWidth="xl" className={styles.container} fixed>
         <nav className={styles.nav}>
           <Grid container>
-            <Grid item sm={6}>
+            <Grid item sm={3}>
               <Link className={styles.logo} to="/">
                 <Logo />
               </Link>
             </Grid>
 
-            <Grid item sm={6}>
+            <Grid item sm={9}>
               <Box
                 display="flex"
                 position="relative"
@@ -67,10 +67,10 @@ const Header = () => {
                   </>
                 ) : (
                   <Tabs
-                    sx={{ marginLeft: 'auto' }}
                     value={value}
                     indicatorColor="primary"
                     onChange={handleChange}
+                    sx={{ marginLeft: 'auto' }}
                   >
                     <Tab
                       style={{ textDecoration: 'none', color: 'black' }}
@@ -80,13 +80,13 @@ const Header = () => {
                     />
                     <Tab
                       style={{ textDecoration: 'none', color: 'black' }}
-                      label="Cadastrar Atendimento"
+                      label="Cadastrar"
                       component={Link}
                       to="/home/cadastro"
                     />
                     <Tab
                       style={{ textDecoration: 'none', color: 'black' }}
-                      label="Visualizar atendimentos"
+                      label="Visualizar "
                       component={Link}
                       to="/home/listar"
                     />
@@ -109,11 +109,7 @@ const Header = () => {
                           />
 
                           <p> Hi, João</p>
-                          <IconButton
-                            onClick={handleClick}
-                            size="small"
-                            sx={{ ml: 2 }}
-                          >
+                          <IconButton onClick={handleClick} size="small">
                             <ExpandMoreIcon fontSize="small" />
                           </IconButton>
                           <Menu
