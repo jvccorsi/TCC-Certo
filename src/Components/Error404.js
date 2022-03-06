@@ -2,7 +2,7 @@ import { Typography, Container, Box, Button } from '@mui/material';
 import React from 'react';
 import minhaImagem from '../Assets/undraw_page_not_found_re_e9o6 1.svg';
 import styles from './Error.module.css';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const Error404 = () => {
   const navigate = useNavigate();
