@@ -73,35 +73,23 @@ const Header = () => {
                     onChange={handleChange}
                   >
                     <Tab
-                      label={
-                        <NavLink
-                          style={{ textDecoration: 'none', color: 'black' }}
-                          to="/home"
-                        >
-                          Home
-                        </NavLink>
-                      }
-                    ></Tab>
+                      style={{ textDecoration: 'none', color: 'black' }}
+                      label="Home"
+                      component={Link}
+                      to="/home"
+                    />
                     <Tab
-                      label={
-                        <NavLink
-                          style={{ textDecoration: 'none', color: 'black' }}
-                          to="/home/cadastro"
-                        >
-                          Cadastrar
-                        </NavLink>
-                      }
-                    ></Tab>
+                      style={{ textDecoration: 'none', color: 'black' }}
+                      label="Cadastrar Atendimento"
+                      component={Link}
+                      to="/home/cadastro"
+                    />
                     <Tab
-                      label={
-                        <NavLink
-                          style={{ textDecoration: 'none', color: 'black' }}
-                          to="/home/listar"
-                        >
-                          Visualizar atendimentos
-                        </NavLink>
-                      }
-                    ></Tab>
+                      style={{ textDecoration: 'none', color: 'black' }}
+                      label="Visualizar atendimentos"
+                      component={Link}
+                      to="/home/listar"
+                    />
 
                     <Tab
                       label={
