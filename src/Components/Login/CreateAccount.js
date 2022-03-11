@@ -11,10 +11,12 @@ import {
 } from '@mui/material';
 import GoogleIcon from '@mui/icons-material/Google';
 import undraw_create from '../../Assets/undraw_medical_research_qg4d 1.svg';
+import Head from '../Head';
 
 const CreateAccount = () => {
   return (
     <section>
+      <Head title="Create"></Head>
       <Container maxWidth="xl">
         <Grid container className={styles.grid_content}>
           <Grid item xs={6} sm={7}>

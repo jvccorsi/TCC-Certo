@@ -1,7 +1,12 @@
 import React from 'react';
+import Head from '../Head';
 
 const ListarAtendimento = () => {
-  return <div>ListarAtendimento</div>;
+  return (
+    <section>
+      <Head title="Atendimentos"></Head>
+    </section>
+  );
 };
 
 export default ListarAtendimento;

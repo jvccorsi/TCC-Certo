@@ -6,6 +6,7 @@ import GoogleIcon from '@mui/icons-material/Google';
 import { Link, useNavigate } from 'react-router-dom';
 import { TextField, Button, Container, Box, Divider } from '@mui/material';
 import Checkbox from '@mui/material/Checkbox';
+import Head from '../Head';
 
 const LoginForm = () => {
   const navigate = useNavigate();
@@ -16,6 +17,7 @@ const LoginForm = () => {
   }
   return (
     <Container maxWidth="xl">
+      <Head title="Login"></Head>
       <Grid container className={styles.grid_content}>
         <Grid item xs={7} sm={7}>
           <div className={styles.tratar_img}>

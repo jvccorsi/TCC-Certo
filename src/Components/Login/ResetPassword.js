@@ -2,10 +2,12 @@ import { Container, TextField, Typography, Box, Button } from '@mui/material';
 import React from 'react';
 import style from './ResetPassword.module.css';
 import { Link } from 'react-router-dom';
+import Head from '../Head';
 
 const ResetPassword = () => {
   return (
     <>
+      <Head title="Reset"></Head>
       <Container maxWidth="sm" component="article">
         <div className={style.flex_direction_centralize}>
           <Typography

@@ -4,10 +4,12 @@ import CadastroAtendimento from './CadastroAtendimento';
 import ListarAtendimento from './ListarAtendimento';
 
 import HomePage from './HomePage';
+import UserHeader from './UserHeader';
 
 const Home = () => {
   return (
     <section>
+      <UserHeader></UserHeader>
       <Routes>
         <Route path="/" element={<HomePage></HomePage>}></Route>
         <Route

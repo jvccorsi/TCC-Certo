@@ -86,7 +86,7 @@ const Header = () => {
                     />
                     <Tab
                       style={{ textDecoration: 'none', color: 'black' }}
-                      label="Visualizar "
+                      label="Atendimentos "
                       component={Link}
                       to="/home/listar"
                     />
