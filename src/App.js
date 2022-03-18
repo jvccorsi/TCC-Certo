@@ -8,7 +8,6 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter>
-        <Header></Header>
         <main>
           <Routes>
             <Route path="/*" element={<Login></Login>}></Route>{' '}

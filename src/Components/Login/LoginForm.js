@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext, useState } from 'react';
 import minhaImagem from '../../Assets/Research_Undraw.svg';
 import Grid from '@mui/material/Grid';
 import styles from './LoginForm.module.css';
@@ -7,14 +7,28 @@ import { Link, useNavigate } from 'react-router-dom';
 import { TextField, Button, Container, Box, Divider } from '@mui/material';
 import Checkbox from '@mui/material/Checkbox';
 import Head from '../Head';
+import { AuthContext } from '../Hooks/AuthContext';
 
 const LoginForm = () => {
+  const auth = useContext(AuthContext);
   const navigate = useNavigate();
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
 
   function handleSubmit(event) {
     event.preventDefault();
-    navigate('/home');
+    console.log('Username:' + username + 'Password: ' + password);
+    auth.login();
+    // navigate('/home');
   }
+
+  function handleChangeUsername(event) {
+    setUsername(event.target.value);
+  }
+  function handleChangePassword(event) {
+    setPassword(event.target.value);
+  }
+
   return (
     <Container maxWidth="xl">
       <Head title="Login"></Head>
@@ -63,24 +77,30 @@ const LoginForm = () => {
               <div className={styles.form_login}>
                 <form onSubmit={handleSubmit}>
                   <TextField
-                    id="Username"
-                    label="Username"
+                    id="username_hook"
+                    name="username_hook"
+                    label="username"
                     placeholder="Enter your username"
                     variant="standard"
                     type="text"
                     autoFocus
                     margin="normal"
+                    onChange={handleChangeUsername}
                     required
+                    value={username}
                     className={styles.textfield_options}
                   />
 
                   <Box mb={3} mt={0}>
                     <TextField
                       label="Senha"
+                      id="password_hook"
                       margin="normal"
                       variant="standard"
                       type="password"
                       required
+                      value={password}
+                      onChange={handleChangePassword}
                       className={styles.textfield_options}
                     />
                   </Box>
