@@ -40,7 +40,10 @@ function getStepContent(step) {
 const LinaerStepper = () => {
   const methods = useForm({
     defaultValues: {
-      firstName: ['fruta', 'aa', 'aodkaskd'],
+      firstName: [
+        { id: 2, nome: 'aoksda', sobrenome: 'aaaa' },
+        // { id: 2, nome: 'aoksda', sobrenome: 'aaaa' },
+      ],
       lastName: '',
       nickName: '',
       emailAddress: '',
