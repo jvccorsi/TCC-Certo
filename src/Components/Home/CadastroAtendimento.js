@@ -1,5 +1,5 @@
 import { Container, Paper, Box } from '@mui/material';
-import React, { useState } from 'react';
+// import React, { useState } from 'react';
 import LinearStepper from './Stepper/LinearStepper';
 
 const CadastroAtendimento = () => {

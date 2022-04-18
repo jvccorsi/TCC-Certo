@@ -1,4 +1,4 @@
-import { Container, TextField, Grid } from '@mui/material';
+import { TextField, Grid } from '@mui/material';
 import React from 'react';
 import { Controller, useFormContext } from 'react-hook-form';
 
@@ -11,7 +11,7 @@ const AgenteToxico = () => {
         <Controller
           control={control}
           name="emailAddress"
-          render={({}) => (
+          render={() => (
             <TextField
               id="email"
               label="aaa"
@@ -27,7 +27,7 @@ const AgenteToxico = () => {
         <Controller
           control={control}
           name="emailAddress"
-          render={({}) => (
+          render={() => (
             <TextField
               id="email"
               label="aaa"

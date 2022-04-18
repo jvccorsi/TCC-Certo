@@ -1,16 +1,14 @@
 import React, { useState, useCallback } from 'react';
 import LoginForm from './LoginForm';
 import ResetPassword from './ResetPassword';
-import { Route, Routes, useNavigate } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 
 import CreateAccount from './CreateAccount';
-import Error404 from '../Error404';
 import Home from '../Home/Home';
 import { AuthContext } from '../Hooks/AuthContext';
 import Header from '../Header';
 
 const Login = () => {
-  const navigate = useNavigate();
   const [isLoggedIn, setIsLogged] = useState(false);
   const login = useCallback(() => {
     setIsLogged(true);

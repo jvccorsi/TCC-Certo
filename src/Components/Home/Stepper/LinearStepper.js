@@ -73,7 +73,7 @@ const LinaerStepper = () => {
 
   const handleNext = (data) => {
     console.log(data);
-    if (activeStep == steps.length - 1) {
+    if (activeStep === steps.length - 1) {
       console.log('Modo json:' + JSON.stringify(data));
 
       setActiveStep(activeStep + 1);
@@ -144,7 +144,6 @@ const LinaerStepper = () => {
                 {activeStep === steps.length - 1 ? 'Finish' : 'Next'}
               </Button>
             </form>
-            <h2></h2>
           </FormProvider>
         </>
       )}
