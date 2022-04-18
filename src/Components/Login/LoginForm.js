@@ -3,7 +3,7 @@ import minhaImagem from '../../Assets/Research_Undraw.svg';
 import Grid from '@mui/material/Grid';
 import styles from './LoginForm.module.css';
 import GoogleIcon from '@mui/icons-material/Google';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { TextField, Button, Container, Box, Divider } from '@mui/material';
 import Checkbox from '@mui/material/Checkbox';
 import Head from '../Head';
@@ -11,7 +11,7 @@ import { AuthContext } from '../Hooks/AuthContext';
 
 const LoginForm = () => {
   const auth = useContext(AuthContext);
-  const navigate = useNavigate();
+
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
