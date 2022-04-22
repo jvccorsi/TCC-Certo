@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext, useState } from 'react';
 import styles from './LoginForm.module.css';
 import { Link } from 'react-router-dom';
 import {
@@ -12,8 +12,56 @@ import {
 import GoogleIcon from '@mui/icons-material/Google';
 import undraw_create from '../../Assets/undraw_medical_research_qg4d 1.svg';
 import Head from '../Head';
+import { AuthContext } from '../Hooks/AuthContext';
 
 const CreateAccount = () => {
+  const auth = useContext(AuthContext);
+
+  const [firstName, setFirstName] = useState('');
+  const [password, setPassword] = useState('');
+  const [lastName, setLastName] = useState('');
+  const [email, setEmail] = useState('');
+
+  async function handleSubmit(event) {
+    event.preventDefault();
+    try {
+      const response = await fetch(
+        'https://api-tcc-unicamp.herokuapp.com/api/users/signup',
+        {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            name: firstName,
+            lastName: lastName,
+            email: email,
+            password: password,
+          }),
+        },
+      );
+      const responseData = await response.json();
+      console.log(responseData);
+    } catch (err) {
+      console.log(err);
+    }
+    // auth.login();
+    // navigate('/home');
+  }
+
+  function handleChangeFirstName(event) {
+    setFirstName(event.target.value);
+  }
+  function handleChangeLastName(event) {
+    setLastName(event.target.value);
+  }
+  function handleChangeEmail(event) {
+    setEmail(event.target.value);
+  }
+  function handleChangePassword(event) {
+    setPassword(event.target.value);
+  }
+
   return (
     <section>
       <Head title="Create"></Head>
@@ -62,7 +110,7 @@ const CreateAccount = () => {
                 </div>
 
                 <div className={styles.form_login}>
-                  <form>
+                  <form onSubmit={handleSubmit}>
                     <Grid container>
                       <Grid item sm={6}>
                         <Box mr={2}>
@@ -75,6 +123,8 @@ const CreateAccount = () => {
                             margin="normal"
                             required
                             className={styles.textfield_options}
+                            value={firstName}
+                            onChange={handleChangeFirstName}
                           />
                         </Box>
                       </Grid>
@@ -88,6 +138,8 @@ const CreateAccount = () => {
                           required
                           fullWidth
                           className={styles.textfield_options}
+                          value={lastName}
+                          onChange={handleChangeLastName}
                         />
                       </Grid>
                     </Grid>
@@ -100,6 +152,8 @@ const CreateAccount = () => {
                         type="email"
                         required
                         className={styles.textfield_options}
+                        value={email}
+                        onChange={handleChangeEmail}
                       />
                     </Box>
 
@@ -111,6 +165,8 @@ const CreateAccount = () => {
                         type="password"
                         required
                         className={styles.textfield_options}
+                        value={password}
+                        onChange={handleChangePassword}
                       />
                     </Box>
 
