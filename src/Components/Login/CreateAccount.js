@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { useState } from 'react';
 import styles from './LoginForm.module.css';
 import { Link, useNavigate } from 'react-router-dom';
 import {
@@ -14,7 +14,7 @@ import {
 import GoogleIcon from '@mui/icons-material/Google';
 import undraw_create from '../../Assets/undraw_medical_research_qg4d 1.svg';
 import Head from '../Head';
-import { AuthContext } from '../Hooks/AuthContext';
+// import { AuthContext } from '../Hooks/AuthContext';
 
 //MODAL:
 import LoadingSpinner from '../IUElements/LoadingSpinner';
@@ -35,7 +35,7 @@ const style = {
 };
 
 const CreateAccount = () => {
-  const auth = useContext(AuthContext);
+  // const auth = useContext(AuthContext);
 
   const [firstName, setFirstName] = useState('');
   const [password, setPassword] = useState('');
@@ -44,11 +44,12 @@ const CreateAccount = () => {
 
   const [cadastro, setCadastro] = useState(false);
 
+  //Hook httpclient
   const { isLoading, error, sendRequest, clearError, open, setOpen } =
     useHttpClient();
 
-  //MODAL:
   const navigate = useNavigate();
+  //MODAL:
 
   const handleClose = () => {
     setOpen(false);
@@ -77,6 +78,7 @@ const CreateAccount = () => {
       );
       setCadastro(true);
       if (cadastro) setOpen(true);
+      // auth.login();
     } catch (err) {}
   }
 

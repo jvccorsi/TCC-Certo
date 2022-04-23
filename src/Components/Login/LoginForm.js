@@ -19,6 +19,7 @@ import { AuthContext } from '../Hooks/AuthContext';
 
 //SPINNER:
 import LoadingSpinner from '../IUElements/LoadingSpinner';
+import { useHttpClient } from '../Hooks/http-hook';
 
 const style = {
   position: 'absolute',
@@ -37,51 +38,33 @@ const LoginForm = () => {
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [isLoading, setIsLoading] = useState(false);
-  const [error, setError] = useState();
+  //Hook httpclient
+  const { isLoading, error, sendRequest, clearError, open, setOpen } =
+    useHttpClient();
 
   //MODAL:
-  const [open, setOpen] = React.useState(false);
   const handleClose = () => {
     setOpen(false);
-    console.log('teste');
-    return setError(null);
+    clearError();
   };
 
   async function handleSubmit(event) {
     event.preventDefault();
     console.log('Email:' + email + 'Password: ' + password);
     try {
-      setIsLoading(true);
-      setError(null);
-      const response = await fetch(
+      await sendRequest(
         'https://api-tcc-unicamp.herokuapp.com/api/users/login',
+        'POST',
+        JSON.stringify({
+          email: email,
+          password: password,
+        }),
         {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({
-            email: email,
-            password: password,
-          }),
+          'Content-Type': 'application/json',
         },
       );
-      const responseData = await response.json();
-      if (!response.ok) {
-        throw new Error(responseData.message);
-      }
-      console.log(responseData);
-      setIsLoading(false);
-
       auth.login();
-    } catch (err) {
-      console.log(err);
-      setOpen(true);
-      setIsLoading(false);
-      setError(err.message || 'Something went wrong, pleasse try again');
-    }
-    setIsLoading(false);
+    } catch (err) {}
   }
 
   function handleChangeUsername(event) {

@@ -11,7 +11,7 @@ const Home = () => {
     <section>
       <UserHeader></UserHeader>
       <Routes>
-        <Route path="/" element={<HomePage></HomePage>}></Route>
+        <Route path="" element={<HomePage></HomePage>}></Route>
         <Route
           path="/cadastro"
           element={<CadastroAtendimento></CadastroAtendimento>}

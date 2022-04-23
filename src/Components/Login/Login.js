@@ -24,7 +24,7 @@ const Login = () => {
     routes = (
       <>
         {' '}
-        <Route path="/" element={<Home></Home>}></Route>{' '}
+        <Route path="" element={<Home></Home>}></Route>{' '}
         <Route path="home/*" element={<Home></Home>}></Route>{' '}
       </>
     );
@@ -40,7 +40,6 @@ const Login = () => {
           path="reset-password"
           element={<ResetPassword></ResetPassword>}
         ></Route>
-        navigate('/');
       </>
     );
   }
