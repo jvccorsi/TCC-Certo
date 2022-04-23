@@ -1,6 +1,6 @@
 import React, { useState, useContext } from 'react';
 import styles from './LoginForm.module.css';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import {
   TextField,
   Button,
@@ -17,8 +17,10 @@ import Head from '../Head';
 import { AuthContext } from '../Hooks/AuthContext';
 
 //MODAL:
-
 import LoadingSpinner from '../IUElements/LoadingSpinner';
+import { useHttpClient } from '../Hooks/http-hook';
+
+//HOOK HTTP CLIENT:
 
 const style = {
   position: 'absolute',
@@ -39,52 +41,43 @@ const CreateAccount = () => {
   const [password, setPassword] = useState('');
   const [lastName, setLastName] = useState('');
   const [email, setEmail] = useState('');
-  const [isLoading, setIsLoading] = useState(false);
-  const [error, setError] = useState();
+
+  const [cadastro, setCadastro] = useState(false);
+
+  const { isLoading, error, sendRequest, clearError, open, setOpen } =
+    useHttpClient();
 
   //MODAL:
-  const [open, setOpen] = React.useState(false);
+  const navigate = useNavigate();
+
   const handleClose = () => {
     setOpen(false);
-    console.log('teste');
-    return setError(null);
+    clearError();
+    if (cadastro) {
+      navigate('/');
+    }
   };
 
   async function handleSubmit(event) {
     event.preventDefault();
+
     try {
-      setIsLoading(true);
-      setError(null);
-      const response = await fetch(
+      await sendRequest(
         'https://api-tcc-unicamp.herokuapp.com/api/users/signup',
+        'POST',
+        JSON.stringify({
+          name: firstName,
+          lastName: lastName,
+          email: email,
+          password: password,
+        }),
         {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({
-            name: firstName,
-            lastName: lastName,
-            email: email,
-            password: password,
-          }),
+          'Content-Type': 'application/json',
         },
       );
-      const responseData = await response.json();
-      if (!response.ok) {
-        throw new Error(responseData.message);
-      }
-      console.log(responseData);
-      setIsLoading(false);
-
-      auth.login();
-    } catch (err) {
-      console.log(err);
-      setOpen(true);
-      setIsLoading(false);
-      setError(err.message || 'Something went wrong, pleasse try again');
-    }
-    setIsLoading(false);
+      setCadastro(true);
+      if (cadastro) setOpen(true);
+    } catch (err) {}
   }
 
   function handleChangeFirstName(event) {
@@ -109,12 +102,19 @@ const CreateAccount = () => {
         aria-describedby="modal-modal-description"
       >
         <Box sx={style}>
-          <Typography id="modal-modal-title" variant="h6" component="h2">
-            Ocorreu um erro!!
-          </Typography>
-          <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-            {error}
-          </Typography>
+          {cadastro ? (
+            <Typography id="modal-modal-title" variant="h6" component="h2">
+              Cadastro realizado com sucesso!!
+            </Typography>
+          ) : (
+            <Typography id="modal-modal-title" variant="h6" component="h2">
+              Ocorreu um erro!!
+              <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+                {error}
+              </Typography>
+            </Typography>
+          )}
+
           <Box maxWidth={false}>
             <Button
               onClick={handleClose}
