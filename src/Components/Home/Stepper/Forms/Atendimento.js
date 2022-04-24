@@ -90,6 +90,7 @@ const Atendimento = () => {
                   margin="normal"
                   {...field}
                   type="date"
+
                   //required
                 />
               )}

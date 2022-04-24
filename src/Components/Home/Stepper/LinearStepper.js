@@ -57,7 +57,14 @@ const LinaerStepper = () => {
 
       //FIM ATENDIMENTO VALUES:
 
-      multipleSelect: [],
+      //Solicitante values:
+      categoria_multiple_select: [],
+      nome_solicitante: '',
+      uf_solicitante: '',
+      municipio_solicitante: '',
+      fone_solicitante: '',
+      instituicao_solicitante: '',
+      //FIM Solicitante values:
     },
   });
 
