@@ -1,58 +1,285 @@
-import { TextField } from '@mui/material';
 import React from 'react';
+import { Box, TextField } from '@mui/material';
+
 import { Controller, useFormContext } from 'react-hook-form';
+import Grid from '@mui/material/Grid';
+
+import InputLabel from '@mui/material/InputLabel';
+import MenuItem from '@mui/material/MenuItem';
+import FormControl from '@mui/material/FormControl';
+import Select from '@mui/material/Select';
+import Divider from '@mui/material/Divider';
 
 const Atendimento = () => {
+  const names = [
+    'Oliver Hansen',
+    'Van Henry',
+    'April Tucker',
+    'Ralph Hubbard',
+    'Omar Alexander',
+    'Carlos Abbott',
+    'Miriam Wagner',
+    'Bradley Wilkerson',
+    'Virginia Andrews',
+    'Kelly Snyder',
+  ];
+
   const { control } = useFormContext();
   return (
     <>
-      <Controller
-        control={control}
-        name="firstName"
-        render={({ field }) => (
-          <TextField
-            id="first-name"
-            label="First Name"
-            variant="outlined"
-            placeholder="Enter Your First Name"
-            fullWidth
-            margin="normal"
-            {...field}
-          />
-        )}
-      />
-
-      <Controller
-        control={control}
-        name="lastName"
-        render={({ field }) => (
-          <TextField
-            id="last-name"
-            label="Last Name"
-            variant="outlined"
-            placeholder="Enter Your Last Name"
-            fullWidth
-            margin="normal"
-            {...field}
-          />
-        )}
-      />
-
-      <Controller
-        control={control}
-        name="nickName"
-        render={({ field }) => (
-          <TextField
-            id="nick-name"
-            label="Nick Name"
-            variant="outlined"
-            placeholder="Enter Your Nick Name"
-            fullWidth
-            margin="normal"
-            {...field}
-          />
-        )}
-      />
+      <Box m={4}>
+        <Grid container spacing={2}>
+          <Grid item xs={6}>
+            <Controller
+              control={control}
+              name="centro_atendimento"
+              render={({ field }) => (
+                <TextField
+                  id="centro_atendimento"
+                  label="Centro Atendimento"
+                  variant="outlined"
+                  placeholder="Centro atendimento"
+                  fullWidth
+                  {...field}
+                  type="text"
+                  // required
+                />
+              )}
+            />
+          </Grid>
+          <Grid item xs={12}>
+            <Box mt={3}>
+              <Divider>Iniciar ficha</Divider>
+            </Box>
+          </Grid>
+          <Grid item xs={6}>
+            <Box>
+              <Controller
+                render={({ field }) => (
+                  <FormControl fullWidth>
+                    <InputLabel id="demo-simple-select-label">
+                      Tipo de ficha{' '}
+                    </InputLabel>
+                    <Select {...field} labelId="demo-simple-select-label">
+                      <MenuItem value={'Humana'}>Humana</MenuItem>
+                      <MenuItem value={'Animal'}>Animal</MenuItem>
+                    </Select>
+                  </FormControl>
+                )}
+                name="tipo_ficha"
+                control={control}
+              />
+            </Box>
+          </Grid>
+          <Grid item xs={6}>
+            <Box>
+              <Controller
+                render={({ field }) => (
+                  <FormControl fullWidth>
+                    <InputLabel id="demo-simple-select-label">
+                      Exposição{' '}
+                    </InputLabel>
+                    <Select {...field} labelId="demo-simple-select-label">
+                      <MenuItem value={'Individual'}>Individual</MenuItem>
+                      <MenuItem value={'Coletiva'}>Coletiva</MenuItem>
+                    </Select>
+                  </FormControl>
+                )}
+                name="exposicao"
+                control={control}
+              />
+            </Box>
+          </Grid>
+          <Grid item xs={6}>
+            <Controller
+              control={control}
+              name="data_ficha"
+              render={({ field }) => (
+                <TextField
+                  id="data_ficha"
+                  variant="outlined"
+                  placeholder="Data da Ficha"
+                  fullWidth
+                  margin="normal"
+                  {...field}
+                  type="date"
+                  //required
+                />
+              )}
+            />
+          </Grid>
+          <Grid item xs={6}>
+            <Box mt={2}>
+              <Controller
+                control={control}
+                name="hora_ficha"
+                render={({ field }) => (
+                  <TextField
+                    id="hora_ficha"
+                    variant="outlined"
+                    fullWidth
+                    {...field}
+                    type="time"
+                    // required
+                  />
+                )}
+              />
+            </Box>
+          </Grid>
+          <Grid item xs={12}>
+            <Box mt={3}>
+              <Divider>Atendimento</Divider>
+            </Box>
+          </Grid>
+          <Grid item xs={6}>
+            <Controller
+              control={control}
+              name="data_atendimento"
+              render={({ field }) => (
+                <TextField
+                  id="data_atendimento"
+                  variant="outlined"
+                  placeholder="Data do atendimento"
+                  fullWidth
+                  margin="normal"
+                  {...field}
+                  type="date"
+                  //required
+                />
+              )}
+            />
+          </Grid>
+          <Grid item xs={3}>
+            <Box mt={2}>
+              <Controller
+                control={control}
+                name="horario_atendimento"
+                render={({ field }) => (
+                  <TextField
+                    id="horario_atendimento"
+                    variant="outlined"
+                    fullWidth
+                    {...field}
+                    type="time"
+                    //required
+                  />
+                )}
+              />
+            </Box>
+          </Grid>
+          <Grid item xs={3}>
+            <Box mt={2}>
+              <Controller
+                render={({ field }) => (
+                  <FormControl fullWidth>
+                    <InputLabel id="demo-simple-select-label">
+                      Meio de atendimento{' '}
+                    </InputLabel>
+                    <Select {...field} labelId="demo-simple-select-label">
+                      <MenuItem value={'Telefonico'}>Telefonico</MenuItem>
+                      <MenuItem value={'Presencial'}>Presencial</MenuItem>
+                      <MenuItem value={'Outro'}>Outro</MenuItem>
+                    </Select>
+                  </FormControl>
+                )}
+                name="meio_atendimento"
+                control={control}
+              />
+            </Box>
+          </Grid>
+          <Grid item xs={6}>
+            <Controller
+              control={control}
+              name="local_atendimento"
+              render={({ field }) => (
+                <TextField
+                  id="local_atendimento"
+                  label="Local do atendimento"
+                  variant="outlined"
+                  placeholder="Local do atendimento"
+                  fullWidth
+                  {...field}
+                  type="text"
+                  // required
+                />
+              )}
+            />
+          </Grid>
+          <Grid item xs={6}>
+            <Controller
+              control={control}
+              name="responsavel_atendimento"
+              render={({ field }) => (
+                <TextField
+                  id="responsavel_atendimento"
+                  label="Responsável pelo atendimento"
+                  variant="outlined"
+                  placeholder="Responsável pelo atendimento"
+                  fullWidth
+                  {...field}
+                  type="text"
+                  // required
+                />
+              )}
+            />
+          </Grid>
+          <Grid item xs={6}>
+            <Controller
+              control={control}
+              name="responsavel_revisao"
+              render={({ field }) => (
+                <TextField
+                  id="responsavel_revisao"
+                  label="Responsável pela revisão"
+                  variant="outlined"
+                  placeholder="Responsável pela revisão"
+                  fullWidth
+                  {...field}
+                  type="text"
+                  //  required
+                />
+              )}
+            />
+          </Grid>{' '}
+          <Grid item xs={6}>
+            <Controller
+              control={control}
+              name="responsavel_supervisao"
+              render={({ field }) => (
+                <TextField
+                  id="responsavel_supervisao"
+                  label="Responsável pela supervisão"
+                  variant="outlined"
+                  placeholder="Responsável pela supervisão"
+                  fullWidth
+                  {...field}
+                  type="text"
+                  // required
+                />
+              )}
+            />
+          </Grid>
+          <Grid item xs={12}>
+            <Controller
+              control={control}
+              name="controle_centro"
+              render={({ field }) => (
+                <TextField
+                  id="controle_centro"
+                  label="Controle Centro"
+                  variant="outlined"
+                  placeholder="Controle Centro"
+                  fullWidth
+                  {...field}
+                  type="text"
+                  //required
+                />
+              )}
+            />
+          </Grid>
+          {/* MULTIPLE SELECT  */}
+        </Grid>
+      </Box>
     </>
   );
 };

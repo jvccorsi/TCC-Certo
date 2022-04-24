@@ -40,24 +40,26 @@ function getStepContent(step) {
 const LinaerStepper = () => {
   const methods = useForm({
     defaultValues: {
-      firstName: [
-        { id: 2, nome: 'aoksda', sobrenome: 'aaaa' },
-        // { id: 2, nome: 'aoksda', sobrenome: 'aaaa' },
-      ],
-      lastName: '',
-      nickName: '',
-      emailAddress: '',
-      phoneNumber: '',
-      alternatePhone: '',
-      address1: ['fruta', 'aa', 'aodkaskd'],
-      address2: ['fruta', 'aa', 'aodkaskd'],
-      country: '',
-      cardNumber: '',
-      cardMonth: '',
-      cardYear: '',
+      //ATENDIMENTO VALUES:
+      centro_atendimento: '',
+      tipo_ficha: '',
+      exposicao: '',
+      data_ficha: new Date(),
+      hora_ficha: '',
+      data_atendimento: new Date(),
+      horario_atendimento: '',
+      meio_atendimento: '',
+      local_atendimento: '',
+      responsavel_atendimento: '',
+      responsavel_revisao: '',
+      responsavel_supervisao: '',
+      controle_centro: '',
+
+      //FIM ATENDIMENTO VALUES:
+
+      multipleSelect: [],
     },
   });
-  console.log(typeof methods);
 
   const [activeStep, setActiveStep] = useState(0);
   const [skippedSteps, setSkippedSteps] = useState([]);
