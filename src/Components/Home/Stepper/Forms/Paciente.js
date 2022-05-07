@@ -23,6 +23,8 @@ const Paciente = () => {
     'Ignorado',
   ];
 
+  const sexoPaciente = ['Masculino', 'Feminino', 'Ignorado'];
+
   return (
     <>
       <Box m={4}>
@@ -32,7 +34,7 @@ const Paciente = () => {
               <Divider></Divider>
             </Box>
           </Grid>
-          <Grid item xs={5}>
+          <Grid item xs={12}>
             <Controller
               control={control}
               name="paciente.nome_paciente"
@@ -50,8 +52,82 @@ const Paciente = () => {
               )}
             />
           </Grid>
+          <Grid item xs={4}>
+            <Controller
+              control={control}
+              name="paciente.data_nascimento_paciente"
+              render={({ field }) => (
+                <TextField
+                  label="Data Nasc (dd/mm/dddd)"
+                  id="data_nascimento"
+                  variant="outlined"
+                  placeholder="Data Nasc (dd/mm/dddd)"
+                  fullWidth
+                  {...field}
+                  type="text"
 
-          <Grid item xs={3}>
+                  //required
+                />
+              )}
+            />
+          </Grid>
+          <Grid item xs={4}>
+            <Controller
+              control={control}
+              name="paciente.peso_paciente"
+              render={({ field }) => (
+                <TextField
+                  label="Peso - KG"
+                  id="data_nascimento"
+                  variant="outlined"
+                  placeholder="Peso - KG"
+                  fullWidth
+                  {...field}
+                  type="number"
+
+                  //required
+                />
+              )}
+            />
+          </Grid>
+          <Grid item xs={4}>
+            <Controller
+              control={control}
+              name="paciente.idade_paciente"
+              render={({ field }) => (
+                <TextField
+                  id="idade_paciente"
+                  label="Idade (D,M,A)"
+                  variant="outlined"
+                  placeholder="Idade (D,M,A)"
+                  fullWidth
+                  {...field}
+                  type="number"
+
+                  //required
+                />
+              )}
+            />
+          </Grid>
+          <Grid item xs={4}>
+            <Controller
+              render={({ field }) => (
+                <FormControl fullWidth>
+                  <InputLabel id="sexopaciente">Sexo </InputLabel>
+                  <Select {...field} labelId="sexopaciente">
+                    {sexoPaciente.map((sexoPaciente) => (
+                      <MenuItem value={sexoPaciente} key={sexoPaciente}>
+                        {sexoPaciente}
+                      </MenuItem>
+                    ))}
+                  </Select>
+                </FormControl>
+              )}
+              name="paciente.sexo_paciente"
+              control={control}
+            />
+          </Grid>
+          <Grid item xs={4}>
             <Controller
               render={({ field }) => (
                 <FormControl fullWidth>
@@ -87,7 +163,7 @@ const Paciente = () => {
               )}
             />
           </Grid>
-          <Grid item xs={3}>
+          <Grid item xs={6}>
             <Controller
               control={control}
               name="paciente.escolaridade_paciente"
@@ -105,7 +181,7 @@ const Paciente = () => {
               )}
             />
           </Grid>
-          <Grid item xs={4}>
+          <Grid item xs={6}>
             <Controller
               control={control}
               name="paciente.ocupacao_paciente"
@@ -123,7 +199,12 @@ const Paciente = () => {
               )}
             />
           </Grid>
-          <Grid item xs={5}>
+          <Grid item xs={12}>
+            <Box m={3}>
+              <Divider></Divider>
+            </Box>
+          </Grid>
+          <Grid item xs={3}>
             <Controller
               control={control}
               name="paciente.endereco.pais_paciente"
@@ -141,12 +222,8 @@ const Paciente = () => {
               )}
             />
           </Grid>
-          <Grid item xs={12}>
-            <Box m={3}>
-              <Divider></Divider>
-            </Box>
-          </Grid>
-          <Grid item xs={4}>
+
+          <Grid item xs={3}>
             <Controller
               control={control}
               name="paciente.endereco.municipio_paciente"
@@ -164,7 +241,7 @@ const Paciente = () => {
               )}
             />
           </Grid>
-          <Grid item xs={4}>
+          <Grid item xs={3}>
             <Controller
               control={control}
               name="paciente.endereco.cep_paciente"
@@ -182,7 +259,7 @@ const Paciente = () => {
               )}
             />
           </Grid>
-          <Grid item xs={4}>
+          <Grid item xs={3}>
             <Controller
               control={control}
               name="paciente.endereco.bairro_paciente"

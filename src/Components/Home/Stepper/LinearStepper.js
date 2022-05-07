@@ -7,6 +7,9 @@ import Solicitante from './Forms/Solicitante';
 import Paciente from './Forms/Paciente';
 import AgenteToxico from './Forms/AgenteToxico';
 import Exposicao from './Forms/Exposicao';
+import OutrasInformacoes from './Forms/OutrasInformacoes';
+import Acompanhamento from './Forms/Acompanhamento';
+import ClassificacaoFinal from './Forms/ClassificacaoFinal';
 
 function getSteps() {
   return [
@@ -34,12 +37,12 @@ function getStepContent(step) {
     case 4:
       return <Exposicao />;
     case 5:
-      return <Exposicao />;
+      return <OutrasInformacoes />;
 
     case 6:
-      return <Exposicao />;
+      return <Acompanhamento />;
     case 7:
-      return <Exposicao />;
+      return <ClassificacaoFinal />;
 
     default:
       return 'unknown step';
@@ -49,7 +52,6 @@ function getStepContent(step) {
 const LinaerStepper = () => {
   const methods = useForm({
     defaultValues: {
-      //ATENDIMENTO VALUES:
       atendimento: {
         centro_atendimento: '',
         ficha: {
@@ -67,10 +69,6 @@ const LinaerStepper = () => {
         responsavel_supervisao: '',
         controle_centro: '',
       },
-
-      //FIM ATENDIMENTO VALUES:
-
-      //Solicitante values:
       solicitante: {
         categoria_multiple_select: [],
         nome_solicitante: '',
@@ -80,15 +78,17 @@ const LinaerStepper = () => {
         instituicao_solicitante: '',
       },
 
-      //FIM Solicitante values:
-
-      //Inicio Paciente Values:
       paciente: {
         nome_paciente: '',
         gestante_select_paciente: '',
         raca_cor_paciente: '',
         escolaridade_paciente: '',
         ocupacao_paciente: '',
+        data_nascimento_paciente: '',
+        idade_paciente: 1,
+        peso_paciente: 1,
+        sexo_paciente: '',
+
         endereco: {
           pais_paciente: '',
           municipio_paciente: '',
@@ -134,7 +134,33 @@ const LinaerStepper = () => {
         dose: '',
       },
 
-      //Fim Paciente Values:
+      exposicao: {
+        data: new Date(),
+        horario: '',
+        tempo_decorrido: '',
+        duracao_exposicao: '',
+        especificar_mordida: '',
+        tipos: {
+          //Dropdowns!
+          tipo_exposicao: [],
+          local_exposicao: [],
+          zona_exposicao: [],
+          via_de_exposicao: [],
+          circunstancia_de_exposicao: [],
+          local_mordida: [],
+        },
+        endereco: {
+          pais: '',
+          estado: '',
+          municipio: '',
+          cep: '',
+          bairro: '',
+          logradouro: '',
+          numero: 0,
+          complemento: '',
+          fone: '',
+        },
+      },
     },
   });
 
@@ -145,6 +171,7 @@ const LinaerStepper = () => {
   const handleNext = (data) => {
     console.log(data);
     if (activeStep === steps.length - 1) {
+      //final ->
       console.log('Modo json:' + JSON.stringify(data));
 
       setActiveStep(activeStep + 1);
