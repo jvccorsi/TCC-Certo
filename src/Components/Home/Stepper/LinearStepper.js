@@ -161,6 +161,67 @@ const LinaerStepper = () => {
           fone: '',
         },
       },
+
+      outrasInformacoes: {
+        classificacao_gravidade: '',
+        manifestacoesClinicas: {
+          manifestacao: '',
+          sinais_sintomas: '',
+        },
+        tratamento: {
+          medida_tomada: '',
+          medida_orientada: '',
+          medida_realizada: '',
+          informacoes_adicionais: '',
+          exames_resultados_lab: '',
+        },
+        historia: '',
+        fonte: '',
+        complemento: '',
+        imagens: '',
+        observacoes: '',
+      },
+
+      acompanhamento: {
+        //ArrayField
+        acompanhamento1: {
+          data_hora: '',
+          responsavel: '',
+          evolucao: '',
+          informante: '',
+          instituicao: '',
+          cidade: '',
+          fone: '',
+        },
+        acompanhamento2: {
+          data_hora: '',
+          responsavel: '',
+          evolucao: '',
+          informante: '',
+          instituicao: '',
+          cidade: '',
+          fone: '',
+        },
+        acompanhamento3: {
+          data_hora: '',
+          responsavel: '',
+          evolucao: '',
+          informante: '',
+          instituicao: '',
+          cidade: '',
+          fone: '',
+        },
+      },
+
+      classificacaoFinal: {
+        classificacao_gravidade_final: '',
+        desfecho: '',
+        obito: '',
+        data: new Date(),
+        autopsia: '',
+        resultado_autopsia: '',
+        contribuicao_obito: '',
+      },
     },
   });
 
