@@ -35,7 +35,7 @@ const Solicitante = () => {
           <Grid item xs={6}>
             <Controller
               control={control}
-              name="nome_solicitante"
+              name="solicitante.nome_solicitante"
               render={({ field }) => (
                 <TextField
                   id="nome_solicitante"
@@ -52,7 +52,7 @@ const Solicitante = () => {
           </Grid>
           <Grid item xs={6}>
             <Controller
-              name="categoria_multiple_select"
+              name="solicitante.categoria_multiple_select"
               control={control}
               type="text"
               render={({ field }) => (
@@ -81,7 +81,7 @@ const Solicitante = () => {
           <Grid item xs={3}>
             <Controller
               control={control}
-              name="uf_solicitante"
+              name="solicitante.uf_solicitante"
               render={({ field }) => (
                 <TextField
                   id="uf_solicitante"
@@ -99,7 +99,7 @@ const Solicitante = () => {
           <Grid item xs={6}>
             <Controller
               control={control}
-              name="municipio_solicitante"
+              name="solicitante.municipio_solicitante"
               render={({ field }) => (
                 <TextField
                   id="municipio_solicitante"
@@ -117,7 +117,7 @@ const Solicitante = () => {
           <Grid item xs={3}>
             <Controller
               control={control}
-              name="fone_solicitante"
+              name="solicitante.fone_solicitante"
               render={({ field }) => (
                 <TextField
                   id="fone_solicitante"
@@ -135,7 +135,7 @@ const Solicitante = () => {
           <Grid item xs={12}>
             <Controller
               control={control}
-              name="instituicao_solicitante"
+              name="solicitante.instituicao_solicitante"
               render={({ field }) => (
                 <TextField
                   id="instituicao_solicitante"

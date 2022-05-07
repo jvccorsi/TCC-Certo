@@ -19,7 +19,7 @@ const Atendimento = () => {
           <Grid item xs={6}>
             <Controller
               control={control}
-              name="centro_atendimento"
+              name="atendimento.centro_atendimento"
               render={({ field }) => (
                 <TextField
                   id="centro_atendimento"
@@ -53,7 +53,7 @@ const Atendimento = () => {
                     </Select>
                   </FormControl>
                 )}
-                name="tipo_ficha"
+                name="atendimento.ficha.tipo_ficha"
                 control={control}
               />
             </Box>
@@ -72,7 +72,7 @@ const Atendimento = () => {
                     </Select>
                   </FormControl>
                 )}
-                name="exposicao"
+                name="atendimento.ficha.exposicao"
                 control={control}
               />
             </Box>
@@ -80,7 +80,7 @@ const Atendimento = () => {
           <Grid item xs={6}>
             <Controller
               control={control}
-              name="data_ficha"
+              name="atendimento.ficha.data_ficha"
               render={({ field }) => (
                 <TextField
                   id="data_ficha"
@@ -100,7 +100,7 @@ const Atendimento = () => {
             <Box mt={2}>
               <Controller
                 control={control}
-                name="hora_ficha"
+                name="atendimento.ficha.hora_ficha"
                 render={({ field }) => (
                   <TextField
                     id="hora_ficha"
@@ -122,7 +122,7 @@ const Atendimento = () => {
           <Grid item xs={6}>
             <Controller
               control={control}
-              name="data_atendimento"
+              name="atendimento.data_atendimento"
               render={({ field }) => (
                 <TextField
                   id="data_atendimento"
@@ -141,7 +141,7 @@ const Atendimento = () => {
             <Box mt={2}>
               <Controller
                 control={control}
-                name="horario_atendimento"
+                name="atendimento.horario_atendimento"
                 render={({ field }) => (
                   <TextField
                     id="horario_atendimento"
@@ -170,7 +170,7 @@ const Atendimento = () => {
                     </Select>
                   </FormControl>
                 )}
-                name="meio_atendimento"
+                name="atendimento.meio_atendimento"
                 control={control}
               />
             </Box>
@@ -178,7 +178,7 @@ const Atendimento = () => {
           <Grid item xs={6}>
             <Controller
               control={control}
-              name="local_atendimento"
+              name="atendimento.local_atendimento"
               render={({ field }) => (
                 <TextField
                   id="local_atendimento"
@@ -196,7 +196,7 @@ const Atendimento = () => {
           <Grid item xs={6}>
             <Controller
               control={control}
-              name="responsavel_atendimento"
+              name="atendimento.responsavel_atendimento"
               render={({ field }) => (
                 <TextField
                   id="responsavel_atendimento"
@@ -214,7 +214,7 @@ const Atendimento = () => {
           <Grid item xs={6}>
             <Controller
               control={control}
-              name="responsavel_revisao"
+              name="atendimento.responsavel_revisao"
               render={({ field }) => (
                 <TextField
                   id="responsavel_revisao"
@@ -232,7 +232,7 @@ const Atendimento = () => {
           <Grid item xs={6}>
             <Controller
               control={control}
-              name="responsavel_supervisao"
+              name="atendimento.responsavel_supervisao"
               render={({ field }) => (
                 <TextField
                   id="responsavel_supervisao"
@@ -250,7 +250,7 @@ const Atendimento = () => {
           <Grid item xs={12}>
             <Controller
               control={control}
-              name="controle_centro"
+              name="atendimento.controle_centro"
               render={({ field }) => (
                 <TextField
                   id="controle_centro"

@@ -6,6 +6,7 @@ import Atendimento from './Forms/Atendimento';
 import Solicitante from './Forms/Solicitante';
 import Paciente from './Forms/Paciente';
 import AgenteToxico from './Forms/AgenteToxico';
+import Exposicao from './Forms/Exposicao';
 
 function getSteps() {
   return [
@@ -14,7 +15,9 @@ function getSteps() {
     'Paciente',
     'Agente Tóxico',
     'Exposição',
-    'Tratamento',
+    'Outros informações',
+    'Acompanhamento ',
+    'Classificacao Final ',
   ];
 }
 
@@ -29,9 +32,15 @@ function getStepContent(step) {
     case 3:
       return <AgenteToxico />;
     case 4:
-      return <AgenteToxico />;
+      return <Exposicao />;
     case 5:
-      return <AgenteToxico />;
+      return <Exposicao />;
+
+    case 6:
+      return <Exposicao />;
+    case 7:
+      return <Exposicao />;
+
     default:
       return 'unknown step';
   }
@@ -41,44 +50,97 @@ const LinaerStepper = () => {
   const methods = useForm({
     defaultValues: {
       //ATENDIMENTO VALUES:
-      centro_atendimento: '',
-      tipo_ficha: '',
-      exposicao: '',
-      data_ficha: new Date(),
-      hora_ficha: '',
-      data_atendimento: new Date(),
-      horario_atendimento: '',
-      meio_atendimento: '',
-      local_atendimento: '',
-      responsavel_atendimento: '',
-      responsavel_revisao: '',
-      responsavel_supervisao: '',
-      controle_centro: '',
+      atendimento: {
+        centro_atendimento: '',
+        ficha: {
+          tipo_ficha: '',
+          exposicao: '',
+          data_ficha: new Date(),
+          hora_ficha: '',
+        },
+        data_atendimento: new Date(),
+        horario_atendimento: '',
+        meio_atendimento: '',
+        local_atendimento: '',
+        responsavel_atendimento: '',
+        responsavel_revisao: '',
+        responsavel_supervisao: '',
+        controle_centro: '',
+      },
 
       //FIM ATENDIMENTO VALUES:
 
       //Solicitante values:
-      categoria_multiple_select: [],
-      nome_solicitante: '',
-      uf_solicitante: '',
-      municipio_solicitante: '',
-      fone_solicitante: '',
-      instituicao_solicitante: '',
+      solicitante: {
+        categoria_multiple_select: [],
+        nome_solicitante: '',
+        uf_solicitante: '',
+        municipio_solicitante: '',
+        fone_solicitante: '',
+        instituicao_solicitante: '',
+      },
+
       //FIM Solicitante values:
+
+      //Inicio Paciente Values:
+      paciente: {
+        nome_paciente: '',
+        gestante_select_paciente: '',
+        raca_cor_paciente: '',
+        escolaridade_paciente: '',
+        ocupacao_paciente: '',
+        endereco: {
+          pais_paciente: '',
+          municipio_paciente: '',
+          cep_paciente: '',
+          bairro_paciente: '',
+          logradouro_paciente: '',
+          numero_casa_paciente: '',
+          complemento_casa_paciente: '',
+        },
+        telefone_paciente: '',
+        nome_mae_paciente: '',
+        prontuario_paciente: '',
+        cpf_paciente: '',
+        rg_paciente: '',
+        cartao_sus_paciente: '',
+        convenio_paciente: '',
+      },
+
+      agenteToxico: {
+        agente1: {
+          nome: '',
+          substancia_Genero: '',
+          subclasse: '',
+          classe: '',
+          grupo: '',
+        },
+        agente2: {
+          nome: '',
+          substancia_Genero: '',
+          subclasse: '',
+          classe: '',
+          grupo: '',
+        },
+        agente3: {
+          nome: '',
+          substancia_Genero: '',
+          subclasse: '',
+          classe: '',
+          grupo: '',
+        },
+        dados_complementares: '',
+        quantidade_apresentacao: '',
+        dose: '',
+      },
+
+      //Fim Paciente Values:
     },
   });
 
   const [activeStep, setActiveStep] = useState(0);
-  const [skippedSteps, setSkippedSteps] = useState([]);
+
   const steps = getSteps();
-
-  const isStepOptional = (step) => {
-    return step === 1 || step === 2;
-  };
-
-  const isStepSkipped = (step) => {
-    return skippedSteps.includes(step);
-  };
 
   const handleNext = (data) => {
     console.log(data);
@@ -88,21 +150,11 @@ const LinaerStepper = () => {
       setActiveStep(activeStep + 1);
     } else {
       setActiveStep(activeStep + 1);
-      setSkippedSteps(
-        skippedSteps.filter((skipItem) => skipItem !== activeStep),
-      );
     }
   };
 
   const handleBack = () => {
     setActiveStep(activeStep - 1);
-  };
-
-  const handleSkip = () => {
-    if (!isStepSkipped(activeStep)) {
-      setSkippedSteps([...skippedSteps, activeStep]);
-    }
-    setActiveStep(activeStep + 1);
   };
 
   return (
@@ -111,9 +163,7 @@ const LinaerStepper = () => {
         {steps.map((step, index) => {
           const labelProps = {};
           const stepProps = {};
-          if (isStepSkipped(index)) {
-            stepProps.completed = false;
-          }
+
           return (
             <Step {...stepProps} key={index}>
               <StepLabel {...labelProps}>{step}</StepLabel>
@@ -135,15 +185,7 @@ const LinaerStepper = () => {
               <Button disabled={activeStep === 0} onClick={handleBack}>
                 back
               </Button>
-              {isStepOptional(activeStep) && (
-                <Button
-                  variant="contained"
-                  color="primary"
-                  onClick={handleSkip}
-                >
-                  skip
-                </Button>
-              )}
+
               <Button
                 variant="contained"
                 color="primary"
