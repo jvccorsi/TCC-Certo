@@ -218,7 +218,8 @@ const LinaerStepper = () => {
     console.log(data);
     if (activeStep === steps.length - 1) {
       //final ->
-      console.log('Modo json:' + JSON.stringify(data));
+      // console.log('Modo json:' + JSON.stringify(data));
+      console.log(data);
 
       setActiveStep(activeStep + 1);
     } else {

@@ -19,6 +19,7 @@ import DrawerComp from './DrawerComp';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import ListItemIcon from '@mui/material/ListItemIcon';
+import Divider from '@mui/material/Divider';
 import Logout from '@mui/icons-material/Logout';
 import { AuthContext } from './Hooks/AuthContext';
 
@@ -160,6 +161,13 @@ const Header = () => {
                                 vertical: 'bottom',
                               }}
                             >
+                              <MenuItem>
+                                <Avatar /> Profile
+                              </MenuItem>
+                              <MenuItem>
+                                <Avatar /> My account
+                              </MenuItem>
+                              <Divider />
                               <MenuItem>
                                 <ListItemIcon>
                                   <Logout fontSize="small" />

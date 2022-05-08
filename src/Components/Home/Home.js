@@ -1,7 +1,7 @@
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
 import CadastroAtendimento from './CadastroAtendimento';
-import ListarAtendimento from './ListarAtendimento';
+import ListarAtendimento2 from './ListarAtendimento2';
 
 import HomePage from './HomePage';
 import UserHeader from './UserHeader';
@@ -18,7 +18,7 @@ const Home = () => {
         ></Route>
         <Route
           path="/listar"
-          element={<ListarAtendimento></ListarAtendimento>}
+          element={<ListarAtendimento2></ListarAtendimento2>}
         ></Route>
       </Routes>
     </section>
