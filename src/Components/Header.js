@@ -162,13 +162,6 @@ const Header = () => {
                               }}
                             >
                               <MenuItem>
-                                <Avatar /> Profile
-                              </MenuItem>
-                              <MenuItem>
-                                <Avatar /> My account
-                              </MenuItem>
-                              <Divider />
-                              <MenuItem>
                                 <ListItemIcon>
                                   <Logout fontSize="small" />
                                 </ListItemIcon>
