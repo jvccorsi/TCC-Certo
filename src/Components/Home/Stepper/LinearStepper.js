@@ -28,6 +28,7 @@ function getStepContent(step) {
   switch (step) {
     case 0:
       return <Atendimento />;
+
     case 1:
       return <Solicitante />;
     case 2:
@@ -85,8 +86,8 @@ const LinaerStepper = () => {
         escolaridade_paciente: '',
         ocupacao_paciente: '',
         data_nascimento_paciente: '',
-        idade_paciente: 1,
-        peso_paciente: 1,
+        idade_paciente: '',
+        peso_paciente: '',
         sexo_paciente: '',
 
         endereco: {
@@ -184,33 +185,17 @@ const LinaerStepper = () => {
 
       acompanhamento: {
         //ArrayField
-        acompanhamento1: {
-          data_hora: '',
-          responsavel: '',
-          evolucao: '',
-          informante: '',
-          instituicao: '',
-          cidade: '',
-          fone: '',
-        },
-        acompanhamento2: {
-          data_hora: '',
-          responsavel: '',
-          evolucao: '',
-          informante: '',
-          instituicao: '',
-          cidade: '',
-          fone: '',
-        },
-        acompanhamento3: {
-          data_hora: '',
-          responsavel: '',
-          evolucao: '',
-          informante: '',
-          instituicao: '',
-          cidade: '',
-          fone: '',
-        },
+        dados: [
+          {
+            data_hora: '',
+            responsavel: '',
+            evolucao: '',
+            informante: '',
+            instituicao: '',
+            cidade: '',
+            fone: '',
+          },
+        ],
       },
 
       classificacaoFinal: {
