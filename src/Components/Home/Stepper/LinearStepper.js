@@ -1,5 +1,13 @@
-import React, { useState } from 'react';
-import { Typography, Button, Stepper, Step, StepLabel } from '@mui/material';
+import React, { useState, useContext } from 'react';
+import {
+  Typography,
+  Button,
+  Stepper,
+  Step,
+  StepLabel,
+  Modal,
+  Box,
+} from '@mui/material';
 import { useForm, FormProvider } from 'react-hook-form';
 
 import Atendimento from './Forms/Atendimento';
@@ -10,6 +18,9 @@ import Exposicao from './Forms/Exposicao';
 import OutrasInformacoes from './Forms/OutrasInformacoes';
 import Acompanhamento from './Forms/Acompanhamento';
 import ClassificacaoFinal from './Forms/ClassificacaoFinal';
+import { useHttpClient } from '../../Hooks/http-hook';
+import { AuthContext } from '../../Hooks/AuthContext';
+import LoadingSpinner from '../../IUElements/LoadingSpinner';
 
 function getSteps() {
   return [
@@ -23,6 +34,17 @@ function getSteps() {
     'Classificacao Final ',
   ];
 }
+const style = {
+  position: 'absolute',
+  top: '50%',
+  left: '50%',
+  transform: 'translate(-50%, -50%)',
+  width: 400,
+  bgcolor: 'background.paper',
+  border: '2px solid #000',
+  boxShadow: 24,
+  p: 4,
+};
 
 function getStepContent(step) {
   switch (step) {
@@ -51,6 +73,12 @@ function getStepContent(step) {
 }
 
 const LinaerStepper = () => {
+  const [openModal, setOpenModal] = useState(false);
+
+  const { isLoading, error, sendRequest, clearError } = useHttpClient();
+
+  const auth = useContext(AuthContext);
+
   const methods = useForm({
     defaultValues: {
       atendimento: {
@@ -211,16 +239,33 @@ const LinaerStepper = () => {
   });
 
   const [activeStep, setActiveStep] = useState(0);
+  var error_content = false;
 
   const steps = getSteps();
 
-  const handleNext = (data) => {
-    console.log(data);
-    if (activeStep === steps.length - 1) {
-      //final ->
-      // console.log('Modo json:' + JSON.stringify(data));
-      console.log(data);
+  const submitFormRequest = async (data) => {
+    var data_post = {};
+    data_post = data;
+    data_post.creator = auth.userId;
+    try {
+      await sendRequest(
+        'http://localhost:3000/api/fichas',
+        'POST',
+        JSON.stringify(data_post),
+        {
+          'Content-Type': 'application/json',
+        },
+      );
+    } catch (error) {
+      setOpenModal(true);
+      error_content = true;
+    }
+  };
 
+  const handleNext = (data) => {
+    if (activeStep === steps.length - 1) {
+      //Se tiver acabado o stepper, ele submete!!
+      submitFormRequest(data);
       setActiveStep(activeStep + 1);
     } else {
       setActiveStep(activeStep + 1);
@@ -230,9 +275,41 @@ const LinaerStepper = () => {
   const handleBack = () => {
     setActiveStep(activeStep - 1);
   };
+  const handleClose = () => {
+    setOpenModal(false);
+    clearError();
+  };
 
   return (
     <div>
+      <Modal
+        open={openModal}
+        onClose={handleClose}
+        aria-labelledby="modal-modal-title"
+        aria-describedby="modal-modal-description"
+      >
+        <Box sx={style}>
+          <Typography id="modal-modal-title" variant="h6" component="h2">
+            Ocorreu um erro - Contacte o suporte!!
+          </Typography>
+          <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+            O erro é: {error}
+          </Typography>
+          <Box maxWidth={false}>
+            <Button
+              onClick={handleClose}
+              variant="contained"
+              style={{ backgroundColor: '#FE6969' }}
+              size="small"
+            >
+              Fechar
+            </Button>
+          </Box>
+        </Box>
+      </Modal>
+
+      {isLoading && <LoadingSpinner asOverlay />}
+
       <Stepper activeStep={activeStep} alternativeLabel>
         {steps.map((step, index) => {
           const labelProps = {};
@@ -246,9 +323,9 @@ const LinaerStepper = () => {
         })}
       </Stepper>
 
-      {activeStep === steps.length ? (
-        <Typography variant="h3" align="center">
-          Finalizado
+      {activeStep === steps.length && !error_content ? (
+        <Typography variant="h4" align="center" m={5} color={'green'}>
+          Cadastro realizado com sucesso!
         </Typography>
       ) : (
         <>

@@ -63,8 +63,8 @@ const CreateAccount = () => {
     event.preventDefault();
 
     try {
-      await sendRequest(
-        'https://api-tcc-unicamp.herokuapp.com/api/users/signup',
+      const responseData = await sendRequest(
+        'http://localhost:3000/api/users/signup',
         'POST',
         JSON.stringify({
           name: firstName,
@@ -78,7 +78,7 @@ const CreateAccount = () => {
       );
       setCadastro(true);
       if (cadastro) setOpen(true);
-      // auth.login();
+      // auth.login(responseData.user.id); Login pós cadastro
     } catch (err) {}
   }
 
