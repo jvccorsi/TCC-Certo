@@ -16,6 +16,8 @@ const UserHeader = () => {
     if ('/home' === pathname) setTitle('Home');
     else if ('/home/cadastro' === pathname) setTitle('Cadastrar');
     else if ('/home/listar' === pathname) setTitle('Atendimentos');
+    else if ('/home/visualizar' === pathname) setTitle('Visualizar');
+    else if ('/home/editar' === pathname) setTitle('Visualizar');
     else setTitle('');
   }, [location]);
 

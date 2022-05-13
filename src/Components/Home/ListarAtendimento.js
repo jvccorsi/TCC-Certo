@@ -2,7 +2,7 @@ import React from 'react';
 
 import { DataGrid, GridToolbar } from '@mui/x-data-grid';
 import { useNavigate } from 'react-router-dom';
-import { Box, Container, Grid } from '@mui/material';
+import { Box, Grid } from '@mui/material';
 import IconButton from '@mui/material/IconButton';
 import DeleteIcon from '@mui/icons-material/Delete';
 import EditSharpIcon from '@mui/icons-material/EditSharp';
@@ -173,7 +173,7 @@ const ListarAtendimento = () => {
             .forEach(
               (c) => (thisRow[c.field] = params.getValue(params.id, c.field)),
             );
-          navigate(`../visualizar/${JSON.stringify(thisRow.id)} `, {
+          navigate(`../visualizar/${btoa(JSON.stringify(thisRow.id))} `, {
             replace: true,
           });
 
@@ -212,12 +212,12 @@ const ListarAtendimento = () => {
               (c) => (thisRow[c.field] = params.getValue(params.id, c.field)),
             );
 
-          navigate(`../editar/${JSON.stringify(thisRow.id)} `, {
+          navigate(`../editar/${btoa(JSON.stringify(thisRow.id))} `, {
             replace: true,
           });
 
           //Retorna o id da linha!
-          return alert(JSON.stringify(thisRow.id));
+          return JSON.stringify(thisRow.id);
         };
 
         return (
@@ -274,23 +274,21 @@ const ListarAtendimento = () => {
 
   return (
     <>
-      <Container maxWidth="xl" fixed>
-        <Box m={4}>
-          <Grid container spacing={2} justifyContent="center">
-            <Grid item xs={8}>
-              <div style={{ height: '65vh', width: '100%' }}>
-                <DataGrid
-                  rows={rows}
-                  columns={columns}
-                  components={{ Toolbar: GridToolbar }}
-                  checkboxSelection
-                  disableSelectionOnClick
-                />
-              </div>
-            </Grid>
+      <Box m={4}>
+        <Grid container spacing={2} justifyContent="center">
+          <Grid item xs={8}>
+            <div style={{ height: '65vh', width: '100%' }}>
+              <DataGrid
+                rows={rows}
+                columns={columns}
+                components={{ Toolbar: GridToolbar }}
+                checkboxSelection
+                disableSelectionOnClick
+              />
+            </div>
           </Grid>
-        </Box>
-      </Container>
+        </Grid>
+      </Box>
     </>
   );
 };

@@ -2,6 +2,7 @@ import React from 'react';
 import { Route, Routes } from 'react-router-dom';
 import CadastroAtendimento from './CadastroAtendimento';
 import ListarAtendimento1 from './ListarAtendimento';
+import Editar from './editar/editar';
 
 import HomePage from './HomePage';
 import UserHeader from './UserHeader';
@@ -20,10 +21,7 @@ const Home = () => {
           path="/listar"
           element={<ListarAtendimento1></ListarAtendimento1>}
         ></Route>
-        <Route
-          path="/editar"
-          element={<ListarAtendimento1></ListarAtendimento1>}
-        ></Route>
+        <Route path="/editar/:id" element={<Editar></Editar>}></Route>
       </Routes>
     </section>
   );
