@@ -16,8 +16,6 @@ const UserHeader = () => {
     if ('/home' === pathname) setTitle('Home');
     else if ('/home/cadastro' === pathname) setTitle('Cadastrar');
     else if ('/home/listar' === pathname) setTitle('Atendimentos');
-    else if ('/home/visualizar' === pathname) setTitle('Visualizar');
-    else if ('/home/editar' === pathname) setTitle('Visualizar');
     else setTitle('');
   }, [location]);
 
@@ -36,8 +34,10 @@ const UserHeader = () => {
             <HomeOutlinedIcon color="primary" fontSize="large" />
           ) : title === 'Cadastrar' ? (
             <AddOutlinedIcon color="primary" fontSize="large" />
-          ) : (
+          ) : title === 'Atendimentos' ? (
             <ReceiptOutlinedIcon color="primary" fontSize="large" />
+          ) : (
+            <p></p>
           )}
 
           <h1

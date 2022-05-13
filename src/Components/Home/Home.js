@@ -6,6 +6,7 @@ import Editar from './editar/editar';
 
 import HomePage from './HomePage';
 import UserHeader from './UserHeader';
+import Visualizar from './visualizar/Visualizar';
 
 const Home = () => {
   return (
@@ -22,6 +23,10 @@ const Home = () => {
           element={<ListarAtendimento1></ListarAtendimento1>}
         ></Route>
         <Route path="/editar/:id" element={<Editar></Editar>}></Route>
+        <Route
+          path="/visualizar/:id"
+          element={<Visualizar></Visualizar>}
+        ></Route>
       </Routes>
     </section>
   );
