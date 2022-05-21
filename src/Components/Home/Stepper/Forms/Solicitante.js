@@ -10,7 +10,7 @@ import {
 } from '@mui/material';
 import { useFormContext, Controller } from 'react-hook-form';
 
-const Solicitante = () => {
+const Solicitante = ({ desabiliar }) => {
   const { control } = useFormContext();
 
   const categoria = [
@@ -49,7 +49,7 @@ const Solicitante = () => {
                   fullWidth
                   {...field}
                   type="text"
-                  // required
+                  disabled={desabiliar ? 'disabled' : ''}
                 />
               )}
             />
@@ -72,7 +72,11 @@ const Solicitante = () => {
                     defaultValue={[]}
                   >
                     {categoria.map((categoria) => (
-                      <MenuItem value={categoria} key={categoria}>
+                      <MenuItem
+                        value={categoria}
+                        key={categoria}
+                        disabled={desabiliar ? 'disabled' : ''}
+                      >
                         {categoria}
                       </MenuItem>
                     ))}
@@ -95,7 +99,7 @@ const Solicitante = () => {
                   fullWidth
                   {...field}
                   type="text"
-                  // required
+                  disabled={desabiliar ? 'disabled' : ''}
                 />
               )}
             />
@@ -113,7 +117,7 @@ const Solicitante = () => {
                   fullWidth
                   {...field}
                   type="text"
-                  // required
+                  disabled={desabiliar ? 'disabled' : ''}
                 />
               )}
             />
@@ -131,7 +135,7 @@ const Solicitante = () => {
                   fullWidth
                   {...field}
                   type="tel"
-                  // required
+                  disabled={desabiliar ? 'disabled' : ''}
                 />
               )}
             />
@@ -149,7 +153,7 @@ const Solicitante = () => {
                   fullWidth
                   {...field}
                   type="text"
-                  // required
+                  disabled={desabiliar ? 'disabled' : ''}
                 />
               )}
             />

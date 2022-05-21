@@ -2,7 +2,7 @@ import { TextField, Grid, Box, Divider } from '@mui/material';
 import React from 'react';
 import { Controller, useFormContext } from 'react-hook-form';
 
-const AgenteToxico = () => {
+const AgenteToxico = ({ desabiliar }) => {
   const { control } = useFormContext();
 
   return (
@@ -26,7 +26,7 @@ const AgenteToxico = () => {
                 fullWidth
                 {...field}
                 type="text"
-                // required
+                disabled={desabiliar ? 'disabled' : ''}
               />
             )}
           />
@@ -44,7 +44,7 @@ const AgenteToxico = () => {
                 fullWidth
                 {...field}
                 type="text"
-                // required
+                disabled={desabiliar ? 'disabled' : ''}
               />
             )}
           />
@@ -62,7 +62,7 @@ const AgenteToxico = () => {
                 fullWidth
                 {...field}
                 type="text"
-                // required
+                disabled={desabiliar ? 'disabled' : ''}
               />
             )}
           />
@@ -80,7 +80,7 @@ const AgenteToxico = () => {
                 fullWidth
                 {...field}
                 type="text"
-                // required
+                disabled={desabiliar ? 'disabled' : ''}
               />
             )}
           />
@@ -98,7 +98,7 @@ const AgenteToxico = () => {
                 fullWidth
                 {...field}
                 type="text"
-                // required
+                disabled={desabiliar ? 'disabled' : ''}
               />
             )}
           />
@@ -123,7 +123,7 @@ const AgenteToxico = () => {
                 fullWidth
                 {...field}
                 type="text"
-                // required
+                disabled={desabiliar ? 'disabled' : ''}
               />
             )}
           />
@@ -142,7 +142,7 @@ const AgenteToxico = () => {
                 fullWidth
                 {...field}
                 type="text"
-                // required
+                disabled={desabiliar ? 'disabled' : ''}
               />
             )}
           />
@@ -160,7 +160,7 @@ const AgenteToxico = () => {
                 fullWidth
                 {...field}
                 type="text"
-                // required
+                disabled={desabiliar ? 'disabled' : ''}
               />
             )}
           />
@@ -178,7 +178,7 @@ const AgenteToxico = () => {
                 fullWidth
                 {...field}
                 type="text"
-                // required
+                disabled={desabiliar ? 'disabled' : ''}
               />
             )}
           />
@@ -196,7 +196,7 @@ const AgenteToxico = () => {
                 fullWidth
                 {...field}
                 type="text"
-                // required
+                disabled={desabiliar ? 'disabled' : ''}
               />
             )}
           />
@@ -221,7 +221,7 @@ const AgenteToxico = () => {
                 fullWidth
                 {...field}
                 type="text"
-                // required
+                disabled={desabiliar ? 'disabled' : ''}
               />
             )}
           />
@@ -240,7 +240,7 @@ const AgenteToxico = () => {
                 fullWidth
                 {...field}
                 type="text"
-                // required
+                disabled={desabiliar ? 'disabled' : ''}
               />
             )}
           />
@@ -258,7 +258,7 @@ const AgenteToxico = () => {
                 fullWidth
                 {...field}
                 type="text"
-                // required
+                disabled={desabiliar ? 'disabled' : ''}
               />
             )}
           />
@@ -276,7 +276,7 @@ const AgenteToxico = () => {
                 fullWidth
                 {...field}
                 type="text"
-                // required
+                disabled={desabiliar ? 'disabled' : ''}
               />
             )}
           />
@@ -294,7 +294,7 @@ const AgenteToxico = () => {
                 fullWidth
                 {...field}
                 type="text"
-                // required
+                disabled={desabiliar ? 'disabled' : ''}
               />
             )}
           />
@@ -318,7 +318,7 @@ const AgenteToxico = () => {
                 fullWidth
                 {...field}
                 type="text"
-                // required
+                disabled={desabiliar ? 'disabled' : ''}
               />
             )}
           />
@@ -336,7 +336,7 @@ const AgenteToxico = () => {
                 fullWidth
                 {...field}
                 type="text"
-                // required
+                disabled={desabiliar ? 'disabled' : ''}
               />
             )}
           />
@@ -354,7 +354,7 @@ const AgenteToxico = () => {
                 fullWidth
                 {...field}
                 type="text"
-                // required
+                disabled={desabiliar ? 'disabled' : ''}
               />
             )}
           />

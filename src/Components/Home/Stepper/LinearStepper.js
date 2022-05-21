@@ -86,10 +86,10 @@ const LinaerStepper = () => {
         ficha: {
           tipo_ficha: '',
           exposicao: '',
-          data_ficha: new Date(),
+          data_ficha: '',
           hora_ficha: '',
         },
-        data_atendimento: new Date(),
+        data_atendimento: '',
         horario_atendimento: '',
         meio_atendimento: '',
         local_atendimento: '',
@@ -164,7 +164,7 @@ const LinaerStepper = () => {
       },
 
       exposicao: {
-        data: new Date(),
+        data: '',
         horario: '',
         tempo_decorrido: '',
         duracao_exposicao: '',
@@ -230,7 +230,7 @@ const LinaerStepper = () => {
         classificacao_gravidade_final: '',
         desfecho: '',
         obito: '',
-        data: new Date(),
+        data: '',
         autopsia: '',
         resultado_autopsia: '',
         contribuicao_obito: '',
@@ -249,7 +249,7 @@ const LinaerStepper = () => {
     data_post.creator = auth.userId;
     try {
       await sendRequest(
-        'http://localhost:3000/api/fichas',
+        'https://api-tcc-unicamp.herokuapp.com/api/fichas',
         'POST',
         JSON.stringify(data_post),
         {
@@ -263,6 +263,7 @@ const LinaerStepper = () => {
   };
 
   const handleNext = (data) => {
+    console.log(data);
     if (activeStep === steps.length - 1) {
       //Se tiver acabado o stepper, ele submete!!
       submitFormRequest(data);

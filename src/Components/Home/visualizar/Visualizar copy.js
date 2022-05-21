@@ -16,10 +16,22 @@ import styles from './visualizar.module.css';
 
 import { useHttpClient } from '../../Hooks/http-hook';
 import LoadingSpinner from '../../IUElements/LoadingSpinner';
+import { useFieldArray, useForm } from 'react-hook-form';
 
 const Visualizar = () => {
   const [loadedFicha, setLoadedFicha] = useState();
   const { isLoading, error, sendRequest, clearError } = useHttpClient();
+  const { control, register } = useForm({
+    defaultValues: {
+      test: [{ firstName: 'Bill', lastName: 'Luo' }],
+    },
+  });
+  const { fields, append, prepend, remove, swap, move, insert } = useFieldArray(
+    {
+      control, // control props comes from useForm (optional: if you are using FormContext)
+      name: 'test', // unique name for your Field Array
+    },
+  );
 
   const { id } = useParams();
 
@@ -94,14 +106,50 @@ const Visualizar = () => {
                 />
                 {loadedFicha.defaultValues.acompanhamento.dados.map(
                   (item, index) => (
-                    <div key={index}>
-                      <p type="text"> </p>
-                      <p type="text">{item.id}</p>
-                      <p type="text">{item.informante}</p>
-                    </div>
+                    <>
+                      <p type="text" key={index}>
+                        {' '}
+                        {index}
+                      </p>
+                      <p type="text" key={index}>
+                        {item.id}
+                      </p>
+                      <p type="text" key={index}>
+                        {item.informante}
+                      </p>
+                    </>
                   ),
                 )}
               </Box>
+
+              {/* <FormProvider {...methods} defaultValues={defaultValues2}>
+                <Atendimento desabiliar={true} />
+                <Box mt={3}>
+                  <Divider>Solicitante</Divider>
+                </Box>
+                <Solicitante desabiliar={true} />
+                <Box mt={3}>
+                  <Divider>Paciente</Divider>
+                </Box>
+                <Paciente desabiliar={true} />
+                <Box mt={3}>
+                  <Divider>Agente Toxico</Divider>
+                </Box>
+                <AgenteToxico desabiliar={true} />
+                <Box mt={3}>
+                  <Divider>Exposição</Divider>
+                </Box>
+                <Exposicao desabiliar={true} />
+                <Box mt={6}>
+                  <Divider>Outras informações</Divider>
+                </Box>
+                <OutrasInformacoes desabiliar={true} />
+                <Acompanhamento desabiliar={true} />
+                <Box mt={3}>
+                  <Divider>Classificação final</Divider>
+                </Box>
+                <ClassificacaoFinal desabiliar={true} />
+              </FormProvider> */}
             </Paper>
           )}
         </Box>{' '}

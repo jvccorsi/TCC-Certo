@@ -10,7 +10,7 @@ import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import Divider from '@mui/material/Divider';
 
-const Atendimento = () => {
+const Atendimento = ({ desabiliar }) => {
   const { control } = useFormContext();
   return (
     <>
@@ -29,7 +29,7 @@ const Atendimento = () => {
                   fullWidth
                   {...field}
                   type="text"
-                  // required
+                  disabled={desabiliar ? 'disabled' : ''}
                 />
               )}
             />
@@ -47,7 +47,11 @@ const Atendimento = () => {
                     <InputLabel id="demo-simple-select-label">
                       Tipo de ficha{' '}
                     </InputLabel>
-                    <Select {...field} labelId="demo-simple-select-label">
+                    <Select
+                      {...field}
+                      labelId="demo-simple-select-label"
+                      disabled={desabiliar ? 'disabled' : ''}
+                    >
                       <MenuItem value={'Humana'}>Humana</MenuItem>
                       <MenuItem value={'Animal'}>Animal</MenuItem>
                     </Select>
@@ -66,7 +70,11 @@ const Atendimento = () => {
                     <InputLabel id="demo-simple-select-label">
                       Exposição{' '}
                     </InputLabel>
-                    <Select {...field} labelId="demo-simple-select-label">
+                    <Select
+                      {...field}
+                      labelId="demo-simple-select-label"
+                      disabled={desabiliar ? 'disabled' : ''}
+                    >
                       <MenuItem value={'Individual'}>Individual</MenuItem>
                       <MenuItem value={'Coletiva'}>Coletiva</MenuItem>
                     </Select>
@@ -90,8 +98,7 @@ const Atendimento = () => {
                   margin="normal"
                   {...field}
                   type="date"
-
-                  //required
+                  disabled={desabiliar ? 'disabled' : ''}
                 />
               )}
             />
@@ -108,7 +115,7 @@ const Atendimento = () => {
                     fullWidth
                     {...field}
                     type="time"
-                    // required
+                    disabled={desabiliar ? 'disabled' : ''}
                   />
                 )}
               />
@@ -132,7 +139,7 @@ const Atendimento = () => {
                   margin="normal"
                   {...field}
                   type="date"
-                  //required
+                  disabled={desabiliar ? 'disabled' : ''}
                 />
               )}
             />
@@ -149,7 +156,7 @@ const Atendimento = () => {
                     fullWidth
                     {...field}
                     type="time"
-                    //required
+                    disabled={desabiliar ? 'disabled' : ''}
                   />
                 )}
               />
@@ -163,7 +170,11 @@ const Atendimento = () => {
                     <InputLabel id="demo-simple-select-label">
                       Meio de atendimento{' '}
                     </InputLabel>
-                    <Select {...field} labelId="demo-simple-select-label">
+                    <Select
+                      {...field}
+                      labelId="demo-simple-select-label"
+                      disabled={desabiliar ? 'disabled' : ''}
+                    >
                       <MenuItem value={'Telefonico'}>Telefonico</MenuItem>
                       <MenuItem value={'Presencial'}>Presencial</MenuItem>
                       <MenuItem value={'Outro'}>Outro</MenuItem>
@@ -188,7 +199,7 @@ const Atendimento = () => {
                   fullWidth
                   {...field}
                   type="text"
-                  // required
+                  disabled={desabiliar ? 'disabled' : ''}
                 />
               )}
             />
@@ -206,7 +217,7 @@ const Atendimento = () => {
                   fullWidth
                   {...field}
                   type="text"
-                  // required
+                  disabled={desabiliar ? 'disabled' : ''}
                 />
               )}
             />
@@ -224,7 +235,7 @@ const Atendimento = () => {
                   fullWidth
                   {...field}
                   type="text"
-                  //  required
+                  disabled={desabiliar ? 'disabled' : ''}
                 />
               )}
             />
@@ -242,7 +253,7 @@ const Atendimento = () => {
                   fullWidth
                   {...field}
                   type="text"
-                  // required
+                  disabled={desabiliar ? 'disabled' : ''}
                 />
               )}
             />
@@ -260,7 +271,7 @@ const Atendimento = () => {
                   fullWidth
                   {...field}
                   type="text"
-                  //required
+                  disabled={desabiliar ? 'disabled' : ''}
                 />
               )}
             />
