@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 import { DataGrid, GridToolbar } from '@mui/x-data-grid';
 import { useNavigate } from 'react-router-dom';
@@ -7,6 +7,8 @@ import IconButton from '@mui/material/IconButton';
 import DeleteIcon from '@mui/icons-material/Delete';
 import EditSharpIcon from '@mui/icons-material/EditSharp';
 import RemoveRedEyeSharpIcon from '@mui/icons-material/RemoveRedEyeSharp';
+import { useHttpClient } from '../Hooks/http-hook';
+import LoadingSpinner from '../IUElements/LoadingSpinner';
 
 const style = {
   position: 'absolute',
@@ -28,154 +30,58 @@ const ListarAtendimento = () => {
     setidExcluir(id);
   };
   const handleClose = () => setOpen(false);
-
-  const rows = [
-    { id: 1, Centro: 'xx-corsi01', TipoFicha: 'World', Exposicao: 'Teste1' },
-    {
-      id: 2,
-      Centro: 'xx-corsi02',
-      TipoFicha: 'is Awesome',
-      Exposicao: 'Teste1',
-    },
-    {
-      id: 3,
-      Centro: 'xx-corsi03',
-      TipoFicha: 'is Amazing',
-      Exposicao: 'Teste1',
-    },
-    { id: 4, Centro: 'xx-corsi01', TipoFicha: 'World', Exposicao: 'Teste1' },
-    {
-      id: 5,
-      Centro: 'xx-corsi01',
-      TipoFicha: 'is Awesome',
-      Exposicao: 'Teste1',
-    },
-    {
-      id: 6,
-      Centro: 'xx-corsi01',
-      TipoFicha: 'is Amazing',
-      Exposicao: 'Teste1',
-    },
-    { id: 7, Centro: 'xx-corsi01', TipoFicha: 'World', Exposicao: 'Teste1' },
-    {
-      id: 8,
-      Centro: 'xx-corsi01',
-      TipoFicha: 'is Awesome',
-      Exposicao: 'Teste1',
-    },
-    {
-      id: 9,
-      Centro: 'xx-corsi01',
-      TipoFicha: 'is Amazing',
-      Exposicao: 'Teste1',
-    },
-    { id: 10, Centro: 'xx-corsi01', TipoFicha: 'World', Exposicao: 'Teste1' },
-    {
-      id: 11,
-      Centro: 'xx-corsi01',
-      TipoFicha: 'is Awesome',
-      Exposicao: 'Teste1',
-    },
-    {
-      id: 12,
-      Centro: 'xx-corsi01',
-      TipoFicha: 'is Amazing',
-      Exposicao: 'Teste1',
-    },
-    { id: 13, Centro: 'xx-corsi01', TipoFicha: 'World', Exposicao: 'Teste1' },
-    {
-      id: 14,
-      Centro: 'xx-corsi01',
-      TipoFicha: 'is Awesome',
-      Exposicao: 'Teste1',
-    },
-    {
-      id: 15,
-      Centro: 'xx-corsi01',
-      TipoFicha: 'is Amazing',
-      Exposicao: 'Teste1',
-    },
-    { id: 16, Centro: 'xx-corsi01', TipoFicha: 'World', Exposicao: 'Teste1' },
-    {
-      id: 17,
-      Centro: 'xx-corsi01',
-      TipoFicha: 'is Awesome',
-      Exposicao: 'Teste1',
-    },
-    {
-      id: 18,
-      Centro: 'xx-corsi01',
-      TipoFicha: 'is Amazing',
-      Exposicao: 'Teste1',
-    },
-    { id: 19, Centro: 'xx-corsi01', TipoFicha: 'World', Exposicao: 'Teste1' },
-    {
-      id: 20,
-      Centro: 'xx-corsi01',
-      TipoFicha: 'is Awesome',
-      Exposicao: 'Teste1',
-    },
-    {
-      id: 21,
-      Centro: 'xx-corsi01',
-      TipoFicha: 'is Amazing',
-      Exposicao: 'Teste1',
-    },
-    {
-      id: 22,
-      Centro: 'xx-corsi01',
-      TipoFicha: 'is Awesome',
-      Exposicao: 'Teste1',
-    },
-    {
-      id: 23,
-      Centro: 'xx-corsi01',
-      TipoFicha: 'is Amazing',
-      Exposicao: 'Teste1',
-    },
-    {
-      id: 25,
-      Centro: 'xx-corsi01',
-      TipoFicha: 'is Awesome',
-      Exposicao: 'Teste1',
-    },
-    {
-      id: 26,
-      Centro: 'xx-corsi01',
-      TipoFicha: 'is Amazing',
-      Exposicao: 'Teste1',
-    },
-    {
-      id: 27,
-      Centro: 'xx-corsi01',
-      TipoFicha: 'is Amazing',
-      Exposicao: 'Teste1',
-    },
-    {
-      id: 28,
-      Centro: 'xx-corsi01',
-      TipoFicha: 'is Amazing',
-      Exposicao: 'Teste1',
-    },
-    {
-      id: 29,
-      Centro: 'xx-corsi01',
-      TipoFicha: 'is Amazing',
-      Exposicao: 'Teste1',
-    },
-    {
-      id: 30,
-      Centro: 'xx-corsi01',
-      TipoFicha: 'is Amazing',
-      Exposicao: 'Teste1',
-    },
-  ];
+  const { isLoading, sendRequest } = useHttpClient();
+  const [loadedFicha, setLoadedFicha] = useState([]);
   let navigate = useNavigate();
+
+  const [rows, setRows] = useState([]);
+
   const columns = [
-    { field: 'id', headerName: 'ID', width: 70 },
-    { field: 'Centro', headerName: 'Centro', width: 130 },
-    { field: 'TipoFicha', headerName: 'Tipo de Ficha ', width: 130 },
-    { field: 'Exposicao', headerName: 'Exposicao', width: 130 },
+    {
+      field: '_id',
+      headerName: 'ID',
+      width: 70,
+    },
+    {
+      field: 'Centro',
+      headerName: 'Centro',
+      width: 130,
+      valueGetter: (params) => {
+        return params.row.atendimento.centro_atendimento;
+      },
+    },
+    {
+      field: 'Tipo Ficha',
+      headerName: 'Tipo de Ficha ',
+      width: 130,
+      valueGetter: (params) => {
+        return params.row.atendimento.ficha.tipo_ficha;
+      },
+    },
+    {
+      field: 'Exposicao',
+      headerName: 'Exposicao',
+      width: 130,
+      valueGetter: (params) => {
+        return params.row.atendimento.ficha.exposicao;
+      },
+    },
+    {
+      field: 'Solicitante',
+      headerName: 'Solicitante',
+      width: 100,
+      valueGetter: (params) => {
+        return params.row.solicitante.nome_solicitante;
+      },
+    },
+    {
+      field: 'Paciente',
+      headerName: 'Paciente',
+      width: 180,
+      valueGetter: (params) => {
+        return params.row.paciente.nome_paciente;
+      },
+    },
 
     {
       field: 'Detalhes',
@@ -183,23 +89,10 @@ const ListarAtendimento = () => {
       sortable: false,
       renderCell: (params) => {
         const onClickDetalhes = (e) => {
-          e.stopPropagation(); // don't select this row after clicking
-
-          const api = params.api;
-          const thisRow = {};
-
-          api
-            .getAllColumns()
-            .filter((c) => c.field !== '__check__' && !!c)
-            .forEach(
-              (c) => (thisRow[c.field] = params.getValue(params.id, c.field)),
-            );
-          navigate(`../visualizar/${btoa(JSON.stringify(thisRow.id))} `, {
+          navigate(`../visualizar/${params.id} `, {
             replace: true,
           });
-
-          //Retorna o id da linha!
-          return JSON.stringify(thisRow.id);
+          return JSON.stringify(params.id);
         };
 
         return (
@@ -260,26 +153,7 @@ const ListarAtendimento = () => {
       renderCell: (params) => {
         const onClickExcluir = (e) => {
           e.stopPropagation(); // don't select this row after clicking
-
-          const api = params.api;
-          const thisRow = {};
-
-          api
-            .getAllColumns()
-            .filter((c) => c.field !== '__check__' && !!c)
-            .forEach(
-              (c) => (thisRow[c.field] = params.getValue(params.id, c.field)),
-            );
-
-          //Retorna o id da linha!
-
-          // navigate(`../excluir/${JSON.stringify(thisRow.id)} `, {
-          //   replace: true,
-          // });
-          // return handleOpen();
-
-          return handleOpen(JSON.stringify(thisRow.id));
-          // return alert(JSON.stringify(thisRow.id));
+          return handleOpen(params.id);
         };
 
         return (
@@ -296,8 +170,26 @@ const ListarAtendimento = () => {
     },
   ];
 
+  useEffect(() => {
+    const fetchFichas = async () => {
+      try {
+        const responseData = await sendRequest(
+          `http://localhost:3000/api/fichas`,
+          'GET',
+        );
+        setLoadedFicha(responseData);
+        console.log(responseData);
+        setRows(responseData);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    fetchFichas();
+  }, [sendRequest]);
+
   return (
     <>
+      {isLoading && <LoadingSpinner asOverlay />}
       <Modal
         open={open}
         onClose={handleClose}
@@ -306,7 +198,7 @@ const ListarAtendimento = () => {
       >
         <Box sx={style}>
           <Typography id="modal-modal-title" variant="h6" component="h2">
-            Tem certeza que deseja excluir o modal {idExcluir} ?
+            Tem certeza que deseja excluir o atendimento {idExcluir} ?
           </Typography>
           <Typography id="modal-modal-description" sx={{ mt: 2 }}>
             <Box display="flex" justifyContent="center" alignItems="center">
@@ -323,21 +215,24 @@ const ListarAtendimento = () => {
           </Typography>
         </Box>
       </Modal>
-      <Box m={4}>
-        <Grid container spacing={2} justifyContent="center">
-          <Grid item xs={8}>
-            <div style={{ height: '65vh', width: '100%' }}>
-              <DataGrid
-                rows={rows}
-                columns={columns}
-                components={{ Toolbar: GridToolbar }}
-                checkboxSelection
-                disableSelectionOnClick
-              />
-            </div>
+      {!isLoading && loadedFicha && (
+        <Box m={4}>
+          <Grid container spacing={2} justifyContent="center">
+            <Grid item xs={8}>
+              <div style={{ height: '65vh', width: '100%' }}>
+                <DataGrid
+                  rows={rows}
+                  columns={columns}
+                  components={{ Toolbar: GridToolbar }}
+                  checkboxSelection
+                  disableSelectionOnClick
+                  getRowId={(row) => row._id}
+                />
+              </div>
+            </Grid>
           </Grid>
-        </Grid>
-      </Box>
+        </Box>
+      )}
     </>
   );
 };

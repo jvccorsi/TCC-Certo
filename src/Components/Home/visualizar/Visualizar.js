@@ -27,7 +27,7 @@ const Visualizar = () => {
     const fetchFichas = async () => {
       try {
         const responseData = await sendRequest(
-          `http://localhost:3000/api/fichas/62893212ec14d8e74d066992`,
+          `http://localhost:3000/api/fichas/${id}`,
           'GET',
         );
         setLoadedFicha(responseData);
@@ -55,9 +55,7 @@ const Visualizar = () => {
 
           <Grid container spacing={2}>
             <Grid item xs={11}>
-              <h1 className={styles.titulo_visualizar}>
-                Atendimento - {atob(id)}
-              </h1>
+              <h1 className={styles.titulo_visualizar}>Atendimento - {id}</h1>
             </Grid>
             <Grid item xs={1}>
               <Link to="/home/listar">
