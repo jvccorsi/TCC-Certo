@@ -23,18 +23,19 @@ const style = {
 };
 
 const ListarAtendimento = () => {
+  //Variaveis
   const [open, setOpen] = React.useState(false);
   const [idExcluir, setidExcluir] = React.useState();
+  const [deleted, setDeleted] = React.useState();
   const handleOpen = (id) => {
     setOpen(true);
     setidExcluir(id);
   };
   const handleClose = () => setOpen(false);
-  const { isLoading, sendRequest } = useHttpClient();
   const [loadedFicha, setLoadedFicha] = useState([]);
-  let navigate = useNavigate();
-
   const [rows, setRows] = useState([]);
+  let navigate = useNavigate();
+  const { isLoading, sendRequest } = useHttpClient();
 
   const columns = [
     {
@@ -174,18 +175,35 @@ const ListarAtendimento = () => {
     const fetchFichas = async () => {
       try {
         const responseData = await sendRequest(
-          `http://localhost:3000/api/fichas`,
+          `https://api-tcc-unicamp.herokuapp.com/api/fichas`,
           'GET',
         );
         setLoadedFicha(responseData);
-        console.log(responseData);
+
         setRows(responseData);
       } catch (error) {
         console.log(error);
       }
     };
     fetchFichas();
-  }, [sendRequest]);
+  }, [sendRequest, deleted]);
+
+  const deletedPlace = async () => {
+    handleClose();
+    try {
+      await sendRequest(
+        `https://api-tcc-unicamp.herokuapp.com/api/fichas/${idExcluir}`,
+        'DELETE',
+        null,
+        {
+          'Content-Type': 'application/json',
+        },
+      );
+      setDeleted(Math.random());
+    } catch (err) {
+      console.log(err);
+    }
+  };
 
   return (
     <>
@@ -203,7 +221,11 @@ const ListarAtendimento = () => {
           <Typography id="modal-modal-description" sx={{ mt: 2 }}>
             <Box display="flex" justifyContent="center" alignItems="center">
               <Box m={2}>
-                <Button variant="contained" color="error">
+                <Button
+                  variant="contained"
+                  color="error"
+                  onClick={deletedPlace}
+                >
                   Sim
                 </Button>
               </Box>

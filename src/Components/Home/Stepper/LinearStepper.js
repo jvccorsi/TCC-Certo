@@ -263,7 +263,6 @@ const LinaerStepper = () => {
   };
 
   const handleNext = (data) => {
-    console.log(data);
     if (activeStep === steps.length - 1) {
       //Se tiver acabado o stepper, ele submete!!
       submitFormRequest(data);

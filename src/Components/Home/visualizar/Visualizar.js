@@ -27,7 +27,7 @@ const Visualizar = () => {
     const fetchFichas = async () => {
       try {
         const responseData = await sendRequest(
-          `http://localhost:3000/api/fichas/${id}`,
+          `https://api-tcc-unicamp.herokuapp.com/api/fichas/${id}`,
           'GET',
         );
         setLoadedFicha(responseData);
