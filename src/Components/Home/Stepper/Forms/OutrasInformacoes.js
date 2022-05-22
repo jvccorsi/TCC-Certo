@@ -12,7 +12,7 @@ import {
   Divider,
 } from '@mui/material';
 
-const OutrasInformacoes = ({ desabiliar }) => {
+const OutrasInformacoes = () => {
   const { control } = useFormContext();
 
   return (
@@ -31,11 +31,7 @@ const OutrasInformacoes = ({ desabiliar }) => {
                   <InputLabel id="demo-simple-select-label">
                     Classificação Inicial da Gravidade{' '}
                   </InputLabel>
-                  <Select
-                    {...field}
-                    labelId="demo-simple-select-label"
-                    disabled={desabiliar ? 'disabled' : ''}
-                  >
+                  <Select {...field} labelId="demo-simple-select-label">
                     <MenuItem value={'Individual'}>Individual</MenuItem>
                     <MenuItem value={'Leve'}>Leve</MenuItem>
                     <MenuItem value={'Moderada'}>Moderada</MenuItem>
@@ -55,11 +51,7 @@ const OutrasInformacoes = ({ desabiliar }) => {
                   <InputLabel id="manifestacoes_clinicas">
                     Manifestações Clínicas
                   </InputLabel>
-                  <Select
-                    {...field}
-                    labelId="manifestacoes_clinicas"
-                    disabled={desabiliar ? 'disabled' : ''}
-                  >
+                  <Select {...field} labelId="manifestacoes_clinicas">
                     <MenuItem value={'Sim'}>Sim</MenuItem>
                     <MenuItem value={'Nao'}>Nao</MenuItem>
                     <MenuItem value={'Ignorado'}>Ignorado</MenuItem>
@@ -86,7 +78,6 @@ const OutrasInformacoes = ({ desabiliar }) => {
                   type="text"
                   fullWidth
                   {...field}
-                  disabled={desabiliar ? 'disabled' : ''}
                 />
               )}
             />
@@ -111,7 +102,6 @@ const OutrasInformacoes = ({ desabiliar }) => {
                   type="text"
                   fullWidth
                   {...field}
-                  disabled={desabiliar ? 'disabled' : ''}
                 />
               )}
             />
@@ -131,7 +121,6 @@ const OutrasInformacoes = ({ desabiliar }) => {
                   type="text"
                   fullWidth
                   {...field}
-                  disabled={desabiliar ? 'disabled' : ''}
                 />
               )}
             />
@@ -151,7 +140,6 @@ const OutrasInformacoes = ({ desabiliar }) => {
                   type="text"
                   fullWidth
                   {...field}
-                  disabled={desabiliar ? 'disabled' : ''}
                 />
               )}
             />
@@ -171,7 +159,6 @@ const OutrasInformacoes = ({ desabiliar }) => {
                   type="text"
                   fullWidth
                   {...field}
-                  disabled={desabiliar ? 'disabled' : ''}
                 />
               )}
             />
@@ -191,7 +178,6 @@ const OutrasInformacoes = ({ desabiliar }) => {
                   type="text"
                   fullWidth
                   {...field}
-                  disabled={desabiliar ? 'disabled' : ''}
                 />
               )}
             />
@@ -217,7 +203,6 @@ const OutrasInformacoes = ({ desabiliar }) => {
                   type="text"
                   fullWidth
                   {...field}
-                  disabled={desabiliar ? 'disabled' : ''}
                 />
               )}
             />
@@ -235,7 +220,6 @@ const OutrasInformacoes = ({ desabiliar }) => {
                   type="text"
                   fullWidth
                   {...field}
-                  disabled={desabiliar ? 'disabled' : ''}
                 />
               )}
             />
@@ -253,7 +237,6 @@ const OutrasInformacoes = ({ desabiliar }) => {
                   type="text"
                   fullWidth
                   {...field}
-                  disabled={desabiliar ? 'disabled' : ''}
                 />
               )}
             />
@@ -265,11 +248,7 @@ const OutrasInformacoes = ({ desabiliar }) => {
                   <InputLabel id="demo-simple-select-label">
                     Imagens{' '}
                   </InputLabel>
-                  <Select
-                    {...field}
-                    labelId="demo-simple-select-label"
-                    disabled={desabiliar ? 'disabled' : ''}
-                  >
+                  <Select {...field} labelId="demo-simple-select-label">
                     <MenuItem value={'Sim'}>Sim</MenuItem>
                     <MenuItem value={'Nao'}>Nao</MenuItem>
                     <MenuItem value={'Ignorado'}>Ignorado</MenuItem>
@@ -296,7 +275,6 @@ const OutrasInformacoes = ({ desabiliar }) => {
                   type="text"
                   fullWidth
                   {...field}
-                  disabled={desabiliar ? 'disabled' : ''}
                 />
               )}
             />

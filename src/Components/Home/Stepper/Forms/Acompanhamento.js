@@ -5,7 +5,7 @@ import { IconButton, Box, Grid, TextField, Divider } from '@mui/material';
 import DeleteIcon from '@mui/icons-material/Delete';
 import AddCircleIcon from '@mui/icons-material/AddCircle';
 
-const Acompanhamento = ({ desabiliar }) => {
+const Acompanhamento = () => {
   const { control, register } = useFormContext();
 
   const { fields, append, remove } = useFieldArray({
@@ -27,7 +27,6 @@ const Acompanhamento = ({ desabiliar }) => {
             <IconButton
               variant="contained"
               color="success"
-              disabled={desabiliar ? 'disabled' : ''}
               onClick={() => {
                 append({
                   data_hora: '',
@@ -58,7 +57,6 @@ const Acompanhamento = ({ desabiliar }) => {
                         placeholder="Data/Hora"
                         fullWidth
                         type="text"
-                        disabled={desabiliar ? 'disabled' : ''}
                         {...register(`acompanhamento.dados.${index}.data_hora`)}
                       />
 
@@ -70,7 +68,6 @@ const Acompanhamento = ({ desabiliar }) => {
                         placeholder="Responsavel"
                         fullWidth
                         type="text"
-                        disabled={desabiliar ? 'disabled' : ''}
                         {...register(
                           `acompanhamento.dados.${index}.responsavel`,
                         )}
@@ -83,7 +80,6 @@ const Acompanhamento = ({ desabiliar }) => {
                         placeholder="Evolucao"
                         fullWidth
                         type="text"
-                        disabled={desabiliar ? 'disabled' : ''}
                         {...register(`acompanhamento.dados.${index}.evolucao`)}
                       />
                       <TextField
@@ -94,7 +90,6 @@ const Acompanhamento = ({ desabiliar }) => {
                         placeholder="Informante"
                         fullWidth
                         type="text"
-                        disabled={desabiliar ? 'disabled' : ''}
                         {...register(
                           `acompanhamento.dados.${index}.informante`,
                         )}
@@ -107,7 +102,6 @@ const Acompanhamento = ({ desabiliar }) => {
                         placeholder="Instituicao"
                         fullWidth
                         type="text"
-                        disabled={desabiliar ? 'disabled' : ''}
                         {...register(
                           `acompanhamento.dados.${index}.instituicao`,
                         )}
@@ -120,7 +114,6 @@ const Acompanhamento = ({ desabiliar }) => {
                         placeholder="Cidade"
                         fullWidth
                         type="text"
-                        disabled={desabiliar ? 'disabled' : ''}
                         {...register(`acompanhamento.dados.${index}.cidade`)}
                       />
                       <TextField
@@ -131,7 +124,6 @@ const Acompanhamento = ({ desabiliar }) => {
                         placeholder="Fone"
                         fullWidth
                         type="text"
-                        disabled={desabiliar ? 'disabled' : ''}
                         {...register(`acompanhamento.dados.${index}.fone`)}
                       />
                       <Grid item xs={6}>
@@ -139,7 +131,6 @@ const Acompanhamento = ({ desabiliar }) => {
                           aria-label="delete"
                           onClick={() => remove(index)}
                           color="error"
-                          disabled={desabiliar ? 'disabled' : ''}
                         >
                           <DeleteIcon />
                           Deletar ⇧

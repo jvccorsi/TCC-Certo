@@ -11,7 +11,7 @@ import {
 import React from 'react';
 import { Controller, useFormContext } from 'react-hook-form';
 
-const Exposicao = ({ desabiliar }) => {
+const Exposicao = () => {
   const tipoExposicao = [
     'Aguda-Unica',
     'Aguda-Repetida',
@@ -116,7 +116,6 @@ const Exposicao = ({ desabiliar }) => {
                   fullWidth
                   {...field}
                   type="date"
-                  disabled={desabiliar ? 'disabled' : ''}
                 />
               )}
             />
@@ -133,7 +132,6 @@ const Exposicao = ({ desabiliar }) => {
                   fullWidth
                   {...field}
                   type="time"
-                  disabled={desabiliar ? 'disabled' : ''}
                 />
               )}
             />
@@ -151,7 +149,6 @@ const Exposicao = ({ desabiliar }) => {
                   fullWidth
                   {...field}
                   type="text"
-                  disabled={desabiliar ? 'disabled' : ''}
                 />
               )}
             />
@@ -167,11 +164,7 @@ const Exposicao = ({ desabiliar }) => {
                   <InputLabel id="tipo_exposicao">Tipo</InputLabel>
                   <Select {...field} multiple defaultValue={[]}>
                     {tipoExposicao.map((res) => (
-                      <MenuItem
-                        value={res}
-                        key={res}
-                        disabled={desabiliar ? 'disabled' : ''}
-                      >
+                      <MenuItem value={res} key={res}>
                         {res}
                       </MenuItem>
                     ))}
@@ -194,7 +187,6 @@ const Exposicao = ({ desabiliar }) => {
                   fullWidth
                   {...field}
                   type="text"
-                  disabled={desabiliar ? 'disabled' : ''}
                 />
               )}
             />
@@ -212,11 +204,7 @@ const Exposicao = ({ desabiliar }) => {
                   </InputLabel>
                   <Select {...field} multiple defaultValue={[]}>
                     {localExposicao.map((res) => (
-                      <MenuItem
-                        value={res}
-                        key={res}
-                        disabled={desabiliar ? 'disabled' : ''}
-                      >
+                      <MenuItem value={res} key={res}>
                         {res}
                       </MenuItem>
                     ))}
@@ -238,11 +226,7 @@ const Exposicao = ({ desabiliar }) => {
                   <InputLabel id="zona_exposicao">Zona Exposicao</InputLabel>
                   <Select {...field} multiple defaultValue={[]}>
                     {zonaExposicao.map((res) => (
-                      <MenuItem
-                        value={res}
-                        key={res}
-                        disabled={desabiliar ? 'disabled' : ''}
-                      >
+                      <MenuItem value={res} key={res}>
                         {res}
                       </MenuItem>
                     ))}
@@ -265,7 +249,6 @@ const Exposicao = ({ desabiliar }) => {
                   fullWidth
                   {...field}
                   type="text"
-                  disabled={desabiliar ? 'disabled' : ''}
                 />
               )}
             />
@@ -283,7 +266,6 @@ const Exposicao = ({ desabiliar }) => {
                   fullWidth
                   {...field}
                   type="text"
-                  disabled={desabiliar ? 'disabled' : ''}
                 />
               )}
             />
@@ -301,7 +283,6 @@ const Exposicao = ({ desabiliar }) => {
                   fullWidth
                   {...field}
                   type="text"
-                  disabled={desabiliar ? 'disabled' : ''}
                 />
               )}
             />
@@ -319,7 +300,6 @@ const Exposicao = ({ desabiliar }) => {
                   fullWidth
                   {...field}
                   type="text"
-                  disabled={desabiliar ? 'disabled' : ''}
                 />
               )}
             />
@@ -337,7 +317,6 @@ const Exposicao = ({ desabiliar }) => {
                   fullWidth
                   {...field}
                   type="text"
-                  disabled={desabiliar ? 'disabled' : ''}
                 />
               )}
             />
@@ -355,7 +334,6 @@ const Exposicao = ({ desabiliar }) => {
                   fullWidth
                   {...field}
                   type="text"
-                  disabled={desabiliar ? 'disabled' : ''}
                 />
               )}
             />
@@ -373,7 +351,6 @@ const Exposicao = ({ desabiliar }) => {
                   fullWidth
                   {...field}
                   type="number"
-                  disabled={desabiliar ? 'disabled' : ''}
                 />
               )}
             />
@@ -391,7 +368,6 @@ const Exposicao = ({ desabiliar }) => {
                   fullWidth
                   {...field}
                   type="text"
-                  disabled={desabiliar ? 'disabled' : ''}
                 />
               )}
             />
@@ -409,7 +385,6 @@ const Exposicao = ({ desabiliar }) => {
                   fullWidth
                   {...field}
                   type="text"
-                  disabled={desabiliar ? 'disabled' : ''}
                 />
               )}
             />
@@ -429,11 +404,7 @@ const Exposicao = ({ desabiliar }) => {
                   </InputLabel>
                   <Select {...field} multiple defaultValue={[]}>
                     {viaExposicao.map((res) => (
-                      <MenuItem
-                        value={res}
-                        key={res}
-                        disabled={desabiliar ? 'disabled' : ''}
-                      >
+                      <MenuItem value={res} key={res}>
                         {res}
                       </MenuItem>
                     ))}
@@ -456,7 +427,6 @@ const Exposicao = ({ desabiliar }) => {
                   <Select {...field} multiple defaultValue={[]}>
                     {CircunstanciaExposicao.map((CircunstanciaExposicao) => (
                       <MenuItem
-                        disabled={desabiliar ? 'disabled' : ''}
                         value={CircunstanciaExposicao}
                         key={CircunstanciaExposicao}
                       >
@@ -483,11 +453,7 @@ const Exposicao = ({ desabiliar }) => {
                   </InputLabel>
                   <Select {...field} multiple defaultValue={[]}>
                     {localMordida.map((res) => (
-                      <MenuItem
-                        value={res}
-                        key={res}
-                        disabled={desabiliar ? 'disabled' : ''}
-                      >
+                      <MenuItem value={res} key={res}>
                         {res}
                       </MenuItem>
                     ))}
@@ -510,7 +476,6 @@ const Exposicao = ({ desabiliar }) => {
                   fullWidth
                   {...field}
                   type="text"
-                  disabled={desabiliar ? 'disabled' : ''}
                 />
               )}
             />

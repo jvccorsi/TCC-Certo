@@ -2,7 +2,7 @@ import { TextField, Grid, Box, Divider } from '@mui/material';
 import React from 'react';
 import { Controller, useFormContext } from 'react-hook-form';
 
-const AgenteToxico = ({ desabiliar }) => {
+const AgenteToxico = () => {
   const { control } = useFormContext();
 
   return (
@@ -26,7 +26,6 @@ const AgenteToxico = ({ desabiliar }) => {
                 fullWidth
                 {...field}
                 type="text"
-                disabled={desabiliar ? 'disabled' : ''}
               />
             )}
           />
@@ -44,7 +43,6 @@ const AgenteToxico = ({ desabiliar }) => {
                 fullWidth
                 {...field}
                 type="text"
-                disabled={desabiliar ? 'disabled' : ''}
               />
             )}
           />
@@ -62,7 +60,6 @@ const AgenteToxico = ({ desabiliar }) => {
                 fullWidth
                 {...field}
                 type="text"
-                disabled={desabiliar ? 'disabled' : ''}
               />
             )}
           />
@@ -80,7 +77,6 @@ const AgenteToxico = ({ desabiliar }) => {
                 fullWidth
                 {...field}
                 type="text"
-                disabled={desabiliar ? 'disabled' : ''}
               />
             )}
           />
@@ -98,7 +94,6 @@ const AgenteToxico = ({ desabiliar }) => {
                 fullWidth
                 {...field}
                 type="text"
-                disabled={desabiliar ? 'disabled' : ''}
               />
             )}
           />
@@ -123,7 +118,6 @@ const AgenteToxico = ({ desabiliar }) => {
                 fullWidth
                 {...field}
                 type="text"
-                disabled={desabiliar ? 'disabled' : ''}
               />
             )}
           />
@@ -142,7 +136,6 @@ const AgenteToxico = ({ desabiliar }) => {
                 fullWidth
                 {...field}
                 type="text"
-                disabled={desabiliar ? 'disabled' : ''}
               />
             )}
           />
@@ -160,7 +153,6 @@ const AgenteToxico = ({ desabiliar }) => {
                 fullWidth
                 {...field}
                 type="text"
-                disabled={desabiliar ? 'disabled' : ''}
               />
             )}
           />
@@ -178,7 +170,6 @@ const AgenteToxico = ({ desabiliar }) => {
                 fullWidth
                 {...field}
                 type="text"
-                disabled={desabiliar ? 'disabled' : ''}
               />
             )}
           />
@@ -196,7 +187,6 @@ const AgenteToxico = ({ desabiliar }) => {
                 fullWidth
                 {...field}
                 type="text"
-                disabled={desabiliar ? 'disabled' : ''}
               />
             )}
           />
@@ -221,7 +211,6 @@ const AgenteToxico = ({ desabiliar }) => {
                 fullWidth
                 {...field}
                 type="text"
-                disabled={desabiliar ? 'disabled' : ''}
               />
             )}
           />
@@ -240,7 +229,6 @@ const AgenteToxico = ({ desabiliar }) => {
                 fullWidth
                 {...field}
                 type="text"
-                disabled={desabiliar ? 'disabled' : ''}
               />
             )}
           />
@@ -258,7 +246,6 @@ const AgenteToxico = ({ desabiliar }) => {
                 fullWidth
                 {...field}
                 type="text"
-                disabled={desabiliar ? 'disabled' : ''}
               />
             )}
           />
@@ -276,7 +263,6 @@ const AgenteToxico = ({ desabiliar }) => {
                 fullWidth
                 {...field}
                 type="text"
-                disabled={desabiliar ? 'disabled' : ''}
               />
             )}
           />
@@ -294,7 +280,6 @@ const AgenteToxico = ({ desabiliar }) => {
                 fullWidth
                 {...field}
                 type="text"
-                disabled={desabiliar ? 'disabled' : ''}
               />
             )}
           />
@@ -318,7 +303,6 @@ const AgenteToxico = ({ desabiliar }) => {
                 fullWidth
                 {...field}
                 type="text"
-                disabled={desabiliar ? 'disabled' : ''}
               />
             )}
           />
@@ -336,7 +320,6 @@ const AgenteToxico = ({ desabiliar }) => {
                 fullWidth
                 {...field}
                 type="text"
-                disabled={desabiliar ? 'disabled' : ''}
               />
             )}
           />
@@ -354,7 +337,6 @@ const AgenteToxico = ({ desabiliar }) => {
                 fullWidth
                 {...field}
                 type="text"
-                disabled={desabiliar ? 'disabled' : ''}
               />
             )}
           />

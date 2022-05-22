@@ -32,7 +32,7 @@ const contribuicaoObito = [
   'Ignorado',
 ];
 
-const ClassificacaoFinal = ({ desabiliar }) => {
+const ClassificacaoFinal = () => {
   const { control } = useFormContext();
 
   return (
@@ -52,11 +52,7 @@ const ClassificacaoFinal = ({ desabiliar }) => {
 
                   <Select {...field}>
                     {classificacaoGravidade.map((res) => (
-                      <MenuItem
-                        value={res}
-                        key={res}
-                        disabled={desabiliar ? 'disabled' : ''}
-                      >
+                      <MenuItem value={res} key={res}>
                         {res}
                       </MenuItem>
                     ))}
@@ -76,11 +72,7 @@ const ClassificacaoFinal = ({ desabiliar }) => {
 
                   <Select {...field}>
                     {desfecho.map((res) => (
-                      <MenuItem
-                        value={res}
-                        key={res}
-                        disabled={desabiliar ? 'disabled' : ''}
-                      >
+                      <MenuItem value={res} key={res}>
                         {res}
                       </MenuItem>
                     ))}
@@ -100,11 +92,7 @@ const ClassificacaoFinal = ({ desabiliar }) => {
 
                   <Select {...field}>
                     {obito.map((res) => (
-                      <MenuItem
-                        value={res}
-                        key={res}
-                        disabled={desabiliar ? 'disabled' : ''}
-                      >
+                      <MenuItem value={res} key={res}>
                         {res}
                       </MenuItem>
                     ))}
@@ -124,11 +112,7 @@ const ClassificacaoFinal = ({ desabiliar }) => {
 
                   <Select {...field}>
                     {autopsia.map((res) => (
-                      <MenuItem
-                        value={res}
-                        key={res}
-                        disabled={desabiliar ? 'disabled' : ''}
-                      >
+                      <MenuItem value={res} key={res}>
                         {res}
                       </MenuItem>
                     ))}
@@ -148,7 +132,6 @@ const ClassificacaoFinal = ({ desabiliar }) => {
                   fullWidth
                   {...field}
                   type="date"
-                  disabled={desabiliar ? 'disabled' : ''}
                 />
               )}
             />
@@ -166,7 +149,6 @@ const ClassificacaoFinal = ({ desabiliar }) => {
                   fullWidth
                   {...field}
                   type="text"
-                  disabled={desabiliar ? 'disabled' : ''}
                 />
               )}
             />
@@ -184,11 +166,7 @@ const ClassificacaoFinal = ({ desabiliar }) => {
 
                   <Select {...field}>
                     {contribuicaoObito.map((res) => (
-                      <MenuItem
-                        value={res}
-                        key={res}
-                        disabled={desabiliar ? 'disabled' : ''}
-                      >
+                      <MenuItem value={res} key={res}>
                         {res}
                       </MenuItem>
                     ))}

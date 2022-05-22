@@ -10,7 +10,7 @@ import {
 } from '@mui/material';
 import { useFormContext, Controller } from 'react-hook-form';
 
-const Solicitante = ({ desabiliar }) => {
+const Solicitante = () => {
   const { control } = useFormContext();
 
   const categoria = [
@@ -49,7 +49,6 @@ const Solicitante = ({ desabiliar }) => {
                   fullWidth
                   {...field}
                   type="text"
-                  disabled={desabiliar ? 'disabled' : ''}
                 />
               )}
             />
@@ -72,11 +71,7 @@ const Solicitante = ({ desabiliar }) => {
                     defaultValue={[]}
                   >
                     {categoria.map((categoria) => (
-                      <MenuItem
-                        value={categoria}
-                        key={categoria}
-                        disabled={desabiliar ? 'disabled' : ''}
-                      >
+                      <MenuItem value={categoria} key={categoria}>
                         {categoria}
                       </MenuItem>
                     ))}
@@ -99,7 +94,6 @@ const Solicitante = ({ desabiliar }) => {
                   fullWidth
                   {...field}
                   type="text"
-                  disabled={desabiliar ? 'disabled' : ''}
                 />
               )}
             />
@@ -117,7 +111,6 @@ const Solicitante = ({ desabiliar }) => {
                   fullWidth
                   {...field}
                   type="text"
-                  disabled={desabiliar ? 'disabled' : ''}
                 />
               )}
             />
@@ -135,7 +128,6 @@ const Solicitante = ({ desabiliar }) => {
                   fullWidth
                   {...field}
                   type="tel"
-                  disabled={desabiliar ? 'disabled' : ''}
                 />
               )}
             />
@@ -153,7 +145,6 @@ const Solicitante = ({ desabiliar }) => {
                   fullWidth
                   {...field}
                   type="text"
-                  disabled={desabiliar ? 'disabled' : ''}
                 />
               )}
             />

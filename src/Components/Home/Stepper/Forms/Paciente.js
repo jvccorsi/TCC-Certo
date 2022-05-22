@@ -10,7 +10,7 @@ import {
   TextField,
   Divider,
 } from '@mui/material';
-const Paciente = ({ desabiliar }) => {
+const Paciente = () => {
   const { control } = useFormContext();
 
   const gestante = [
@@ -42,7 +42,6 @@ const Paciente = ({ desabiliar }) => {
                   fullWidth
                   {...field}
                   type="text"
-                  disabled={desabiliar ? 'disabled' : ''}
                 />
               )}
             />
@@ -60,7 +59,6 @@ const Paciente = ({ desabiliar }) => {
                   fullWidth
                   {...field}
                   type="text"
-                  disabled={desabiliar ? 'disabled' : ''}
                 />
               )}
             />
@@ -78,7 +76,6 @@ const Paciente = ({ desabiliar }) => {
                   fullWidth
                   {...field}
                   type="number"
-                  disabled={desabiliar ? 'disabled' : ''}
                 />
               )}
             />
@@ -96,7 +93,6 @@ const Paciente = ({ desabiliar }) => {
                   fullWidth
                   {...field}
                   type="number"
-                  disabled={desabiliar ? 'disabled' : ''}
                 />
               )}
             />
@@ -108,11 +104,7 @@ const Paciente = ({ desabiliar }) => {
                   <InputLabel id="sexopaciente">Sexo </InputLabel>
                   <Select {...field} labelId="sexopaciente">
                     {sexoPaciente.map((sexoPaciente) => (
-                      <MenuItem
-                        value={sexoPaciente}
-                        key={sexoPaciente}
-                        disabled={desabiliar ? 'disabled' : ''}
-                      >
+                      <MenuItem value={sexoPaciente} key={sexoPaciente}>
                         {sexoPaciente}
                       </MenuItem>
                     ))}
@@ -130,11 +122,7 @@ const Paciente = ({ desabiliar }) => {
                   <InputLabel id="gestante_select">Gestante </InputLabel>
                   <Select {...field} labelId="gestante_select">
                     {gestante.map((gestante) => (
-                      <MenuItem
-                        value={gestante}
-                        key={gestante}
-                        disabled={desabiliar ? 'disabled' : ''}
-                      >
+                      <MenuItem value={gestante} key={gestante}>
                         {gestante}
                       </MenuItem>
                     ))}
@@ -158,7 +146,6 @@ const Paciente = ({ desabiliar }) => {
                   fullWidth
                   {...field}
                   type="text"
-                  disabled={desabiliar ? 'disabled' : ''}
                 />
               )}
             />
@@ -176,7 +163,6 @@ const Paciente = ({ desabiliar }) => {
                   fullWidth
                   {...field}
                   type="text"
-                  disabled={desabiliar ? 'disabled' : ''}
                 />
               )}
             />
@@ -194,7 +180,6 @@ const Paciente = ({ desabiliar }) => {
                   fullWidth
                   {...field}
                   type="text"
-                  disabled={desabiliar ? 'disabled' : ''}
                 />
               )}
             />
@@ -217,7 +202,6 @@ const Paciente = ({ desabiliar }) => {
                   fullWidth
                   {...field}
                   type="text"
-                  disabled={desabiliar ? 'disabled' : ''}
                 />
               )}
             />
@@ -236,7 +220,6 @@ const Paciente = ({ desabiliar }) => {
                   fullWidth
                   {...field}
                   type="text"
-                  disabled={desabiliar ? 'disabled' : ''}
                 />
               )}
             />
@@ -254,7 +237,6 @@ const Paciente = ({ desabiliar }) => {
                   fullWidth
                   {...field}
                   type="text"
-                  disabled={desabiliar ? 'disabled' : ''}
                 />
               )}
             />
@@ -272,7 +254,6 @@ const Paciente = ({ desabiliar }) => {
                   fullWidth
                   {...field}
                   type="text"
-                  disabled={desabiliar ? 'disabled' : ''}
                 />
               )}
             />
@@ -290,7 +271,6 @@ const Paciente = ({ desabiliar }) => {
                   fullWidth
                   {...field}
                   type="text"
-                  disabled={desabiliar ? 'disabled' : ''}
                 />
               )}
             />
@@ -308,7 +288,6 @@ const Paciente = ({ desabiliar }) => {
                   fullWidth
                   {...field}
                   type="text"
-                  disabled={desabiliar ? 'disabled' : ''}
                 />
               )}
             />
@@ -326,7 +305,6 @@ const Paciente = ({ desabiliar }) => {
                   fullWidth
                   {...field}
                   type="text"
-                  disabled={desabiliar ? 'disabled' : ''}
                 />
               )}
             />
@@ -345,7 +323,6 @@ const Paciente = ({ desabiliar }) => {
                   fullWidth
                   {...field}
                   type="tel"
-                  disabled={desabiliar ? 'disabled' : ''}
                 />
               )}
             />
@@ -363,7 +340,6 @@ const Paciente = ({ desabiliar }) => {
                   fullWidth
                   {...field}
                   type="text"
-                  disabled={desabiliar ? 'disabled' : ''}
                 />
               )}
             />
@@ -381,7 +357,6 @@ const Paciente = ({ desabiliar }) => {
                   fullWidth
                   {...field}
                   type="text"
-                  disabled={desabiliar ? 'disabled' : ''}
                 />
               )}
             />
@@ -404,7 +379,6 @@ const Paciente = ({ desabiliar }) => {
                   fullWidth
                   {...field}
                   type="text"
-                  disabled={desabiliar ? 'disabled' : ''}
                 />
               )}
             />
@@ -423,7 +397,6 @@ const Paciente = ({ desabiliar }) => {
                   fullWidth
                   {...field}
                   type="text"
-                  disabled={desabiliar ? 'disabled' : ''}
                 />
               )}
             />
@@ -441,7 +414,6 @@ const Paciente = ({ desabiliar }) => {
                   fullWidth
                   {...field}
                   type="text"
-                  disabled={desabiliar ? 'disabled' : ''}
                 />
               )}
             />
@@ -459,7 +431,6 @@ const Paciente = ({ desabiliar }) => {
                   fullWidth
                   {...field}
                   type="text"
-                  disabled={desabiliar ? 'disabled' : ''}
                 />
               )}
             />
