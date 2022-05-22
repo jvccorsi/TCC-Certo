@@ -52,7 +52,7 @@ const LoginForm = () => {
     event.preventDefault();
     console.log('Email:' + email + 'Password: ' + password);
     try {
-      await sendRequest(
+      const responseData = await sendRequest(
         'https://api-tcc-unicamp.herokuapp.com/api/users/login',
         'POST',
         JSON.stringify({
@@ -63,7 +63,7 @@ const LoginForm = () => {
           'Content-Type': 'application/json',
         },
       );
-      auth.login();
+      auth.login(responseData.user.id);
     } catch (err) {}
   }
 

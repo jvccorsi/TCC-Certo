@@ -20,7 +20,7 @@ const OutrasInformacoes = () => {
       <Box m={4}>
         <Grid container spacing={2}>
           <Grid item xs={12}>
-            <Box mt={3} mb={3}>
+            <Box mt={1} mb={3}>
               <Divider>Gravidade</Divider>
             </Box>
           </Grid>
@@ -78,8 +78,6 @@ const OutrasInformacoes = () => {
                   type="text"
                   fullWidth
                   {...field}
-
-                  // required
                 />
               )}
             />
@@ -104,8 +102,6 @@ const OutrasInformacoes = () => {
                   type="text"
                   fullWidth
                   {...field}
-
-                  // required
                 />
               )}
             />
@@ -125,8 +121,6 @@ const OutrasInformacoes = () => {
                   type="text"
                   fullWidth
                   {...field}
-
-                  // required
                 />
               )}
             />
@@ -146,8 +140,6 @@ const OutrasInformacoes = () => {
                   type="text"
                   fullWidth
                   {...field}
-
-                  // required
                 />
               )}
             />
@@ -167,8 +159,6 @@ const OutrasInformacoes = () => {
                   type="text"
                   fullWidth
                   {...field}
-
-                  // required
                 />
               )}
             />
@@ -188,8 +178,6 @@ const OutrasInformacoes = () => {
                   type="text"
                   fullWidth
                   {...field}
-
-                  // required
                 />
               )}
             />
@@ -215,8 +203,6 @@ const OutrasInformacoes = () => {
                   type="text"
                   fullWidth
                   {...field}
-
-                  // required
                 />
               )}
             />
@@ -234,8 +220,6 @@ const OutrasInformacoes = () => {
                   type="text"
                   fullWidth
                   {...field}
-
-                  // required
                 />
               )}
             />
@@ -253,8 +237,6 @@ const OutrasInformacoes = () => {
                   type="text"
                   fullWidth
                   {...field}
-
-                  // required
                 />
               )}
             />
@@ -293,8 +275,6 @@ const OutrasInformacoes = () => {
                   type="text"
                   fullWidth
                   {...field}
-
-                  // required
                 />
               )}
             />

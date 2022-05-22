@@ -30,11 +30,6 @@ const Paciente = () => {
       <Box m={4}>
         <Grid container spacing={2}>
           <Grid item xs={12}>
-            <Box m={3}>
-              <Divider></Divider>
-            </Box>
-          </Grid>
-          <Grid item xs={12}>
             <Controller
               control={control}
               name="paciente.nome_paciente"
@@ -47,7 +42,6 @@ const Paciente = () => {
                   fullWidth
                   {...field}
                   type="text"
-                  // required
                 />
               )}
             />
@@ -65,8 +59,6 @@ const Paciente = () => {
                   fullWidth
                   {...field}
                   type="text"
-
-                  //required
                 />
               )}
             />
@@ -84,8 +76,6 @@ const Paciente = () => {
                   fullWidth
                   {...field}
                   type="number"
-
-                  //required
                 />
               )}
             />
@@ -103,8 +93,6 @@ const Paciente = () => {
                   fullWidth
                   {...field}
                   type="number"
-
-                  //required
                 />
               )}
             />
@@ -158,7 +146,6 @@ const Paciente = () => {
                   fullWidth
                   {...field}
                   type="text"
-                  // required
                 />
               )}
             />
@@ -176,7 +163,6 @@ const Paciente = () => {
                   fullWidth
                   {...field}
                   type="text"
-                  // required
                 />
               )}
             />
@@ -194,7 +180,6 @@ const Paciente = () => {
                   fullWidth
                   {...field}
                   type="text"
-                  // required
                 />
               )}
             />
@@ -217,7 +202,6 @@ const Paciente = () => {
                   fullWidth
                   {...field}
                   type="text"
-                  // required
                 />
               )}
             />
@@ -236,7 +220,6 @@ const Paciente = () => {
                   fullWidth
                   {...field}
                   type="text"
-                  // required
                 />
               )}
             />
@@ -254,7 +237,6 @@ const Paciente = () => {
                   fullWidth
                   {...field}
                   type="text"
-                  // required
                 />
               )}
             />
@@ -272,7 +254,6 @@ const Paciente = () => {
                   fullWidth
                   {...field}
                   type="text"
-                  // required
                 />
               )}
             />
@@ -290,7 +271,6 @@ const Paciente = () => {
                   fullWidth
                   {...field}
                   type="text"
-                  // required
                 />
               )}
             />
@@ -308,7 +288,6 @@ const Paciente = () => {
                   fullWidth
                   {...field}
                   type="text"
-                  // required
                 />
               )}
             />
@@ -326,7 +305,6 @@ const Paciente = () => {
                   fullWidth
                   {...field}
                   type="text"
-                  // required
                 />
               )}
             />
@@ -345,7 +323,6 @@ const Paciente = () => {
                   fullWidth
                   {...field}
                   type="tel"
-                  // required
                 />
               )}
             />
@@ -363,7 +340,6 @@ const Paciente = () => {
                   fullWidth
                   {...field}
                   type="text"
-                  // required
                 />
               )}
             />
@@ -381,7 +357,6 @@ const Paciente = () => {
                   fullWidth
                   {...field}
                   type="text"
-                  // required
                 />
               )}
             />
@@ -404,7 +379,6 @@ const Paciente = () => {
                   fullWidth
                   {...field}
                   type="text"
-                  // required
                 />
               )}
             />
@@ -423,7 +397,6 @@ const Paciente = () => {
                   fullWidth
                   {...field}
                   type="text"
-                  // required
                 />
               )}
             />
@@ -441,7 +414,6 @@ const Paciente = () => {
                   fullWidth
                   {...field}
                   type="text"
-                  // required
                 />
               )}
             />
@@ -459,7 +431,6 @@ const Paciente = () => {
                   fullWidth
                   {...field}
                   type="text"
-                  // required
                 />
               )}
             />

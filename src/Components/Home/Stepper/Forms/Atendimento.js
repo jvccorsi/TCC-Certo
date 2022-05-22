@@ -10,7 +10,7 @@ import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import Divider from '@mui/material/Divider';
 
-const Atendimento = () => {
+const Atendimento = (response) => {
   const { control } = useFormContext();
   return (
     <>
@@ -29,7 +29,6 @@ const Atendimento = () => {
                   fullWidth
                   {...field}
                   type="text"
-                  // required
                 />
               )}
             />
@@ -90,8 +89,6 @@ const Atendimento = () => {
                   margin="normal"
                   {...field}
                   type="date"
-
-                  //required
                 />
               )}
             />
@@ -108,7 +105,6 @@ const Atendimento = () => {
                     fullWidth
                     {...field}
                     type="time"
-                    // required
                   />
                 )}
               />
@@ -132,7 +128,6 @@ const Atendimento = () => {
                   margin="normal"
                   {...field}
                   type="date"
-                  //required
                 />
               )}
             />
@@ -149,7 +144,6 @@ const Atendimento = () => {
                     fullWidth
                     {...field}
                     type="time"
-                    //required
                   />
                 )}
               />
@@ -188,7 +182,6 @@ const Atendimento = () => {
                   fullWidth
                   {...field}
                   type="text"
-                  // required
                 />
               )}
             />
@@ -206,7 +199,6 @@ const Atendimento = () => {
                   fullWidth
                   {...field}
                   type="text"
-                  // required
                 />
               )}
             />
@@ -224,7 +216,6 @@ const Atendimento = () => {
                   fullWidth
                   {...field}
                   type="text"
-                  //  required
                 />
               )}
             />
@@ -242,7 +233,6 @@ const Atendimento = () => {
                   fullWidth
                   {...field}
                   type="text"
-                  // required
                 />
               )}
             />
@@ -260,7 +250,6 @@ const Atendimento = () => {
                   fullWidth
                   {...field}
                   type="text"
-                  //required
                 />
               )}
             />

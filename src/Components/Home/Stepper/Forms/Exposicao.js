@@ -116,8 +116,6 @@ const Exposicao = () => {
                   fullWidth
                   {...field}
                   type="date"
-
-                  //required
                 />
               )}
             />
@@ -134,7 +132,6 @@ const Exposicao = () => {
                   fullWidth
                   {...field}
                   type="time"
-                  // required
                 />
               )}
             />
@@ -152,7 +149,6 @@ const Exposicao = () => {
                   fullWidth
                   {...field}
                   type="text"
-                  // required
                 />
               )}
             />
@@ -191,7 +187,6 @@ const Exposicao = () => {
                   fullWidth
                   {...field}
                   type="text"
-                  // required
                 />
               )}
             />
@@ -254,7 +249,6 @@ const Exposicao = () => {
                   fullWidth
                   {...field}
                   type="text"
-                  // required
                 />
               )}
             />
@@ -272,7 +266,6 @@ const Exposicao = () => {
                   fullWidth
                   {...field}
                   type="text"
-                  // required
                 />
               )}
             />
@@ -290,7 +283,6 @@ const Exposicao = () => {
                   fullWidth
                   {...field}
                   type="text"
-                  // required
                 />
               )}
             />
@@ -308,7 +300,6 @@ const Exposicao = () => {
                   fullWidth
                   {...field}
                   type="text"
-                  // required
                 />
               )}
             />
@@ -326,7 +317,6 @@ const Exposicao = () => {
                   fullWidth
                   {...field}
                   type="text"
-                  // required
                 />
               )}
             />
@@ -344,7 +334,6 @@ const Exposicao = () => {
                   fullWidth
                   {...field}
                   type="text"
-                  // required
                 />
               )}
             />
@@ -362,7 +351,6 @@ const Exposicao = () => {
                   fullWidth
                   {...field}
                   type="number"
-                  // required
                 />
               )}
             />
@@ -380,7 +368,6 @@ const Exposicao = () => {
                   fullWidth
                   {...field}
                   type="text"
-                  // required
                 />
               )}
             />
@@ -398,7 +385,6 @@ const Exposicao = () => {
                   fullWidth
                   {...field}
                   type="text"
-                  // required
                 />
               )}
             />
@@ -490,7 +476,6 @@ const Exposicao = () => {
                   fullWidth
                   {...field}
                   type="text"
-                  // required
                 />
               )}
             />

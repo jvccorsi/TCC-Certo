@@ -149,7 +149,6 @@ const ClassificacaoFinal = () => {
                   fullWidth
                   {...field}
                   type="text"
-                  // required
                 />
               )}
             />

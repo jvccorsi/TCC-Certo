@@ -34,8 +34,10 @@ const UserHeader = () => {
             <HomeOutlinedIcon color="primary" fontSize="large" />
           ) : title === 'Cadastrar' ? (
             <AddOutlinedIcon color="primary" fontSize="large" />
-          ) : (
+          ) : title === 'Atendimentos' ? (
             <ReceiptOutlinedIcon color="primary" fontSize="large" />
+          ) : (
+            <p></p>
           )}
 
           <h1

@@ -49,7 +49,6 @@ const Solicitante = () => {
                   fullWidth
                   {...field}
                   type="text"
-                  // required
                 />
               )}
             />
@@ -95,7 +94,6 @@ const Solicitante = () => {
                   fullWidth
                   {...field}
                   type="text"
-                  // required
                 />
               )}
             />
@@ -113,7 +111,6 @@ const Solicitante = () => {
                   fullWidth
                   {...field}
                   type="text"
-                  // required
                 />
               )}
             />
@@ -131,7 +128,6 @@ const Solicitante = () => {
                   fullWidth
                   {...field}
                   type="tel"
-                  // required
                 />
               )}
             />
@@ -149,7 +145,6 @@ const Solicitante = () => {
                   fullWidth
                   {...field}
                   type="text"
-                  // required
                 />
               )}
             />

@@ -10,12 +10,15 @@ import Header from '../Header';
 
 const Login = () => {
   const [isLoggedIn, setIsLogged] = useState(false);
-  const login = useCallback(() => {
+  const [userId, setUserID] = useState(false);
+  const login = useCallback((uid) => {
     setIsLogged(true);
+    setUserID(uid);
   }, []);
 
   const logout = useCallback(() => {
     setIsLogged(false);
+    setUserID(null);
   }, []);
 
   let routes;
@@ -46,7 +49,12 @@ const Login = () => {
   return (
     <section>
       <AuthContext.Provider
-        value={{ isLoggedIn: isLoggedIn, login: login, logout: logout }}
+        value={{
+          isLoggedIn: isLoggedIn,
+          userId: userId,
+          login: login,
+          logout: logout,
+        }}
       >
         <Header></Header>
 
