@@ -610,15 +610,652 @@ const Visualizar = () => {
                       <Divider>Agente Tóxico</Divider>
                     </Box>
                   </Grid>
-                  {/* {loadedFicha.defaultValues.acompanhamento.dados.map(
+                  <Grid item xs={12}>
+                    <TextField
+                      id="convenio_paciente"
+                      label="COLOCAR ARRAY FIELD AQUI"
+                      variant="standard"
+                      disabled
+                      fullWidth
+                      value={'PULEIIIIIIIIIIIIII'}
+                    />
+                  </Grid>
+                  <Grid item xs={4}>
+                    <TextField
+                      id="dados_complementares"
+                      label="Dados Complementares "
+                      variant="standard"
+                      disabled
+                      fullWidth
+                      value={
+                        loadedFicha.defaultValues.agenteToxico
+                          .dados_complementares
+                      }
+                    />
+                  </Grid>
+                  <Grid item xs={4}>
+                    <TextField
+                      id="quantidade_apresentacao"
+                      label="Quantidade/Apresentação"
+                      variant="standard"
+                      disabled
+                      fullWidth
+                      value={
+                        loadedFicha.defaultValues.agenteToxico
+                          .quantidade_apresentacao
+                      }
+                    />
+                  </Grid>
+                  <Grid item xs={4}>
+                    <TextField
+                      id="dose"
+                      label="Dose"
+                      variant="standard"
+                      disabled
+                      fullWidth
+                      value={loadedFicha.defaultValues.agenteToxico.dose}
+                    />
+                  </Grid>
+                  <Grid item xs={12}>
+                    <Box mt={3} mb={4}>
+                      <Divider>Exposição</Divider>
+                    </Box>
+                  </Grid>
+                  <Grid item xs={4}>
+                    <TextField
+                      id="data"
+                      label="Data Exposição"
+                      variant="standard"
+                      disabled
+                      fullWidth
+                      value={loadedFicha.defaultValues.exposicao.data}
+                    />
+                  </Grid>
+                  <Grid item xs={4}>
+                    <TextField
+                      id="horario"
+                      label="Horario Exposição"
+                      variant="standard"
+                      disabled
+                      fullWidth
+                      value={loadedFicha.defaultValues.exposicao.horario}
+                    />
+                  </Grid>
+                  <Grid item xs={4}>
+                    <TextField
+                      id="tempo_decorrido"
+                      label="Tempo Decorrido"
+                      variant="standard"
+                      disabled
+                      fullWidth
+                      value={
+                        loadedFicha.defaultValues.exposicao.tempo_decorrido
+                      }
+                    />
+                  </Grid>
+                  <Grid item xs={4}>
+                    <TextField
+                      id="tipo_exposicao"
+                      label="Tipo Exposiçao"
+                      variant="standard"
+                      disabled
+                      fullWidth
+                      value={
+                        loadedFicha.defaultValues.exposicao.tipos.tipo_exposicao
+                      }
+                    />
+                  </Grid>
+                  <Grid item xs={4}>
+                    <TextField
+                      id="tempo_decorrido"
+                      label="Duração"
+                      variant="standard"
+                      disabled
+                      fullWidth
+                      value={
+                        loadedFicha.defaultValues.exposicao.duracao_exposicao
+                      }
+                    />
+                  </Grid>
+                  <Grid item xs={4}>
+                    <TextField
+                      id="local_exposicao"
+                      label="Local Exposição "
+                      variant="standard"
+                      disabled
+                      fullWidth
+                      value={
+                        loadedFicha.defaultValues.exposicao.tipos
+                          .local_exposicao
+                      }
+                    />
+                  </Grid>
+                  <Grid item xs={4}>
+                    <TextField
+                      id="zona_exposicao"
+                      label="Zona Exposição "
+                      variant="standard"
+                      disabled
+                      fullWidth
+                      value={
+                        loadedFicha.defaultValues.exposicao.tipos.zona_exposicao
+                      }
+                    />
+                  </Grid>
+                  <Grid item xs={4}>
+                    <TextField
+                      id="pais"
+                      label="País "
+                      variant="standard"
+                      disabled
+                      fullWidth
+                      value={loadedFicha.defaultValues.exposicao.endereco.pais}
+                    />
+                  </Grid>
+                  <Grid item xs={4}>
+                    <TextField
+                      id="estado"
+                      label="Estado "
+                      variant="standard"
+                      disabled
+                      fullWidth
+                      value={
+                        loadedFicha.defaultValues.exposicao.endereco.estado
+                      }
+                    />
+                  </Grid>
+                  <Grid item xs={4}>
+                    <TextField
+                      id="municipio"
+                      label="Municipio "
+                      variant="standard"
+                      disabled
+                      fullWidth
+                      value={
+                        loadedFicha.defaultValues.exposicao.endereco.municipio
+                      }
+                    />
+                  </Grid>
+                  <Grid item xs={4}>
+                    <TextField
+                      id="cep"
+                      label="Cep "
+                      variant="standard"
+                      disabled
+                      fullWidth
+                      value={loadedFicha.defaultValues.exposicao.endereco.cep}
+                    />
+                  </Grid>
+                  <Grid item xs={4}>
+                    <TextField
+                      id="bairro"
+                      label="Bairro "
+                      variant="standard"
+                      disabled
+                      fullWidth
+                      value={
+                        loadedFicha.defaultValues.exposicao.endereco.bairro
+                      }
+                    />
+                  </Grid>
+                  <Grid item xs={3}>
+                    <TextField
+                      id="logradouro"
+                      label="Logradouro "
+                      variant="standard"
+                      disabled
+                      fullWidth
+                      value={
+                        loadedFicha.defaultValues.exposicao.endereco.logradouro
+                      }
+                    />
+                  </Grid>
+                  <Grid item xs={3}>
+                    <TextField
+                      id="numero"
+                      label="Numero "
+                      variant="standard"
+                      disabled
+                      fullWidth
+                      value={
+                        loadedFicha.defaultValues.exposicao.endereco.numero
+                      }
+                    />
+                  </Grid>
+                  <Grid item xs={3}>
+                    <TextField
+                      id="complemento"
+                      label="Complemento "
+                      variant="standard"
+                      disabled
+                      fullWidth
+                      value={
+                        loadedFicha.defaultValues.exposicao.endereco.complemento
+                      }
+                    />
+                  </Grid>
+                  <Grid item xs={3}>
+                    <TextField
+                      id="fone"
+                      label="Fone "
+                      variant="standard"
+                      disabled
+                      fullWidth
+                      value={loadedFicha.defaultValues.exposicao.endereco.fone}
+                    />
+                  </Grid>
+                  <Grid item xs={12}>
+                    <Box mt={3} mb={4}>
+                      <Divider></Divider>
+                    </Box>
+                  </Grid>
+                  <Grid item xs={6}>
+                    <TextField
+                      id="via_de_exposicao"
+                      label="Via de Exposicao "
+                      variant="standard"
+                      disabled
+                      fullWidth
+                      value={
+                        loadedFicha.defaultValues.exposicao.tipos
+                          .via_de_exposicao
+                      }
+                    />
+                  </Grid>
+                  <Grid item xs={6}>
+                    <TextField
+                      id="circunstancia_de_exposicao"
+                      label="Circunstancias da Exposição "
+                      variant="standard"
+                      disabled
+                      fullWidth
+                      value={
+                        loadedFicha.defaultValues.exposicao.tipos
+                          .circunstancia_de_exposicao
+                      }
+                    />
+                  </Grid>
+                  <Grid item xs={6}>
+                    <TextField
+                      id="local_mordida"
+                      label="Local Mordida "
+                      variant="standard"
+                      disabled
+                      fullWidth
+                      value={
+                        loadedFicha.defaultValues.exposicao.tipos.local_mordida
+                      }
+                    />
+                  </Grid>
+                  <Grid item xs={6}>
+                    <TextField
+                      id="especificar_mordida"
+                      label="Especificar "
+                      variant="standard"
+                      disabled
+                      fullWidth
+                      value={
+                        loadedFicha.defaultValues.exposicao.especificar_mordida
+                      }
+                    />
+                  </Grid>
+                  <Grid item xs={12}>
+                    <Box mt={3} mb={4}>
+                      <Divider>Outras Informações</Divider>
+                    </Box>
+                  </Grid>
+                  <Grid item xs={12}>
+                    <Box mb={4}>
+                      <Divider>Gravidade</Divider>
+                    </Box>
+                  </Grid>
+                  <Grid item xs={6}>
+                    <TextField
+                      id="classificacao_gravidade"
+                      label="Classificação Inicial da Gravidade "
+                      variant="standard"
+                      disabled
+                      fullWidth
+                      value={
+                        loadedFicha.defaultValues.outrasInformacoes
+                          .classificacao_gravidade
+                      }
+                    />
+                  </Grid>
+                  <Grid item xs={6}>
+                    <TextField
+                      id="manifestacao"
+                      label="Manifestacao Clínica"
+                      variant="standard"
+                      disabled
+                      fullWidth
+                      value={
+                        loadedFicha.defaultValues.outrasInformacoes
+                          .manifestacoesClinicas.manifestacao
+                      }
+                    />
+                  </Grid>
+                  <Grid item xs={12}>
+                    <TextField
+                      id="sinais_sintomas"
+                      label="Sinais e Sintomas "
+                      variant="standard"
+                      disabled
+                      fullWidth
+                      value={
+                        loadedFicha.defaultValues.outrasInformacoes
+                          .manifestacoesClinicas.sinais_sintomas
+                      }
+                    />
+                  </Grid>
+                  <Grid item xs={12}>
+                    <Box mb={4}>
+                      <Divider>Tratamento</Divider>
+                    </Box>
+                  </Grid>
+                  <Grid item xs={6}>
+                    <TextField
+                      id="medida_tomada"
+                      label="Medida já tomada"
+                      variant="standard"
+                      disabled
+                      fullWidth
+                      value={
+                        loadedFicha.defaultValues.outrasInformacoes.tratamento
+                          .medida_tomada
+                      }
+                    />
+                  </Grid>
+                  <Grid item xs={6}>
+                    <TextField
+                      id="medida_orientada"
+                      label="Medida Orientada "
+                      variant="standard"
+                      disabled
+                      fullWidth
+                      value={
+                        loadedFicha.defaultValues.outrasInformacoes.tratamento
+                          .medida_orientada
+                      }
+                    />
+                  </Grid>
+                  <Grid item xs={6}>
+                    <TextField
+                      id="medida_realizada"
+                      label="Medida Realizada"
+                      variant="standard"
+                      disabled
+                      fullWidth
+                      value={
+                        loadedFicha.defaultValues.outrasInformacoes.tratamento
+                          .medida_realizada
+                      }
+                    />
+                  </Grid>
+                  <Grid item xs={6}>
+                    <TextField
+                      id="informacoes_adicionais"
+                      label="Informações Adicionais Fornecidas "
+                      variant="standard"
+                      disabled
+                      fullWidth
+                      value={
+                        loadedFicha.defaultValues.outrasInformacoes.tratamento
+                          .informacoes_adicionais
+                      }
+                    />
+                  </Grid>
+                  <Grid item xs={12}>
+                    <TextField
+                      id="exames_resultados_lab"
+                      label="Exames/Resultados Laboratoriais "
+                      variant="standard"
+                      disabled
+                      fullWidth
+                      value={
+                        loadedFicha.defaultValues.outrasInformacoes.tratamento
+                          .exames_resultados_lab
+                      }
+                    />
+                  </Grid>
+                  <Grid item xs={12}>
+                    <Box mb={4}>
+                      <Divider>História</Divider>
+                    </Box>
+                  </Grid>
+                  <Grid item xs={12}>
+                    <TextField
+                      id="historia"
+                      label="História "
+                      variant="standard"
+                      disabled
+                      fullWidth
+                      value={
+                        loadedFicha.defaultValues.outrasInformacoes.historia
+                      }
+                    />
+                  </Grid>
+                  <Grid item xs={4}>
+                    <TextField
+                      id="fonte"
+                      label="Fonte "
+                      variant="standard"
+                      disabled
+                      fullWidth
+                      value={loadedFicha.defaultValues.outrasInformacoes.fonte}
+                    />
+                  </Grid>
+                  <Grid item xs={4}>
+                    <TextField
+                      id="complemento"
+                      label="Complemento "
+                      variant="standard"
+                      disabled
+                      fullWidth
+                      value={
+                        loadedFicha.defaultValues.outrasInformacoes.complemento
+                      }
+                    />
+                  </Grid>
+                  <Grid item xs={4}>
+                    <TextField
+                      id="imagens"
+                      label="Imagens "
+                      variant="standard"
+                      disabled
+                      fullWidth
+                      value={
+                        loadedFicha.defaultValues.outrasInformacoes.imagens
+                      }
+                    />
+                  </Grid>
+                  <Grid item xs={12}>
+                    <TextField
+                      id="observacoes"
+                      label="Observações "
+                      variant="standard"
+                      disabled
+                      fullWidth
+                      value={
+                        loadedFicha.defaultValues.outrasInformacoes.observacoes
+                      }
+                    />
+                  </Grid>
+                  <Grid item xs={12}>
+                    <Box mb={4} mt={3}>
+                      <Divider>Acompanhamento</Divider>
+                    </Box>
+                  </Grid>
+                  {loadedFicha.defaultValues.acompanhamento.dados.map(
                     (item, index) => (
-                      <div key={index}>
-                        <p type="text"> </p>
-                        <p type="text">{item.id}</p>
-                        <p type="text">{item.informante}</p>
-                      </div>
+                      <>
+                        <Grid item xs={12}>
+                          <Box mb={4} mt={3}>
+                            <Divider>Acompanhamento {index}</Divider>
+                          </Box>
+                        </Grid>
+                        <Grid item xs={3} key={index}>
+                          <TextField
+                            id="observacoes"
+                            label="Data/Hora "
+                            variant="standard"
+                            disabled
+                            fullWidth
+                            value={item.data_hora}
+                          />
+                        </Grid>
+                        <Grid item xs={3}>
+                          <TextField
+                            id="observacoes"
+                            label="Responsável "
+                            variant="standard"
+                            disabled
+                            fullWidth
+                            value={item.responsavel}
+                          />
+                        </Grid>
+                        <Grid item xs={3}>
+                          <TextField
+                            id="observacoes"
+                            label="Evolucao "
+                            variant="standard"
+                            disabled
+                            fullWidth
+                            value={item.evolucao}
+                          />
+                        </Grid>
+                        <Grid item xs={3}>
+                          <TextField
+                            id="observacoes"
+                            label="Informante "
+                            variant="standard"
+                            disabled
+                            fullWidth
+                            value={item.informante}
+                          />
+                        </Grid>
+
+                        <Grid item xs={4}>
+                          <TextField
+                            id="observacoes"
+                            label="Instituicao "
+                            variant="standard"
+                            disabled
+                            fullWidth
+                            value={item.instituicao}
+                          />
+                        </Grid>
+                        <Grid item xs={4}>
+                          <TextField
+                            id="observacoes"
+                            label="Cidade "
+                            variant="standard"
+                            disabled
+                            fullWidth
+                            value={item.cidade}
+                          />
+                        </Grid>
+                        <Grid item xs={4}>
+                          <TextField
+                            id="observacoes"
+                            label="Fone "
+                            variant="standard"
+                            disabled
+                            fullWidth
+                            value={item.fone}
+                          />
+                        </Grid>
+                      </>
                     ),
-                  )} */}
+                  )}
+                  <Grid item xs={12}>
+                    <Box mb={4} mt={3}>
+                      <Divider>Classificação Final </Divider>
+                    </Box>
+                  </Grid>
+                  <Grid item xs={6}>
+                    <TextField
+                      id="classificacao_gravidade_final"
+                      label="Classificação Gravidade Final "
+                      variant="standard"
+                      disabled
+                      fullWidth
+                      value={
+                        loadedFicha.defaultValues.classificacaoFinal
+                          .classificacao_gravidade_final
+                      }
+                    />
+                  </Grid>
+                  <Grid item xs={6}>
+                    <TextField
+                      id="desfecho"
+                      label="Desfecho"
+                      variant="standard"
+                      disabled
+                      fullWidth
+                      value={
+                        loadedFicha.defaultValues.classificacaoFinal.desfecho
+                      }
+                    />
+                  </Grid>
+                  <Grid item xs={6}>
+                    <TextField
+                      id="obito"
+                      label="Obito"
+                      variant="standard"
+                      disabled
+                      fullWidth
+                      value={loadedFicha.defaultValues.classificacaoFinal.obito}
+                    />
+                  </Grid>
+                  <Grid item xs={6}>
+                    <TextField
+                      id="autopsia"
+                      label="Autopsia"
+                      variant="standard"
+                      disabled
+                      fullWidth
+                      value={
+                        loadedFicha.defaultValues.classificacaoFinal.autopsia
+                      }
+                    />
+                  </Grid>
+                  <Grid item xs={6}>
+                    <TextField
+                      id="data"
+                      label="Data"
+                      variant="standard"
+                      disabled
+                      fullWidth
+                      value={loadedFicha.defaultValues.classificacaoFinal.data}
+                    />
+                  </Grid>
+                  <Grid item xs={6}>
+                    <TextField
+                      id="resultado_autopsia"
+                      label="Resultado Autopsia"
+                      variant="standard"
+                      disabled
+                      fullWidth
+                      value={
+                        loadedFicha.defaultValues.classificacaoFinal
+                          .resultado_autopsia
+                      }
+                    />
+                  </Grid>
+                  <Grid item xs={12}>
+                    <TextField
+                      id="contribuicao_obito"
+                      label="Contribuição para o Óbito"
+                      variant="standard"
+                      disabled
+                      fullWidth
+                      value={
+                        loadedFicha.defaultValues.classificacaoFinal
+                          .contribuicao_obito
+                      }
+                    />
+                  </Grid>
                 </Grid>
               </Box>
             </Paper>
