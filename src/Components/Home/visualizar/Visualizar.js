@@ -16,11 +16,10 @@ import styles from './visualizar.module.css';
 
 import { useHttpClient } from '../../Hooks/http-hook';
 import LoadingSpinner from '../../IUElements/LoadingSpinner';
-import Atendimento from '../Stepper/Forms/Atendimento';
 
 const Visualizar = () => {
   const [loadedFicha, setLoadedFicha] = useState();
-  const { isLoading, error, sendRequest, clearError } = useHttpClient();
+  const { isLoading, sendRequest } = useHttpClient();
 
   const { id } = useParams();
 

@@ -2,12 +2,33 @@ import React from 'react';
 
 import { DataGrid, GridToolbar } from '@mui/x-data-grid';
 import { useNavigate } from 'react-router-dom';
-import { Box, Grid } from '@mui/material';
+import { Box, Grid, Modal, Typography, Button } from '@mui/material';
 import IconButton from '@mui/material/IconButton';
 import DeleteIcon from '@mui/icons-material/Delete';
 import EditSharpIcon from '@mui/icons-material/EditSharp';
 import RemoveRedEyeSharpIcon from '@mui/icons-material/RemoveRedEyeSharp';
+
+const style = {
+  position: 'absolute',
+  top: '50%',
+  left: '50%',
+  transform: 'translate(-50%, -50%)',
+  width: 400,
+  bgcolor: 'background.paper',
+  border: '2px solid #000',
+  boxShadow: 24,
+  p: 4,
+};
+
 const ListarAtendimento = () => {
+  const [open, setOpen] = React.useState(false);
+  const [idExcluir, setidExcluir] = React.useState();
+  const handleOpen = (id) => {
+    setOpen(true);
+    setidExcluir(id);
+  };
+  const handleClose = () => setOpen(false);
+
   const rows = [
     { id: 1, Centro: 'xx-corsi01', TipoFicha: 'World', Exposicao: 'Teste1' },
     {
@@ -252,10 +273,13 @@ const ListarAtendimento = () => {
 
           //Retorna o id da linha!
 
-          navigate(`../excluir/${JSON.stringify(thisRow.id)} `, {
-            replace: true,
-          });
-          return alert(JSON.stringify(thisRow.id));
+          // navigate(`../excluir/${JSON.stringify(thisRow.id)} `, {
+          //   replace: true,
+          // });
+          // return handleOpen();
+
+          return handleOpen(JSON.stringify(thisRow.id));
+          // return alert(JSON.stringify(thisRow.id));
         };
 
         return (
@@ -274,6 +298,31 @@ const ListarAtendimento = () => {
 
   return (
     <>
+      <Modal
+        open={open}
+        onClose={handleClose}
+        aria-labelledby="modal-modal-title"
+        aria-describedby="modal-modal-description"
+      >
+        <Box sx={style}>
+          <Typography id="modal-modal-title" variant="h6" component="h2">
+            Tem certeza que deseja excluir o modal {idExcluir} ?
+          </Typography>
+          <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+            <Box display="flex" justifyContent="center" alignItems="center">
+              <Box m={2}>
+                <Button variant="contained" color="error">
+                  Sim
+                </Button>
+              </Box>
+
+              <Button variant="contained" color="success" onClick={handleClose}>
+                Não
+              </Button>
+            </Box>
+          </Typography>
+        </Box>
+      </Modal>
       <Box m={4}>
         <Grid container spacing={2} justifyContent="center">
           <Grid item xs={8}>
