@@ -86,9 +86,7 @@ const Visualizar = () => {
                       variant="standard"
                       fullWidth
                       disabled
-                      value={
-                        loadedFicha.defaultValues.atendimento.centro_atendimento
-                      }
+                      value={loadedFicha.atendimento.centro_atendimento}
                     />
                   </Grid>
                   <Grid item xs={6}>
@@ -98,9 +96,7 @@ const Visualizar = () => {
                       variant="standard"
                       disabled
                       fullWidth
-                      value={
-                        loadedFicha.defaultValues.atendimento.ficha.tipo_ficha
-                      }
+                      value={loadedFicha.atendimento.ficha.tipo_ficha}
                     />
                   </Grid>
                   <Grid item xs={4}>
@@ -109,9 +105,7 @@ const Visualizar = () => {
                       label="Exposição"
                       variant="standard"
                       disabled
-                      value={
-                        loadedFicha.defaultValues.atendimento.ficha.exposicao
-                      }
+                      value={loadedFicha.atendimento.ficha.exposicao}
                     />
                   </Grid>
                   <Grid item xs={4}>
@@ -120,9 +114,7 @@ const Visualizar = () => {
                       label="Data"
                       variant="standard"
                       disabled
-                      value={
-                        loadedFicha.defaultValues.atendimento.ficha.data_ficha
-                      }
+                      value={loadedFicha.atendimento.ficha.data_ficha}
                     />
                   </Grid>
                   <Grid item xs={4}>
@@ -131,9 +123,7 @@ const Visualizar = () => {
                       label="Hora"
                       variant="standard"
                       disabled
-                      value={
-                        loadedFicha.defaultValues.atendimento.ficha.hora_ficha
-                      }
+                      value={loadedFicha.atendimento.ficha.hora_ficha}
                     />
                   </Grid>
                   <Grid item xs={12}>
@@ -147,9 +137,7 @@ const Visualizar = () => {
                       label="Data Atendimento"
                       variant="standard"
                       disabled
-                      value={
-                        loadedFicha.defaultValues.atendimento.data_atendimento
-                      }
+                      value={loadedFicha.atendimento.data_atendimento}
                     />
                   </Grid>
                   <Grid item xs={4}>
@@ -158,10 +146,7 @@ const Visualizar = () => {
                       label="Horario Atendimento"
                       variant="standard"
                       disabled
-                      value={
-                        loadedFicha.defaultValues.atendimento
-                          .horario_atendimento
-                      }
+                      value={loadedFicha.atendimento.horario_atendimento}
                     />
                   </Grid>
                   <Grid item xs={4}>
@@ -170,9 +155,7 @@ const Visualizar = () => {
                       label="Meio Atendimento"
                       variant="standard"
                       disabled
-                      value={
-                        loadedFicha.defaultValues.atendimento.meio_atendimento
-                      }
+                      value={loadedFicha.atendimento.meio_atendimento}
                     />
                   </Grid>
                   <Grid item xs={4}>
@@ -181,9 +164,7 @@ const Visualizar = () => {
                       label="Local Atendimento"
                       variant="standard"
                       disabled
-                      value={
-                        loadedFicha.defaultValues.atendimento.local_atendimento
-                      }
+                      value={loadedFicha.atendimento.local_atendimento}
                     />
                   </Grid>
                   <Grid item xs={4}>
@@ -192,10 +173,7 @@ const Visualizar = () => {
                       label="Responsável Atendimento"
                       variant="standard"
                       disabled
-                      value={
-                        loadedFicha.defaultValues.atendimento
-                          .responsavel_atendimento
-                      }
+                      value={loadedFicha.atendimento.responsavel_atendimento}
                     />
                   </Grid>
                   <Grid item xs={4}>
@@ -204,10 +182,7 @@ const Visualizar = () => {
                       label="Responsável Revisão"
                       variant="standard"
                       disabled
-                      value={
-                        loadedFicha.defaultValues.atendimento
-                          .responsavel_revisao
-                      }
+                      value={loadedFicha.atendimento.responsavel_revisao}
                     />
                   </Grid>
                   <Grid item xs={6}>
@@ -217,10 +192,7 @@ const Visualizar = () => {
                       variant="standard"
                       disabled
                       fullWidth
-                      value={
-                        loadedFicha.defaultValues.atendimento
-                          .responsavel_supervisao
-                      }
+                      value={loadedFicha.atendimento.responsavel_supervisao}
                     />
                   </Grid>
                   <Grid item xs={6}>
@@ -230,9 +202,7 @@ const Visualizar = () => {
                       variant="standard"
                       disabled
                       fullWidth
-                      value={
-                        loadedFicha.defaultValues.atendimento.controle_centro
-                      }
+                      value={loadedFicha.atendimento.controle_centro}
                     />
                   </Grid>
                   <Grid item xs={12}>
@@ -247,9 +217,7 @@ const Visualizar = () => {
                       variant="standard"
                       disabled
                       fullWidth
-                      value={
-                        loadedFicha.defaultValues.solicitante.nome_solicitante
-                      }
+                      value={loadedFicha.solicitante.nome_solicitante}
                     />
                   </Grid>
                   <Grid item xs={7}>
@@ -259,10 +227,7 @@ const Visualizar = () => {
                       variant="standard"
                       disabled
                       fullWidth
-                      value={
-                        loadedFicha.defaultValues.solicitante
-                          .categoria_multiple_select
-                      }
+                      value={loadedFicha.solicitante.categoria_multiple_select}
                     />
                   </Grid>
                   <Grid item xs={2}>
@@ -272,9 +237,7 @@ const Visualizar = () => {
                       variant="standard"
                       disabled
                       fullWidth
-                      value={
-                        loadedFicha.defaultValues.solicitante.uf_solicitante
-                      }
+                      value={loadedFicha.solicitante.uf_solicitante}
                     />
                   </Grid>
                   <Grid item xs={5}>
@@ -284,10 +247,7 @@ const Visualizar = () => {
                       variant="standard"
                       disabled
                       fullWidth
-                      value={
-                        loadedFicha.defaultValues.solicitante
-                          .municipio_solicitante
-                      }
+                      value={loadedFicha.solicitante.municipio_solicitante}
                     />
                   </Grid>
                   <Grid item xs={5}>
@@ -297,9 +257,7 @@ const Visualizar = () => {
                       variant="standard"
                       disabled
                       fullWidth
-                      value={
-                        loadedFicha.defaultValues.solicitante.fone_solicitante
-                      }
+                      value={loadedFicha.solicitante.fone_solicitante}
                     />
                   </Grid>
                   <Grid item xs={12}>
@@ -309,10 +267,7 @@ const Visualizar = () => {
                       variant="standard"
                       disabled
                       fullWidth
-                      value={
-                        loadedFicha.defaultValues.solicitante
-                          .instituicao_solicitante
-                      }
+                      value={loadedFicha.solicitante.instituicao_solicitante}
                     />
                   </Grid>
                   <Grid item xs={12}>
@@ -327,7 +282,7 @@ const Visualizar = () => {
                       variant="standard"
                       disabled
                       fullWidth
-                      value={loadedFicha.defaultValues.paciente.nome_paciente}
+                      value={loadedFicha.paciente.nome_paciente}
                     />
                   </Grid>
                   <Grid item xs={4}>
@@ -337,7 +292,7 @@ const Visualizar = () => {
                       variant="standard"
                       disabled
                       fullWidth
-                      value={loadedFicha.defaultValues.paciente.peso_paciente}
+                      value={loadedFicha.paciente.peso_paciente}
                     />
                   </Grid>
                   <Grid item xs={4}>
@@ -347,10 +302,7 @@ const Visualizar = () => {
                       variant="standard"
                       disabled
                       fullWidth
-                      value={
-                        loadedFicha.defaultValues.paciente
-                          .data_nascimento_paciente
-                      }
+                      value={loadedFicha.paciente.data_nascimento_paciente}
                     />
                   </Grid>
                   <Grid item xs={3}>
@@ -360,7 +312,7 @@ const Visualizar = () => {
                       variant="standard"
                       disabled
                       fullWidth
-                      value={loadedFicha.defaultValues.paciente.idade_paciente}
+                      value={loadedFicha.paciente.idade_paciente}
                     />
                   </Grid>
                   <Grid item xs={3}>
@@ -370,7 +322,7 @@ const Visualizar = () => {
                       variant="standard"
                       disabled
                       fullWidth
-                      value={loadedFicha.defaultValues.paciente.sexo_paciente}
+                      value={loadedFicha.paciente.sexo_paciente}
                     />
                   </Grid>
                   <Grid item xs={3}>
@@ -380,10 +332,7 @@ const Visualizar = () => {
                       variant="standard"
                       disabled
                       fullWidth
-                      value={
-                        loadedFicha.defaultValues.paciente
-                          .gestante_select_paciente
-                      }
+                      value={loadedFicha.paciente.gestante_select_paciente}
                     />
                   </Grid>
                   <Grid item xs={3}>
@@ -393,9 +342,7 @@ const Visualizar = () => {
                       variant="standard"
                       disabled
                       fullWidth
-                      value={
-                        loadedFicha.defaultValues.paciente.raca_cor_paciente
-                      }
+                      value={loadedFicha.paciente.raca_cor_paciente}
                     />
                   </Grid>
                   <Grid item xs={6}>
@@ -405,9 +352,7 @@ const Visualizar = () => {
                       variant="standard"
                       disabled
                       fullWidth
-                      value={
-                        loadedFicha.defaultValues.paciente.escolaridade_paciente
-                      }
+                      value={loadedFicha.paciente.escolaridade_paciente}
                     />
                   </Grid>
                   <Grid item xs={6}>
@@ -417,9 +362,7 @@ const Visualizar = () => {
                       variant="standard"
                       disabled
                       fullWidth
-                      value={
-                        loadedFicha.defaultValues.paciente.ocupacao_paciente
-                      }
+                      value={loadedFicha.paciente.ocupacao_paciente}
                     />
                   </Grid>
                   <Grid item xs={12}>
@@ -434,10 +377,7 @@ const Visualizar = () => {
                       variant="standard"
                       disabled
                       fullWidth
-                      value={
-                        loadedFicha.defaultValues.paciente.endereco
-                          .pais_paciente
-                      }
+                      value={loadedFicha.paciente.endereco.pais_paciente}
                     />
                   </Grid>{' '}
                   <Grid item xs={3}>
@@ -447,10 +387,7 @@ const Visualizar = () => {
                       variant="standard"
                       disabled
                       fullWidth
-                      value={
-                        loadedFicha.defaultValues.paciente.endereco
-                          .municipio_paciente
-                      }
+                      value={loadedFicha.paciente.endereco.municipio_paciente}
                     />
                   </Grid>{' '}
                   <Grid item xs={3}>
@@ -460,9 +397,7 @@ const Visualizar = () => {
                       variant="standard"
                       disabled
                       fullWidth
-                      value={
-                        loadedFicha.defaultValues.paciente.endereco.cep_paciente
-                      }
+                      value={loadedFicha.paciente.endereco.cep_paciente}
                     />
                   </Grid>{' '}
                   <Grid item xs={3}>
@@ -472,10 +407,7 @@ const Visualizar = () => {
                       variant="standard"
                       disabled
                       fullWidth
-                      value={
-                        loadedFicha.defaultValues.paciente.endereco
-                          .bairro_paciente
-                      }
+                      value={loadedFicha.paciente.endereco.bairro_paciente}
                     />
                   </Grid>
                   <Grid item xs={3}>
@@ -485,10 +417,7 @@ const Visualizar = () => {
                       variant="standard"
                       disabled
                       fullWidth
-                      value={
-                        loadedFicha.defaultValues.paciente.endereco
-                          .logradouro_paciente
-                      }
+                      value={loadedFicha.paciente.endereco.logradouro_paciente}
                     />
                   </Grid>
                   <Grid item xs={3}>
@@ -498,10 +427,7 @@ const Visualizar = () => {
                       variant="standard"
                       disabled
                       fullWidth
-                      value={
-                        loadedFicha.defaultValues.paciente.endereco
-                          .numero_casa_paciente
-                      }
+                      value={loadedFicha.paciente.endereco.numero_casa_paciente}
                     />
                   </Grid>
                   <Grid item xs={3}>
@@ -512,8 +438,7 @@ const Visualizar = () => {
                       disabled
                       fullWidth
                       value={
-                        loadedFicha.defaultValues.paciente.endereco
-                          .complemento_casa_paciente
+                        loadedFicha.paciente.endereco.complemento_casa_paciente
                       }
                     />
                   </Grid>
@@ -524,9 +449,7 @@ const Visualizar = () => {
                       variant="standard"
                       disabled
                       fullWidth
-                      value={
-                        loadedFicha.defaultValues.paciente.telefone_paciente
-                      }
+                      value={loadedFicha.paciente.telefone_paciente}
                     />
                   </Grid>
                   <Grid item xs={6}>
@@ -536,9 +459,7 @@ const Visualizar = () => {
                       variant="standard"
                       disabled
                       fullWidth
-                      value={
-                        loadedFicha.defaultValues.paciente.nome_mae_paciente
-                      }
+                      value={loadedFicha.paciente.nome_mae_paciente}
                     />
                   </Grid>
                   <Grid item xs={6}>
@@ -548,9 +469,7 @@ const Visualizar = () => {
                       variant="standard"
                       disabled
                       fullWidth
-                      value={
-                        loadedFicha.defaultValues.paciente.prontuario_paciente
-                      }
+                      value={loadedFicha.paciente.prontuario_paciente}
                     />
                   </Grid>
                   <Grid item xs={12}>
@@ -565,7 +484,7 @@ const Visualizar = () => {
                       variant="standard"
                       disabled
                       fullWidth
-                      value={loadedFicha.defaultValues.paciente.cpf_paciente}
+                      value={loadedFicha.paciente.cpf_paciente}
                     />
                   </Grid>
                   <Grid item xs={6}>
@@ -575,7 +494,7 @@ const Visualizar = () => {
                       variant="standard"
                       disabled
                       fullWidth
-                      value={loadedFicha.defaultValues.paciente.rg_paciente}
+                      value={loadedFicha.paciente.rg_paciente}
                     />
                   </Grid>
                   <Grid item xs={6}>
@@ -585,9 +504,7 @@ const Visualizar = () => {
                       variant="standard"
                       disabled
                       fullWidth
-                      value={
-                        loadedFicha.defaultValues.paciente.cartao_sus_paciente
-                      }
+                      value={loadedFicha.paciente.cartao_sus_paciente}
                     />
                   </Grid>
                   <Grid item xs={6}>
@@ -597,9 +514,7 @@ const Visualizar = () => {
                       variant="standard"
                       disabled
                       fullWidth
-                      value={
-                        loadedFicha.defaultValues.paciente.convenio_paciente
-                      }
+                      value={loadedFicha.paciente.convenio_paciente}
                     />
                   </Grid>
                   <Grid item xs={12}>
@@ -624,10 +539,7 @@ const Visualizar = () => {
                       variant="standard"
                       disabled
                       fullWidth
-                      value={
-                        loadedFicha.defaultValues.agenteToxico
-                          .dados_complementares
-                      }
+                      value={loadedFicha.agenteToxico.dados_complementares}
                     />
                   </Grid>
                   <Grid item xs={4}>
@@ -637,10 +549,7 @@ const Visualizar = () => {
                       variant="standard"
                       disabled
                       fullWidth
-                      value={
-                        loadedFicha.defaultValues.agenteToxico
-                          .quantidade_apresentacao
-                      }
+                      value={loadedFicha.agenteToxico.quantidade_apresentacao}
                     />
                   </Grid>
                   <Grid item xs={4}>
@@ -650,7 +559,7 @@ const Visualizar = () => {
                       variant="standard"
                       disabled
                       fullWidth
-                      value={loadedFicha.defaultValues.agenteToxico.dose}
+                      value={loadedFicha.agenteToxico.dose}
                     />
                   </Grid>
                   <Grid item xs={12}>
@@ -665,7 +574,7 @@ const Visualizar = () => {
                       variant="standard"
                       disabled
                       fullWidth
-                      value={loadedFicha.defaultValues.exposicao.data}
+                      value={loadedFicha.exposicao.data}
                     />
                   </Grid>
                   <Grid item xs={4}>
@@ -675,7 +584,7 @@ const Visualizar = () => {
                       variant="standard"
                       disabled
                       fullWidth
-                      value={loadedFicha.defaultValues.exposicao.horario}
+                      value={loadedFicha.exposicao.horario}
                     />
                   </Grid>
                   <Grid item xs={4}>
@@ -685,9 +594,7 @@ const Visualizar = () => {
                       variant="standard"
                       disabled
                       fullWidth
-                      value={
-                        loadedFicha.defaultValues.exposicao.tempo_decorrido
-                      }
+                      value={loadedFicha.exposicao.tempo_decorrido}
                     />
                   </Grid>
                   <Grid item xs={4}>
@@ -697,9 +604,7 @@ const Visualizar = () => {
                       variant="standard"
                       disabled
                       fullWidth
-                      value={
-                        loadedFicha.defaultValues.exposicao.tipos.tipo_exposicao
-                      }
+                      value={loadedFicha.exposicao.tipos.tipo_exposicao}
                     />
                   </Grid>
                   <Grid item xs={4}>
@@ -709,9 +614,7 @@ const Visualizar = () => {
                       variant="standard"
                       disabled
                       fullWidth
-                      value={
-                        loadedFicha.defaultValues.exposicao.duracao_exposicao
-                      }
+                      value={loadedFicha.exposicao.duracao_exposicao}
                     />
                   </Grid>
                   <Grid item xs={4}>
@@ -721,10 +624,7 @@ const Visualizar = () => {
                       variant="standard"
                       disabled
                       fullWidth
-                      value={
-                        loadedFicha.defaultValues.exposicao.tipos
-                          .local_exposicao
-                      }
+                      value={loadedFicha.exposicao.tipos.local_exposicao}
                     />
                   </Grid>
                   <Grid item xs={4}>
@@ -734,9 +634,7 @@ const Visualizar = () => {
                       variant="standard"
                       disabled
                       fullWidth
-                      value={
-                        loadedFicha.defaultValues.exposicao.tipos.zona_exposicao
-                      }
+                      value={loadedFicha.exposicao.tipos.zona_exposicao}
                     />
                   </Grid>
                   <Grid item xs={4}>
@@ -746,7 +644,7 @@ const Visualizar = () => {
                       variant="standard"
                       disabled
                       fullWidth
-                      value={loadedFicha.defaultValues.exposicao.endereco.pais}
+                      value={loadedFicha.exposicao.endereco.pais}
                     />
                   </Grid>
                   <Grid item xs={4}>
@@ -756,9 +654,7 @@ const Visualizar = () => {
                       variant="standard"
                       disabled
                       fullWidth
-                      value={
-                        loadedFicha.defaultValues.exposicao.endereco.estado
-                      }
+                      value={loadedFicha.exposicao.endereco.estado}
                     />
                   </Grid>
                   <Grid item xs={4}>
@@ -768,9 +664,7 @@ const Visualizar = () => {
                       variant="standard"
                       disabled
                       fullWidth
-                      value={
-                        loadedFicha.defaultValues.exposicao.endereco.municipio
-                      }
+                      value={loadedFicha.exposicao.endereco.municipio}
                     />
                   </Grid>
                   <Grid item xs={4}>
@@ -780,7 +674,7 @@ const Visualizar = () => {
                       variant="standard"
                       disabled
                       fullWidth
-                      value={loadedFicha.defaultValues.exposicao.endereco.cep}
+                      value={loadedFicha.exposicao.endereco.cep}
                     />
                   </Grid>
                   <Grid item xs={4}>
@@ -790,9 +684,7 @@ const Visualizar = () => {
                       variant="standard"
                       disabled
                       fullWidth
-                      value={
-                        loadedFicha.defaultValues.exposicao.endereco.bairro
-                      }
+                      value={loadedFicha.exposicao.endereco.bairro}
                     />
                   </Grid>
                   <Grid item xs={3}>
@@ -802,9 +694,7 @@ const Visualizar = () => {
                       variant="standard"
                       disabled
                       fullWidth
-                      value={
-                        loadedFicha.defaultValues.exposicao.endereco.logradouro
-                      }
+                      value={loadedFicha.exposicao.endereco.logradouro}
                     />
                   </Grid>
                   <Grid item xs={3}>
@@ -814,9 +704,7 @@ const Visualizar = () => {
                       variant="standard"
                       disabled
                       fullWidth
-                      value={
-                        loadedFicha.defaultValues.exposicao.endereco.numero
-                      }
+                      value={loadedFicha.exposicao.endereco.numero}
                     />
                   </Grid>
                   <Grid item xs={3}>
@@ -826,9 +714,7 @@ const Visualizar = () => {
                       variant="standard"
                       disabled
                       fullWidth
-                      value={
-                        loadedFicha.defaultValues.exposicao.endereco.complemento
-                      }
+                      value={loadedFicha.exposicao.endereco.complemento}
                     />
                   </Grid>
                   <Grid item xs={3}>
@@ -838,7 +724,7 @@ const Visualizar = () => {
                       variant="standard"
                       disabled
                       fullWidth
-                      value={loadedFicha.defaultValues.exposicao.endereco.fone}
+                      value={loadedFicha.exposicao.endereco.fone}
                     />
                   </Grid>
                   <Grid item xs={12}>
@@ -853,10 +739,7 @@ const Visualizar = () => {
                       variant="standard"
                       disabled
                       fullWidth
-                      value={
-                        loadedFicha.defaultValues.exposicao.tipos
-                          .via_de_exposicao
-                      }
+                      value={loadedFicha.exposicao.tipos.via_de_exposicao}
                     />
                   </Grid>
                   <Grid item xs={6}>
@@ -867,8 +750,7 @@ const Visualizar = () => {
                       disabled
                       fullWidth
                       value={
-                        loadedFicha.defaultValues.exposicao.tipos
-                          .circunstancia_de_exposicao
+                        loadedFicha.exposicao.tipos.circunstancia_de_exposicao
                       }
                     />
                   </Grid>
@@ -879,9 +761,7 @@ const Visualizar = () => {
                       variant="standard"
                       disabled
                       fullWidth
-                      value={
-                        loadedFicha.defaultValues.exposicao.tipos.local_mordida
-                      }
+                      value={loadedFicha.exposicao.tipos.local_mordida}
                     />
                   </Grid>
                   <Grid item xs={6}>
@@ -891,9 +771,7 @@ const Visualizar = () => {
                       variant="standard"
                       disabled
                       fullWidth
-                      value={
-                        loadedFicha.defaultValues.exposicao.especificar_mordida
-                      }
+                      value={loadedFicha.exposicao.especificar_mordida}
                     />
                   </Grid>
                   <Grid item xs={12}>
@@ -914,8 +792,7 @@ const Visualizar = () => {
                       disabled
                       fullWidth
                       value={
-                        loadedFicha.defaultValues.outrasInformacoes
-                          .classificacao_gravidade
+                        loadedFicha.outrasInformacoes.classificacao_gravidade
                       }
                     />
                   </Grid>
@@ -927,8 +804,8 @@ const Visualizar = () => {
                       disabled
                       fullWidth
                       value={
-                        loadedFicha.defaultValues.outrasInformacoes
-                          .manifestacoesClinicas.manifestacao
+                        loadedFicha.outrasInformacoes.manifestacoesClinicas
+                          .manifestacao
                       }
                     />
                   </Grid>
@@ -940,8 +817,8 @@ const Visualizar = () => {
                       disabled
                       fullWidth
                       value={
-                        loadedFicha.defaultValues.outrasInformacoes
-                          .manifestacoesClinicas.sinais_sintomas
+                        loadedFicha.outrasInformacoes.manifestacoesClinicas
+                          .sinais_sintomas
                       }
                     />
                   </Grid>
@@ -958,8 +835,7 @@ const Visualizar = () => {
                       disabled
                       fullWidth
                       value={
-                        loadedFicha.defaultValues.outrasInformacoes.tratamento
-                          .medida_tomada
+                        loadedFicha.outrasInformacoes.tratamento.medida_tomada
                       }
                     />
                   </Grid>
@@ -971,7 +847,7 @@ const Visualizar = () => {
                       disabled
                       fullWidth
                       value={
-                        loadedFicha.defaultValues.outrasInformacoes.tratamento
+                        loadedFicha.outrasInformacoes.tratamento
                           .medida_orientada
                       }
                     />
@@ -984,7 +860,7 @@ const Visualizar = () => {
                       disabled
                       fullWidth
                       value={
-                        loadedFicha.defaultValues.outrasInformacoes.tratamento
+                        loadedFicha.outrasInformacoes.tratamento
                           .medida_realizada
                       }
                     />
@@ -997,7 +873,7 @@ const Visualizar = () => {
                       disabled
                       fullWidth
                       value={
-                        loadedFicha.defaultValues.outrasInformacoes.tratamento
+                        loadedFicha.outrasInformacoes.tratamento
                           .informacoes_adicionais
                       }
                     />
@@ -1010,7 +886,7 @@ const Visualizar = () => {
                       disabled
                       fullWidth
                       value={
-                        loadedFicha.defaultValues.outrasInformacoes.tratamento
+                        loadedFicha.outrasInformacoes.tratamento
                           .exames_resultados_lab
                       }
                     />
@@ -1027,9 +903,7 @@ const Visualizar = () => {
                       variant="standard"
                       disabled
                       fullWidth
-                      value={
-                        loadedFicha.defaultValues.outrasInformacoes.historia
-                      }
+                      value={loadedFicha.outrasInformacoes.historia}
                     />
                   </Grid>
                   <Grid item xs={4}>
@@ -1039,7 +913,7 @@ const Visualizar = () => {
                       variant="standard"
                       disabled
                       fullWidth
-                      value={loadedFicha.defaultValues.outrasInformacoes.fonte}
+                      value={loadedFicha.outrasInformacoes.fonte}
                     />
                   </Grid>
                   <Grid item xs={4}>
@@ -1049,9 +923,7 @@ const Visualizar = () => {
                       variant="standard"
                       disabled
                       fullWidth
-                      value={
-                        loadedFicha.defaultValues.outrasInformacoes.complemento
-                      }
+                      value={loadedFicha.outrasInformacoes.complemento}
                     />
                   </Grid>
                   <Grid item xs={4}>
@@ -1061,9 +933,7 @@ const Visualizar = () => {
                       variant="standard"
                       disabled
                       fullWidth
-                      value={
-                        loadedFicha.defaultValues.outrasInformacoes.imagens
-                      }
+                      value={loadedFicha.outrasInformacoes.imagens}
                     />
                   </Grid>
                   <Grid item xs={12}>
@@ -1073,9 +943,7 @@ const Visualizar = () => {
                       variant="standard"
                       disabled
                       fullWidth
-                      value={
-                        loadedFicha.defaultValues.outrasInformacoes.observacoes
-                      }
+                      value={loadedFicha.outrasInformacoes.observacoes}
                     />
                   </Grid>
                   <Grid item xs={12}>
@@ -1083,88 +951,86 @@ const Visualizar = () => {
                       <Divider>Acompanhamento</Divider>
                     </Box>
                   </Grid>
-                  {loadedFicha.defaultValues.acompanhamento.dados.map(
-                    (item, index) => (
-                      <>
-                        <Grid item xs={12}>
-                          <Box mb={4} mt={3}>
-                            <Divider>Acompanhamento {index}</Divider>
-                          </Box>
-                        </Grid>
-                        <Grid item xs={3} key={index}>
-                          <TextField
-                            id="observacoes"
-                            label="Data/Hora "
-                            variant="standard"
-                            disabled
-                            fullWidth
-                            value={item.data_hora}
-                          />
-                        </Grid>
-                        <Grid item xs={3}>
-                          <TextField
-                            id="observacoes"
-                            label="Responsável "
-                            variant="standard"
-                            disabled
-                            fullWidth
-                            value={item.responsavel}
-                          />
-                        </Grid>
-                        <Grid item xs={3}>
-                          <TextField
-                            id="observacoes"
-                            label="Evolucao "
-                            variant="standard"
-                            disabled
-                            fullWidth
-                            value={item.evolucao}
-                          />
-                        </Grid>
-                        <Grid item xs={3}>
-                          <TextField
-                            id="observacoes"
-                            label="Informante "
-                            variant="standard"
-                            disabled
-                            fullWidth
-                            value={item.informante}
-                          />
-                        </Grid>
+                  {loadedFicha.acompanhamento.dados.map((item, index) => (
+                    <>
+                      <Grid item xs={12}>
+                        <Box mb={4} mt={3}>
+                          <Divider>Acompanhamento {index}</Divider>
+                        </Box>
+                      </Grid>
+                      <Grid item xs={3} key={index}>
+                        <TextField
+                          id="observacoes"
+                          label="Data/Hora "
+                          variant="standard"
+                          disabled
+                          fullWidth
+                          value={item.data_hora}
+                        />
+                      </Grid>
+                      <Grid item xs={3}>
+                        <TextField
+                          id="observacoes"
+                          label="Responsável "
+                          variant="standard"
+                          disabled
+                          fullWidth
+                          value={item.responsavel}
+                        />
+                      </Grid>
+                      <Grid item xs={3}>
+                        <TextField
+                          id="observacoes"
+                          label="Evolucao "
+                          variant="standard"
+                          disabled
+                          fullWidth
+                          value={item.evolucao}
+                        />
+                      </Grid>
+                      <Grid item xs={3}>
+                        <TextField
+                          id="observacoes"
+                          label="Informante "
+                          variant="standard"
+                          disabled
+                          fullWidth
+                          value={item.informante}
+                        />
+                      </Grid>
 
-                        <Grid item xs={4}>
-                          <TextField
-                            id="observacoes"
-                            label="Instituicao "
-                            variant="standard"
-                            disabled
-                            fullWidth
-                            value={item.instituicao}
-                          />
-                        </Grid>
-                        <Grid item xs={4}>
-                          <TextField
-                            id="observacoes"
-                            label="Cidade "
-                            variant="standard"
-                            disabled
-                            fullWidth
-                            value={item.cidade}
-                          />
-                        </Grid>
-                        <Grid item xs={4}>
-                          <TextField
-                            id="observacoes"
-                            label="Fone "
-                            variant="standard"
-                            disabled
-                            fullWidth
-                            value={item.fone}
-                          />
-                        </Grid>
-                      </>
-                    ),
-                  )}
+                      <Grid item xs={4}>
+                        <TextField
+                          id="observacoes"
+                          label="Instituicao "
+                          variant="standard"
+                          disabled
+                          fullWidth
+                          value={item.instituicao}
+                        />
+                      </Grid>
+                      <Grid item xs={4}>
+                        <TextField
+                          id="observacoes"
+                          label="Cidade "
+                          variant="standard"
+                          disabled
+                          fullWidth
+                          value={item.cidade}
+                        />
+                      </Grid>
+                      <Grid item xs={4}>
+                        <TextField
+                          id="observacoes"
+                          label="Fone "
+                          variant="standard"
+                          disabled
+                          fullWidth
+                          value={item.fone}
+                        />
+                      </Grid>
+                    </>
+                  ))}
                   <Grid item xs={12}>
                     <Box mb={4} mt={3}>
                       <Divider>Classificação Final </Divider>
@@ -1178,7 +1044,7 @@ const Visualizar = () => {
                       disabled
                       fullWidth
                       value={
-                        loadedFicha.defaultValues.classificacaoFinal
+                        loadedFicha.classificacaoFinal
                           .classificacao_gravidade_final
                       }
                     />
@@ -1190,9 +1056,7 @@ const Visualizar = () => {
                       variant="standard"
                       disabled
                       fullWidth
-                      value={
-                        loadedFicha.defaultValues.classificacaoFinal.desfecho
-                      }
+                      value={loadedFicha.classificacaoFinal.desfecho}
                     />
                   </Grid>
                   <Grid item xs={6}>
@@ -1202,7 +1066,7 @@ const Visualizar = () => {
                       variant="standard"
                       disabled
                       fullWidth
-                      value={loadedFicha.defaultValues.classificacaoFinal.obito}
+                      value={loadedFicha.classificacaoFinal.obito}
                     />
                   </Grid>
                   <Grid item xs={6}>
@@ -1212,9 +1076,7 @@ const Visualizar = () => {
                       variant="standard"
                       disabled
                       fullWidth
-                      value={
-                        loadedFicha.defaultValues.classificacaoFinal.autopsia
-                      }
+                      value={loadedFicha.classificacaoFinal.autopsia}
                     />
                   </Grid>
                   <Grid item xs={6}>
@@ -1224,7 +1086,7 @@ const Visualizar = () => {
                       variant="standard"
                       disabled
                       fullWidth
-                      value={loadedFicha.defaultValues.classificacaoFinal.data}
+                      value={loadedFicha.classificacaoFinal.data}
                     />
                   </Grid>
                   <Grid item xs={6}>
@@ -1234,10 +1096,7 @@ const Visualizar = () => {
                       variant="standard"
                       disabled
                       fullWidth
-                      value={
-                        loadedFicha.defaultValues.classificacaoFinal
-                          .resultado_autopsia
-                      }
+                      value={loadedFicha.classificacaoFinal.resultado_autopsia}
                     />
                   </Grid>
                   <Grid item xs={12}>
@@ -1247,10 +1106,7 @@ const Visualizar = () => {
                       variant="standard"
                       disabled
                       fullWidth
-                      value={
-                        loadedFicha.defaultValues.classificacaoFinal
-                          .contribuicao_obito
-                      }
+                      value={loadedFicha.classificacaoFinal.contribuicao_obito}
                     />
                   </Grid>
                 </Grid>
