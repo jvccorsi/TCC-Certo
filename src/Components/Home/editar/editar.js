@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import {
   Container,
   Box,
@@ -9,15 +9,20 @@ import {
   Divider,
   Modal,
   Typography,
+  FormControl,
+  InputLabel,
+  Select,
+  MenuItem,
 } from '@mui/material';
 import { useParams } from 'react-router';
 import ReceiptOutlinedIcon from '@mui/icons-material/ReceiptOutlined';
 import { Link } from 'react-router-dom';
 import styles from './editar.module.css';
 
-import { useForm } from 'react-hook-form';
+import { Controller, useForm } from 'react-hook-form';
 import { useHttpClient } from '../../Hooks/http-hook';
 import LoadingSpinner from '../../IUElements/LoadingSpinner';
+import { AuthContext } from '../../Hooks/AuthContext';
 
 const style = {
   position: 'absolute',
@@ -30,16 +35,34 @@ const style = {
   boxShadow: 24,
   p: 4,
 };
+const categoria = [
+  'Medico',
+  'Enfermeiro',
+  'Paciente',
+  'Parente/familitar',
+  'Estudante de Medicina',
+  'Estudante de outra area da saude',
+  'Estudante-Outro',
+  'Farmaceutico',
+  'Tecnico/Auxiliar de enfermagem',
+  'Veterinario',
+  'Outro profissional da saude',
+  'Outro profissional',
+  'Ignorado',
+];
+const FCWidth = {
+  width: '20rem',
+};
 
 const Editar = () => {
   const { id } = useParams();
   const [loadedFicha, setLoadedFicha] = useState();
   const [controller, setController] = useState(0);
-  const { register, handleSubmit, reset } = useForm({});
+  const { register, handleSubmit, reset, control } = useForm({});
   const { isLoading, sendRequest, clearError, error } = useHttpClient();
   const [update, setUpdate] = useState(false);
   const [open, setOpen] = useState(false);
-  const [versionDoc, setVersionDoc] = useState();
+  const auth = useContext(AuthContext);
 
   const handleClose = () => {
     setOpen(false);
@@ -54,7 +77,7 @@ const Editar = () => {
           'GET',
         );
         setLoadedFicha(responseData);
-        setVersionDoc(responseData.__v);
+
         reset(responseData);
       } catch (error) {
         console.log(error);
@@ -75,7 +98,7 @@ const Editar = () => {
 
       try {
         await sendRequest(
-          `https://api-tcc-unicamp.herokuapp.com/api/fichas/${id}`,
+          `http://localhost:3000/api/fichas/${id}`,
           'PATCH',
           JSON.stringify(data_post),
           {
@@ -161,8 +184,8 @@ const Editar = () => {
                     <Grid container spacing={2}>
                       <Grid item xs={11}>
                         <Typography variant="h6" component="h6">
-                          Versão edição:{' '}
-                          <b style={{ color: '#0072FF' }}>{versionDoc}</b>
+                          Editor:{' '}
+                          <b style={{ color: '#0072FF' }}>{auth.userId}</b>
                         </Typography>
                       </Grid>
 
@@ -197,6 +220,50 @@ const Editar = () => {
                           variant="standard"
                           fullWidth
                           {...register('atendimento.ficha.tipo_ficha')}
+                        />
+                      </Grid>
+
+                      <Grid item xs={6}>
+                        <Controller
+                          name="solicitante.categoria_multiple_select"
+                          control={control}
+                          type="text"
+                          defaultValue={[]}
+                          render={({ field }) => (
+                            <FormControl sx={FCWidth}>
+                              <InputLabel id="solicitante">
+                                Solicitante
+                              </InputLabel>
+                              <Select
+                                {...field}
+                                labelId="solicitante"
+                                label="solicitante"
+                                multiple
+                                defaultValue={[]}
+                              >
+                                {categoria.map((age) => (
+                                  <MenuItem value={age} key={age}>
+                                    {age}
+                                  </MenuItem>
+                                ))}
+                              </Select>
+                            </FormControl>
+                          )}
+                        />
+                      </Grid>
+                      <Grid item xs={6}>
+                        <Controller
+                          control={control}
+                          name="atendimento.data_atendimento"
+                          render={({ field }) => (
+                            <TextField
+                              id="data_atendimento"
+                              variant="outlined"
+                              placeholder="Data do atendimento"
+                              {...field}
+                              type="date"
+                            />
+                          )}
                         />
                       </Grid>
                     </Grid>
