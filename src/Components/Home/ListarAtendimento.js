@@ -116,23 +116,11 @@ const ListarAtendimento = () => {
       renderCell: (params) => {
         const onClickEditar = (e) => {
           e.stopPropagation(); // don't select this row after clicking
-
-          const api = params.api;
-          const thisRow = {};
-
-          api
-            .getAllColumns()
-            .filter((c) => c.field !== '__check__' && !!c)
-            .forEach(
-              (c) => (thisRow[c.field] = params.getValue(params.id, c.field)),
-            );
-
-          navigate(`../editar/${btoa(JSON.stringify(thisRow.id))} `, {
+          navigate(`../editar/${params.id} `, {
             replace: true,
           });
-
           //Retorna o id da linha!
-          return JSON.stringify(thisRow.id);
+          return JSON.stringify(params.id);
         };
 
         return (
