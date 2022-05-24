@@ -7,6 +7,8 @@ import {
   Paper,
   TextField,
   Divider,
+  Modal,
+  Typography,
 } from '@mui/material';
 import { useParams } from 'react-router';
 import ReceiptOutlinedIcon from '@mui/icons-material/ReceiptOutlined';
@@ -17,14 +19,32 @@ import { useForm } from 'react-hook-form';
 import { useHttpClient } from '../../Hooks/http-hook';
 import LoadingSpinner from '../../IUElements/LoadingSpinner';
 
+const style = {
+  position: 'absolute',
+  top: '50%',
+  left: '50%',
+  transform: 'translate(-50%, -50%)',
+  width: 400,
+  bgcolor: 'background.paper',
+  border: '2px solid #000',
+  boxShadow: 24,
+  p: 4,
+};
+
 const Editar = () => {
   const { id } = useParams();
   const [loadedFicha, setLoadedFicha] = useState();
-
   const [controller, setController] = useState(0);
-
   const { register, handleSubmit, reset } = useForm({});
-  const { isLoading, sendRequest } = useHttpClient();
+  const { isLoading, sendRequest, clearError, error } = useHttpClient();
+  const [update, setUpdate] = useState(false);
+  const [open, setOpen] = useState(false);
+  const [versionDoc, setVersionDoc] = useState();
+
+  const handleClose = () => {
+    setOpen(false);
+    clearError();
+  };
 
   useEffect(() => {
     const fetchFichas = async () => {
@@ -34,6 +54,7 @@ const Editar = () => {
           'GET',
         );
         setLoadedFicha(responseData);
+        setVersionDoc(responseData.__v);
         reset(responseData);
       } catch (error) {
         console.log(error);
@@ -51,6 +72,7 @@ const Editar = () => {
       );
       const version2 = responseData.__v;
       data_post.__v = version2;
+
       try {
         await sendRequest(
           `https://api-tcc-unicamp.herokuapp.com/api/fichas/${id}`,
@@ -60,14 +82,50 @@ const Editar = () => {
             'Content-Type': 'application/json',
           },
         );
-      } catch (error) {}
+        setUpdate(true);
+      } catch (err) {}
       setController(Math.random());
-    } catch (error) {}
+    } catch (err) {}
+    setOpen(true);
   };
 
   return (
     <>
       {isLoading && <LoadingSpinner asOverlay />}
+
+      <Modal
+        open={open}
+        onClose={handleClose}
+        aria-labelledby="modal-modal-title"
+        aria-describedby="modal-modal-description"
+      >
+        <Box sx={style}>
+          {update ? (
+            <Typography id="modal-modal-title" variant="h6" component="h2">
+              Update realizado com sucesso!!
+            </Typography>
+          ) : (
+            <Typography id="modal-modal-title" variant="h6" component="h2">
+              Ocorreu um erro!!
+              <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+                {error}
+              </Typography>
+            </Typography>
+          )}
+
+          <Box maxWidth={false} mt={2}>
+            <Button
+              onClick={handleClose}
+              variant="contained"
+              color="success"
+              size="small"
+              className={styles.textfield_options}
+            >
+              Fechar
+            </Button>
+          </Box>
+        </Box>
+      </Modal>
 
       <section>
         <Container maxWidth="xl" fixed>
@@ -99,12 +157,25 @@ const Editar = () => {
                 style={{ maxHeight: '70vh', overflow: 'auto' }}
               >
                 <form onSubmit={handleSubmit(submitFormRequest)}>
-                  <div className="btn-post">
-                    <button type="submit">Enviar</button>
-                  </div>
-
                   <Box m={4}>
                     <Grid container spacing={2}>
+                      <Grid item xs={11}>
+                        <Typography variant="h6" component="h6">
+                          Versão edição:{' '}
+                          <b style={{ color: '#0072FF' }}>{versionDoc}</b>
+                        </Typography>
+                      </Grid>
+
+                      <Grid item xs={1}>
+                        <Button
+                          variant="contained"
+                          color="success"
+                          type="submit"
+                        >
+                          Enviar
+                        </Button>
+                      </Grid>
+
                       <Grid item xs={12}>
                         <Box mt={3}>
                           <Divider>Dados - Iniciar ficha</Divider>
