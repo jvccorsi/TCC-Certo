@@ -98,7 +98,7 @@ const Editar = () => {
 
       try {
         await sendRequest(
-          `http://localhost:3000/api/fichas/${id}`,
+          `https://api-tcc-unicamp.herokuapp.com/api/fichas/${id}`,
           'PATCH',
           JSON.stringify(data_post),
           {
