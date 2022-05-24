@@ -30,7 +30,7 @@ const Editar = () => {
     const fetchFichas = async () => {
       try {
         const responseData = await sendRequest(
-          `http://localhost:3000/api/fichas/${id}`,
+          `https://api-tcc-unicamp.herokuapp.com/api/fichas/${id}`,
           'GET',
         );
         setLoadedFicha(responseData);
@@ -46,15 +46,14 @@ const Editar = () => {
     var data_post = data;
     try {
       const responseData = await sendRequest(
-        `http://localhost:3000/api/fichas/${id}`,
+        `https://api-tcc-unicamp.herokuapp.com/api/fichas/${id}`,
         'GET',
       );
       const version2 = responseData.__v;
       data_post.__v = version2;
       try {
         await sendRequest(
-          `http://localhost:3000/api/fichas/${id}`,
-
+          `https://api-tcc-unicamp.herokuapp.com/api/fichas/${id}`,
           'PATCH',
           JSON.stringify(data_post),
           {
