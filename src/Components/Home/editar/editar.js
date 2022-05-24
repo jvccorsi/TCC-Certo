@@ -53,7 +53,8 @@ const Editar = () => {
       data_post.__v = version2;
       try {
         await sendRequest(
-          'http://localhost:3000/api/fichas/6289316fec14d8e74d06698c',
+          `http://localhost:3000/api/fichas/${id}`,
+
           'PATCH',
           JSON.stringify(data_post),
           {
