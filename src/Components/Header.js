@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import styles from './Header.module.css';
 import { Link } from 'react-router-dom';
 import {
@@ -22,11 +22,33 @@ import ListItemIcon from '@mui/material/ListItemIcon';
 
 import Logout from '@mui/icons-material/Logout';
 import { AuthContext } from './Hooks/AuthContext';
+import { useHttpClient } from './Hooks/http-hook';
 
 const Header = () => {
   const [value, setValue] = React.useState(0);
+  const [nomeUser, setNomeUser] = React.useState();
+  const auth = useContext(AuthContext);
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
+
+  const { sendRequest } = useHttpClient();
+
+  useEffect(() => {
+    const fetchUserById = async () => {
+      if (auth.isLoggedIn && auth.userId) {
+        try {
+          const responseData = await sendRequest(
+            `https://api-tcc-unicamp.herokuapp.com/api/users/${auth.userId}`,
+            'GET',
+          );
+          setNomeUser(responseData);
+        } catch (error) {
+          console.log(error);
+        }
+      }
+    };
+    fetchUserById();
+  }, [auth.isLoggedIn, sendRequest, auth.userId]);
 
   const theme = useTheme();
   const isMatch = useMediaQuery(theme.breakpoints.down('md'));
@@ -42,7 +64,6 @@ const Header = () => {
   const handleClose = () => {
     setAnchorEl(null);
   };
-  const auth = useContext(AuthContext);
   return (
     <header className={styles.header}>
       <Container maxWidth="xl" className={styles.container} fixed>
@@ -115,7 +136,8 @@ const Header = () => {
                               }}
                             />
 
-                            <p> Hi, João</p>
+                            {nomeUser && <p>{nomeUser.name} </p>}
+
                             <IconButton onClick={handleClick} size="small">
                               <ExpandMoreIcon fontSize="small" />
                             </IconButton>

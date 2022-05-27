@@ -94,7 +94,6 @@ const Editar = () => {
           'GET',
         );
         setEmailUser(responseData);
-        console.log(responseData);
       } catch (error) {
         console.log(error);
       }
