@@ -57,6 +57,7 @@ const FCWidth = {
 const Editar = () => {
   const { id } = useParams();
   const [loadedFicha, setLoadedFicha] = useState();
+  const [emailUser, setEmailUser] = useState();
   const [controller, setController] = useState(0);
   const { register, handleSubmit, reset, control } = useForm({});
   const { isLoading, sendRequest, clearError, error } = useHttpClient();
@@ -77,7 +78,6 @@ const Editar = () => {
           'GET',
         );
         setLoadedFicha(responseData);
-
         reset(responseData);
       } catch (error) {
         console.log(error);
@@ -85,6 +85,22 @@ const Editar = () => {
     };
     fetchFichas();
   }, [sendRequest, id, reset, controller]);
+
+  useEffect(() => {
+    const fetchUserById = async () => {
+      try {
+        const responseData = await sendRequest(
+          `https://api-tcc-unicamp.herokuapp.com/api/users/${auth.userId}`,
+          'GET',
+        );
+        setEmailUser(responseData);
+        console.log(responseData);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    fetchUserById();
+  }, [sendRequest, auth.userId]);
 
   const submitFormRequest = async (data) => {
     var data_post = data;
@@ -164,7 +180,9 @@ const Editar = () => {
 
             <Grid container spacing={2}>
               <Grid item xs={11}>
-                <h1 className={styles.titulo_visualizar}>Editar - {id}</h1>
+                <h1 className={styles.titulo_visualizar}>
+                  Editar - Ficha: {id}
+                </h1>
               </Grid>
               <Grid item xs={1}>
                 <Link to="/home/listar">
@@ -183,10 +201,14 @@ const Editar = () => {
                   <Box m={4}>
                     <Grid container spacing={2}>
                       <Grid item xs={11}>
-                        <Typography variant="h6" component="h6">
-                          Editor:{' '}
-                          <b style={{ color: '#0072FF' }}>{auth.userId}</b>
-                        </Typography>
+                        {emailUser && (
+                          <Typography variant="h6" component="h6">
+                            Email do editor atual:{' '}
+                            <b style={{ color: '#0072FF' }}>
+                              {emailUser.email}{' '}
+                            </b>
+                          </Typography>
+                        )}
                       </Grid>
 
                       <Grid item xs={1}>
