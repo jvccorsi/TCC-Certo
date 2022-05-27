@@ -50,7 +50,6 @@ const LoginForm = () => {
 
   async function handleSubmit(event) {
     event.preventDefault();
-    console.log('Email:' + email + 'Password: ' + password);
     try {
       const responseData = await sendRequest(
         'https://api-tcc-unicamp.herokuapp.com/api/users/login',
