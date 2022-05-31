@@ -1,289 +1,120 @@
-import { TextField, Grid, Box, Divider } from '@mui/material';
+import { TextField, Grid, Box, Divider, IconButton } from '@mui/material';
+
 import React from 'react';
-import { Controller, useFormContext } from 'react-hook-form';
+import { Controller, useFormContext, useFieldArray } from 'react-hook-form';
+import AddCircleIcon from '@mui/icons-material/AddCircle';
+import DeleteIcon from '@mui/icons-material/Delete';
 
 const AgenteToxico = () => {
-  const { control } = useFormContext();
+  const { control, register } = useFormContext();
+  const { fields, append, remove } = useFieldArray({
+    control,
+    name: 'agenteToxico.dados',
+  });
 
   return (
     <Box m={4}>
       <Grid container spacing={2}>
         <Grid item xs={12}>
           <Box m={3}>
-            <Divider>Agente 1</Divider>
-          </Box>
-        </Grid>
-        <Grid item xs={6}>
-          <Controller
-            control={control}
-            name="agenteToxico.agente1.nome"
-            render={({ field }) => (
-              <TextField
-                id="agente1.nome"
-                label="Nome Popular/Comercial"
-                variant="outlined"
-                placeholder="Nome Popular/Comercial"
-                fullWidth
-                {...field}
-                type="text"
-              />
-            )}
-          />
-        </Grid>
-        <Grid item xs={6}>
-          <Controller
-            control={control}
-            name="agenteToxico.agente1.substancia_Genero"
-            render={({ field }) => (
-              <TextField
-                id="agente1.substancia_Genero"
-                label="Substância/Gênero-espécie"
-                variant="outlined"
-                placeholder="Substância/Gênero-espécie"
-                fullWidth
-                {...field}
-                type="text"
-              />
-            )}
-          />
-        </Grid>
-        <Grid item xs={4}>
-          <Controller
-            control={control}
-            name="agenteToxico.agente1.subclasse"
-            render={({ field }) => (
-              <TextField
-                id="agente1.subclasse"
-                label="Subclasse"
-                variant="outlined"
-                placeholder="Subclasse"
-                fullWidth
-                {...field}
-                type="text"
-              />
-            )}
-          />
-        </Grid>
-        <Grid item xs={4}>
-          <Controller
-            control={control}
-            name="agenteToxico.agente1.classe"
-            render={({ field }) => (
-              <TextField
-                id="agente1.classe"
-                label="Classe"
-                variant="outlined"
-                placeholder="Classe"
-                fullWidth
-                {...field}
-                type="text"
-              />
-            )}
-          />
-        </Grid>
-        <Grid item xs={4}>
-          <Controller
-            control={control}
-            name="agenteToxico.agente1.grupo"
-            render={({ field }) => (
-              <TextField
-                id="agente1.grupo"
-                label="Grupo"
-                variant="outlined"
-                placeholder="Grupo"
-                fullWidth
-                {...field}
-                type="text"
-              />
-            )}
-          />
-        </Grid>
-
-        <Grid item xs={12}>
-          <Box m={3}>
-            <Divider>Agente 2</Divider>
+            <Divider>Agente Tóxico</Divider>
           </Box>
         </Grid>
 
-        <Grid item xs={6}>
-          <Controller
-            control={control}
-            name="agenteToxico.agente2.nome"
-            render={({ field }) => (
-              <TextField
-                id="agente2.nome"
-                label="Nome Popular/Comercial"
-                variant="outlined"
-                placeholder="Nome Popular/Comercial"
-                fullWidth
-                {...field}
-                type="text"
-              />
-            )}
-          />
+        <Grid item xs={3}>
+          <IconButton
+            variant="contained"
+            color="success"
+            onClick={() => {
+              append({
+                nome: '',
+                substancia_Genero: '',
+                subclasse: '',
+                classe: '',
+                grupo: '',
+              });
+            }}
+          >
+            <AddCircleIcon /> Adicionar
+          </IconButton>
         </Grid>
 
-        <Grid item xs={6}>
-          <Controller
-            control={control}
-            name="agenteToxico.agente2.substancia_Genero"
-            render={({ field }) => (
-              <TextField
-                id="agente2.substancia_Genero"
-                label="Substância/Gênero-espécie"
-                variant="outlined"
-                placeholder="Substância/Gênero-espécie"
-                fullWidth
-                {...field}
-                type="text"
-              />
-            )}
-          />
-        </Grid>
-        <Grid item xs={4}>
-          <Controller
-            control={control}
-            name="agenteToxico.agente2.subclasse"
-            render={({ field }) => (
-              <TextField
-                id="agente2.subclasse"
-                label="Subclasse"
-                variant="outlined"
-                placeholder="Subclasse"
-                fullWidth
-                {...field}
-                type="text"
-              />
-            )}
-          />
-        </Grid>
-        <Grid item xs={4}>
-          <Controller
-            control={control}
-            name="agenteToxico.agente2.classe"
-            render={({ field }) => (
-              <TextField
-                id="agente2.classe"
-                label="Classe"
-                variant="outlined"
-                placeholder="Classe"
-                fullWidth
-                {...field}
-                type="text"
-              />
-            )}
-          />
-        </Grid>
-        <Grid item xs={4}>
-          <Controller
-            control={control}
-            name="agenteToxico.agente2.grupo"
-            render={({ field }) => (
-              <TextField
-                id="agente2.grupo"
-                label="Grupo"
-                variant="outlined"
-                placeholder="Grupo"
-                fullWidth
-                {...field}
-                type="text"
-              />
-            )}
-          />
+        <Grid item xs={9}>
+          <ul>
+            {fields.map((item, index) => {
+              return (
+                <>
+                  <li key={item.id}>
+                    <TextField
+                      margin="dense"
+                      id="nome"
+                      label="Nome Agente"
+                      variant="outlined"
+                      placeholder="Nome Agente"
+                      fullWidth
+                      type="text"
+                      {...register(`agenteToxico.dados.${index}.nome`)}
+                    />
+
+                    <TextField
+                      margin="dense"
+                      id="substanciaGenero"
+                      label="Substancia Genero"
+                      variant="outlined"
+                      placeholder="Substancia Genero"
+                      fullWidth
+                      type="text"
+                      {...register(
+                        `agenteToxico.dados.${index}.substancia_Genero`,
+                      )}
+                    />
+                    <TextField
+                      margin="dense"
+                      id="subclasse"
+                      label="Subclasse"
+                      variant="outlined"
+                      placeholder="Subclasse"
+                      fullWidth
+                      type="text"
+                      {...register(`agenteToxico.dados.${index}.subclasse`)}
+                    />
+                    <TextField
+                      margin="dense"
+                      id="classe"
+                      label="Classe"
+                      variant="outlined"
+                      placeholder="Classe"
+                      fullWidth
+                      type="text"
+                      {...register(`agenteToxico.dados.${index}.classe`)}
+                    />
+                    <TextField
+                      margin="dense"
+                      id="grupo"
+                      label="Grupo"
+                      variant="outlined"
+                      placeholder="Grupo"
+                      fullWidth
+                      type="text"
+                      {...register(`agenteToxico.dados.${index}.grupo`)}
+                    />
+                    <Grid item xs={6}>
+                      <IconButton
+                        aria-label="delete"
+                        onClick={() => remove(index)}
+                        color="error"
+                      >
+                        <DeleteIcon />
+                        Deletar ⇧
+                      </IconButton>
+                    </Grid>
+                  </li>
+                </>
+              );
+            })}
+          </ul>
         </Grid>
 
-        <Grid item xs={12}>
-          <Box m={3}>
-            <Divider>Agente 3</Divider>
-          </Box>
-        </Grid>
-
-        <Grid item xs={6}>
-          <Controller
-            control={control}
-            name="agenteToxico.agente3.nome"
-            render={({ field }) => (
-              <TextField
-                id="agente3.nome"
-                label="Nome Popular/Comercial"
-                variant="outlined"
-                placeholder="Nome Popular/Comercial"
-                fullWidth
-                {...field}
-                type="text"
-              />
-            )}
-          />
-        </Grid>
-
-        <Grid item xs={6}>
-          <Controller
-            control={control}
-            name="agenteToxico.agente3.substancia_Genero"
-            render={({ field }) => (
-              <TextField
-                id="agente3.substancia_Genero"
-                label="Substância/Gênero-espécie"
-                variant="outlined"
-                placeholder="Substância/Gênero-espécie"
-                fullWidth
-                {...field}
-                type="text"
-              />
-            )}
-          />
-        </Grid>
-        <Grid item xs={4}>
-          <Controller
-            control={control}
-            name="agenteToxico.agente3.subclasse"
-            render={({ field }) => (
-              <TextField
-                id="agente3.subclasse"
-                label="Subclasse"
-                variant="outlined"
-                placeholder="Subclasse"
-                fullWidth
-                {...field}
-                type="text"
-              />
-            )}
-          />
-        </Grid>
-        <Grid item xs={4}>
-          <Controller
-            control={control}
-            name="agenteToxico.agente3.classe"
-            render={({ field }) => (
-              <TextField
-                id="agente3.classe"
-                label="Classe"
-                variant="outlined"
-                placeholder="Classe"
-                fullWidth
-                {...field}
-                type="text"
-              />
-            )}
-          />
-        </Grid>
-        <Grid item xs={4}>
-          <Controller
-            control={control}
-            name="agenteToxico.agente3.grupo"
-            render={({ field }) => (
-              <TextField
-                id="agente3.grupo"
-                label="Grupo"
-                variant="outlined"
-                placeholder="Grupo"
-                fullWidth
-                {...field}
-                type="text"
-              />
-            )}
-          />
-        </Grid>
         <Grid item xs={12}>
           <Box m={3}>
             <Divider></Divider>

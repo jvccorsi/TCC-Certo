@@ -522,15 +522,70 @@ const Visualizar = () => {
                       <Divider>Agente Tóxico</Divider>
                     </Box>
                   </Grid>
+                  {loadedFicha.agenteToxico.dados.map((item, index) => (
+                    <>
+                      <Grid item xs={12}>
+                        <Box mb={4} mt={3}>
+                          <Divider>Agente Tóxico - {index + 1}</Divider>
+                        </Box>
+                      </Grid>
+                      <Grid item xs={4} key={index}>
+                        <TextField
+                          id="Nome"
+                          label="Nome"
+                          variant="standard"
+                          disabled
+                          fullWidth
+                          value={item.nome}
+                        />
+                      </Grid>
+                      <Grid item xs={5}>
+                        <TextField
+                          id="substanciaGenero"
+                          label="Substancia Genero "
+                          variant="standard"
+                          disabled
+                          fullWidth
+                          value={item.substancia_Genero}
+                        />
+                      </Grid>
+                      <Grid item xs={3}>
+                        <TextField
+                          id="subclasse"
+                          label="Subclasse "
+                          variant="standard"
+                          disabled
+                          fullWidth
+                          value={item.subclasse}
+                        />
+                      </Grid>
+                      <Grid item xs={6}>
+                        <TextField
+                          id="classe"
+                          label="Classe "
+                          variant="standard"
+                          disabled
+                          fullWidth
+                          value={item.classe}
+                        />
+                      </Grid>
+
+                      <Grid item xs={6}>
+                        <TextField
+                          id="grupo"
+                          label="Grupo "
+                          variant="standard"
+                          disabled
+                          fullWidth
+                          value={item.grupo}
+                        />
+                      </Grid>
+                    </>
+                  ))}
                   <Grid item xs={12}>
-                    <TextField
-                      id="convenio_paciente"
-                      label="COLOCAR ARRAY FIELD AQUI"
-                      variant="standard"
-                      disabled
-                      fullWidth
-                      value={'PULEIIIIIIIIIIIIII'}
-                    />
+                    <Box mb={4} mt={3}>
+                      <Divider>Complemento - Agente Tóxico</Divider>
+                    </Box>
                   </Grid>
                   <Grid item xs={4}>
                     <TextField
@@ -955,7 +1010,7 @@ const Visualizar = () => {
                     <>
                       <Grid item xs={12}>
                         <Box mb={4} mt={3}>
-                          <Divider>Acompanhamento {index}</Divider>
+                          <Divider>Acompanhamento {index + 1}</Divider>
                         </Box>
                       </Grid>
                       <Grid item xs={3} key={index}>
