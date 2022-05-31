@@ -137,27 +137,15 @@ const LinaerStepper = () => {
       },
 
       agenteToxico: {
-        agente1: {
-          nome: '',
-          substancia_Genero: '',
-          subclasse: '',
-          classe: '',
-          grupo: '',
-        },
-        agente2: {
-          nome: '',
-          substancia_Genero: '',
-          subclasse: '',
-          classe: '',
-          grupo: '',
-        },
-        agente3: {
-          nome: '',
-          substancia_Genero: '',
-          subclasse: '',
-          classe: '',
-          grupo: '',
-        },
+        dados: [
+          {
+            nome: '',
+            substancia_Genero: '',
+            subclasse: '',
+            classe: '',
+            grupo: '',
+          },
+        ],
         dados_complementares: '',
         quantidade_apresentacao: '',
         dose: '',
@@ -263,6 +251,7 @@ const LinaerStepper = () => {
   };
 
   const handleNext = (data) => {
+    console.log(data);
     if (activeStep === steps.length - 1) {
       //Se tiver acabado o stepper, ele submete!!
       submitFormRequest(data);
