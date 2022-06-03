@@ -21,6 +21,7 @@ import ClassificacaoFinal from './Forms/ClassificacaoFinal';
 import { useHttpClient } from '../../Hooks/http-hook';
 import { AuthContext } from '../../Hooks/AuthContext';
 import LoadingSpinner from '../../IUElements/LoadingSpinner';
+import Exame from './Forms/Exame';
 
 function getSteps() {
   return [
@@ -29,6 +30,7 @@ function getSteps() {
     'Paciente',
     'Agente Tóxico',
     'Exposição',
+    'Exame',
     'Outros informações',
     'Acompanhamento ',
     'Classificacao Final ',
@@ -60,11 +62,12 @@ function getStepContent(step) {
     case 4:
       return <Exposicao />;
     case 5:
-      return <OutrasInformacoes />;
-
+      return <Exame />;
     case 6:
-      return <Acompanhamento />;
+      return <OutrasInformacoes />;
     case 7:
+      return <Acompanhamento />;
+    case 8:
       return <ClassificacaoFinal />;
 
     default:
@@ -223,6 +226,15 @@ const LinaerStepper = () => {
         resultado_autopsia: '',
         contribuicao_obito: '',
       },
+
+      exame: {
+        dados: [
+          {
+            nomeExame: '',
+            resultadoExame: '',
+          },
+        ],
+      },
     },
   });
 
@@ -235,6 +247,8 @@ const LinaerStepper = () => {
     var data_post = {};
     data_post = data;
     data_post.creator = auth.userId;
+    data_post.updateby = auth.userId;
+    data_post.atendimentoStatus = 'aberto';
     try {
       await sendRequest(
         'https://api-tcc-unicamp.herokuapp.com/api/fichas',
@@ -251,7 +265,6 @@ const LinaerStepper = () => {
   };
 
   const handleNext = (data) => {
-    console.log(data);
     if (activeStep === steps.length - 1) {
       //Se tiver acabado o stepper, ele submete!!
       submitFormRequest(data);
