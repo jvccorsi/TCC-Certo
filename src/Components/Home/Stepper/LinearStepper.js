@@ -247,9 +247,11 @@ const LinaerStepper = () => {
     var data_post = {};
     data_post = data;
     data_post.creator = auth.userId;
+    data_post.updateby = auth.userId;
+    data_post.atendimentoStatus = 'aberto';
     try {
       await sendRequest(
-        'https://api-tcc-unicamp.herokuapp.com/api/fichas',
+        'http://localhost:3000/api/fichas',
         'POST',
         JSON.stringify(data_post),
         {
@@ -263,7 +265,6 @@ const LinaerStepper = () => {
   };
 
   const handleNext = (data) => {
-    console.log(data);
     if (activeStep === steps.length - 1) {
       //Se tiver acabado o stepper, ele submete!!
       submitFormRequest(data);
