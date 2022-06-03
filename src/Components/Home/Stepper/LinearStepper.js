@@ -251,7 +251,7 @@ const LinaerStepper = () => {
     data_post.atendimentoStatus = 'aberto';
     try {
       await sendRequest(
-        'http://localhost:3000/api/fichas',
+        'https://api-tcc-unicamp.herokuapp.com/api/fichas',
         'POST',
         JSON.stringify(data_post),
         {
