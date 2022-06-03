@@ -21,6 +21,7 @@ import ClassificacaoFinal from './Forms/ClassificacaoFinal';
 import { useHttpClient } from '../../Hooks/http-hook';
 import { AuthContext } from '../../Hooks/AuthContext';
 import LoadingSpinner from '../../IUElements/LoadingSpinner';
+import Exame from './Forms/Exame';
 
 function getSteps() {
   return [
@@ -29,6 +30,7 @@ function getSteps() {
     'Paciente',
     'Agente Tóxico',
     'Exposição',
+    'Exame',
     'Outros informações',
     'Acompanhamento ',
     'Classificacao Final ',
@@ -60,11 +62,12 @@ function getStepContent(step) {
     case 4:
       return <Exposicao />;
     case 5:
-      return <OutrasInformacoes />;
-
+      return <Exame />;
     case 6:
-      return <Acompanhamento />;
+      return <OutrasInformacoes />;
     case 7:
+      return <Acompanhamento />;
+    case 8:
       return <ClassificacaoFinal />;
 
     default:
@@ -222,6 +225,15 @@ const LinaerStepper = () => {
         autopsia: '',
         resultado_autopsia: '',
         contribuicao_obito: '',
+      },
+
+      exame: {
+        dados: [
+          {
+            nomeExame: '',
+            resultadoExame: '',
+          },
+        ],
       },
     },
   });
