@@ -20,10 +20,23 @@ import LoadingSpinner from '../../IUElements/LoadingSpinner';
 const Visualizar = () => {
   const [loadedFicha, setLoadedFicha] = useState();
   const { isLoading, sendRequest } = useHttpClient();
+  const [emailUser, setEmailUser] = useState();
 
   const { id } = useParams();
 
   useEffect(() => {
+    const fetchUserById = async (valor) => {
+      try {
+        const responseData = await sendRequest(
+          `https://api-tcc-unicamp.herokuapp.com/api/users/${valor.updateby}`,
+          'GET',
+        );
+        setEmailUser(responseData.email);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+
     const fetchFichas = async () => {
       try {
         const responseData = await sendRequest(
@@ -31,6 +44,7 @@ const Visualizar = () => {
           'GET',
         );
         setLoadedFicha(responseData);
+        fetchUserById(responseData);
       } catch (error) {
         console.log(error);
       }
@@ -831,6 +845,40 @@ const Visualizar = () => {
                   </Grid>
                   <Grid item xs={12}>
                     <Box mt={3} mb={4}>
+                      <Divider>Resultado Exames</Divider>
+                    </Box>
+                  </Grid>
+                  {loadedFicha.exame.dados.map((item, index) => (
+                    <>
+                      <Grid item xs={12}>
+                        <Box mb={4} mt={3}>
+                          <Divider>Exame/Resultado - {index + 1}</Divider>
+                        </Box>
+                      </Grid>
+                      <Grid item xs={10} key={index}>
+                        <TextField
+                          id="Exame"
+                          label="Exame"
+                          variant="standard"
+                          disabled
+                          fullWidth
+                          value={item.nomeExame}
+                        />
+                      </Grid>
+                      <Grid item xs={2}>
+                        <TextField
+                          id="resultadoExame"
+                          label="Resultado do Exame"
+                          variant="standard"
+                          disabled
+                          fullWidth
+                          value={item.resultadoExame}
+                        />
+                      </Grid>
+                    </>
+                  ))}
+                  <Grid item xs={12}>
+                    <Box mt={3} mb={4}>
                       <Divider>Outras Informações</Divider>
                     </Box>
                   </Grid>
@@ -1163,6 +1211,18 @@ const Visualizar = () => {
                       fullWidth
                       value={loadedFicha.classificacaoFinal.contribuicao_obito}
                     />
+                  </Grid>
+                  <Grid item xs={12}>
+                    {emailUser && (
+                      <TextField
+                        id="uptadeby"
+                        label="Ultima vez atualizado por: "
+                        variant="standard"
+                        disabled
+                        fullWidth
+                        value={emailUser}
+                      />
+                    )}
                   </Grid>
                 </Grid>
               </Box>
