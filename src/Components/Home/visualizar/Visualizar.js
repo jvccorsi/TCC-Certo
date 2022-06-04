@@ -241,6 +241,7 @@ const Visualizar = () => {
                       variant="standard"
                       disabled
                       fullWidth
+                      multiline
                       value={loadedFicha.solicitante.categoria_multiple_select}
                     />
                   </Grid>
@@ -673,6 +674,7 @@ const Visualizar = () => {
                       variant="standard"
                       disabled
                       fullWidth
+                      multiline
                       value={loadedFicha.exposicao.tipos.tipo_exposicao}
                     />
                   </Grid>
@@ -692,6 +694,7 @@ const Visualizar = () => {
                       label="Local Exposição "
                       variant="standard"
                       disabled
+                      multiline
                       fullWidth
                       value={loadedFicha.exposicao.tipos.local_exposicao}
                     />
@@ -808,6 +811,7 @@ const Visualizar = () => {
                       variant="standard"
                       disabled
                       fullWidth
+                      multiline
                       value={loadedFicha.exposicao.tipos.via_de_exposicao}
                     />
                   </Grid>
@@ -817,6 +821,7 @@ const Visualizar = () => {
                       label="Circunstancias da Exposição "
                       variant="standard"
                       disabled
+                      multiline
                       fullWidth
                       value={
                         loadedFicha.exposicao.tipos.circunstancia_de_exposicao
@@ -829,6 +834,7 @@ const Visualizar = () => {
                       label="Local Mordida "
                       variant="standard"
                       disabled
+                      multiline
                       fullWidth
                       value={loadedFicha.exposicao.tipos.local_mordida}
                     />
@@ -839,6 +845,7 @@ const Visualizar = () => {
                       label="Especificar "
                       variant="standard"
                       disabled
+                      multiline
                       fullWidth
                       value={loadedFicha.exposicao.especificar_mordida}
                     />
