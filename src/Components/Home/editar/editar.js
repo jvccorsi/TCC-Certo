@@ -310,7 +310,6 @@ const Editar = () => {
   const submitFormRequest = async (data) => {
     var data_post = data;
     data_post.updateby = auth.userId;
-    console.log(data_post);
     try {
       const responseData = await sendRequest(
         `https://api-tcc-unicamp.herokuapp.com/api/fichas/${id}`,
