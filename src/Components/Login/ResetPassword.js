@@ -16,7 +16,7 @@ const ResetPassword = () => {
             align="left"
             style={{ fontFamily: 'Alice', fontWeight: 'bold' }}
           >
-            Forgot your password?
+            Esqueceu sua senha?
           </Typography>
           <Typography
             variant="h6"
@@ -24,8 +24,8 @@ const ResetPassword = () => {
             align="left"
             style={{ fontFamily: 'Alice' }}
           >
-            Pleasse enter the email address associated with your account and We
-            will email you link to reset your password.
+            Por favor, entre com o endereço de email associado a sua conta e nos
+            enviaremos um email com um link para você alterar sua senha!
           </Typography>
 
           <form>
@@ -33,7 +33,7 @@ const ResetPassword = () => {
               <TextField
                 required
                 id="Email address"
-                label="Email address"
+                label="Endereço de email"
                 defaultValue=" "
                 fullWidth
                 type="email"
@@ -48,7 +48,7 @@ const ResetPassword = () => {
                 size="large"
                 fullWidth
               >
-                Reset Password
+                Resetar senha
               </Button>
             </Box>
           </form>
@@ -60,7 +60,7 @@ const ResetPassword = () => {
             mt={2}
           >
             <Link className={style.styles_link} to="/">
-              Back to login
+              Voltar ao login
             </Link>
           </Typography>
         </div>

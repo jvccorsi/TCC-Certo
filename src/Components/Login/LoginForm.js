@@ -120,11 +120,11 @@ const LoginForm = () => {
             <div className={styles.flex_direction_centralize}>
               <div className={styles.infos_login}>
                 <div className={styles.title_home}>
-                  <h1 className={styles.text}>Welcome to DataTox</h1>
+                  <h1 className={styles.text}>Bem vindo ao DataTox</h1>
                   <h3 className={styles.text}>
-                    New to DataTox?{' '}
+                    Você é novo aqui?{' '}
                     <Link className={styles.styles_link} to="/create-account">
-                      Create an account{' '}
+                      Crie sua aconta agora{' '}
                     </Link>
                   </h3>
                   <Button
@@ -142,7 +142,7 @@ const LoginForm = () => {
                   </Button>
                   <Box mt={3}>
                     <Divider className={styles.Divider}>
-                      Or sing up with email address
+                      Ou faça seu login com seu email
                     </Divider>
                   </Box>
                 </div>
@@ -152,8 +152,8 @@ const LoginForm = () => {
                     <TextField
                       id="email_hook"
                       name="email_hook"
-                      label="email"
-                      placeholder="Enter your email"
+                      label="Email"
+                      placeholder="Digite aqui o seu email"
                       variant="standard"
                       type="email"
                       autoFocus
@@ -188,7 +188,7 @@ const LoginForm = () => {
                           }}
                         >
                           <Checkbox defaultChecked />
-                          <p>Remember this Device</p>
+                          <p>Relembrar login</p>
                         </div>
                       </Grid>
                       <Grid item xs={5} sm={6}>
@@ -197,7 +197,7 @@ const LoginForm = () => {
                           to="/reset-password"
                           style={{ color: '#01A8FF' }}
                         >
-                          Reset Password
+                          Esqueci minha senha
                         </Link>
                       </Grid>
                     </Grid>
