@@ -1219,7 +1219,7 @@ const Visualizar = () => {
                       value={loadedFicha.classificacaoFinal.contribuicao_obito}
                     />
                   </Grid>
-                  <Grid item xs={12}>
+                  <Grid item xs={6}>
                     {emailUser && (
                       <TextField
                         id="uptadeby"
@@ -1230,6 +1230,16 @@ const Visualizar = () => {
                         value={emailUser}
                       />
                     )}
+                  </Grid>
+                  <Grid item xs={6}>
+                    <TextField
+                      id="Status Atendimento"
+                      label="Status Atendimento"
+                      variant="standard"
+                      fullWidth
+                      disabled
+                      value={loadedFicha.atendimentoStatus}
+                    />
                   </Grid>
                 </Grid>
               </Box>

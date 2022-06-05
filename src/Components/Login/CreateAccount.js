@@ -151,11 +151,11 @@ const CreateAccount = () => {
               <div className={styles.flex_direction_centralize}>
                 <div className={styles.infos_login}>
                   <div className={styles.title_home}>
-                    <h2 className={styles.text}>Get started absolutely free</h2>
+                    <h2 className={styles.text}>Crie sua conta grátis</h2>
                     <h3 className={styles.text}>
-                      Already have an Account?{' '}
+                      Você já tem uma conta?{' '}
                       <Link className={styles.styles_link} to="/">
-                        Sing in{' '}
+                        Faça seu login{' '}
                       </Link>
                     </h3>
 
@@ -174,7 +174,7 @@ const CreateAccount = () => {
                     </Button>
                     <Box mt={3}>
                       <Divider className={styles.Divider}>
-                        Or sing up with email address
+                        Ou se cadastre com seu email e senha
                       </Divider>
                     </Box>
                   </div>
@@ -186,7 +186,7 @@ const CreateAccount = () => {
                           <Box mr={2}>
                             <TextField
                               id="first_name"
-                              label="First Name"
+                              label="Nome"
                               variant="standard"
                               type="text"
                               autoFocus
@@ -201,7 +201,7 @@ const CreateAccount = () => {
                         <Grid item sm={6}>
                           <TextField
                             id="last_name"
-                            label="Last name"
+                            label="Sobrenome"
                             variant="standard"
                             type="text"
                             margin="normal"
@@ -216,8 +216,8 @@ const CreateAccount = () => {
                       <Box mt={2} mb={4}>
                         <TextField
                           id="email"
-                          label="Email Address"
-                          placeholder="Enter your username"
+                          label="Endereço de email"
+                          placeholder="Endereço de email"
                           variant="standard"
                           type="email"
                           required
@@ -229,11 +229,12 @@ const CreateAccount = () => {
 
                       <Box mt={2} mb={4}>
                         <TextField
-                          label="Password"
+                          label="Senha"
                           id="password"
                           variant="standard"
                           type="password"
                           required
+                          inputProps={{ minLength: 8 }}
                           className={styles.textfield_options}
                           value={password}
                           onChange={handleChangePassword}
@@ -247,7 +248,7 @@ const CreateAccount = () => {
                         size="large"
                         className={styles.textfield_options}
                       >
-                        Register
+                        Registrar
                       </Button>
                     </form>
                   </div>

@@ -150,6 +150,8 @@ const localExposicao = [
 
 const zonaExposicao = ['Urbana', 'Rural', 'Ignorado'];
 
+const atendimentoStatus = ['aberto', 'fechado'];
+
 const viaExposicao = [
   'Cutanea',
   'Ignorada',
@@ -406,7 +408,7 @@ const Editar = () => {
                 <form onSubmit={handleSubmit(submitFormRequest)}>
                   <Box m={4}>
                     <Grid container spacing={2}>
-                      <Grid item xs={11}>
+                      <Grid item xs={6}>
                         {emailUser && (
                           <Typography variant="h6" component="h6">
                             Email do editor atual:{' '}
@@ -415,6 +417,29 @@ const Editar = () => {
                             </b>
                           </Typography>
                         )}
+                      </Grid>
+                      <Grid item xs={4}>
+                        <Controller
+                          name="atendimentoStatus"
+                          control={control}
+                          type="text"
+                          defaultValue=""
+                          render={({ field }) => (
+                            <FormControl fullWidth>
+                              <InputLabel id="atendimentoStatus">
+                                Atendimento Status{' '}
+                              </InputLabel>
+
+                              <Select {...field} defaultValue="">
+                                {atendimentoStatus.map((res) => (
+                                  <MenuItem value={res} key={res}>
+                                    {res}
+                                  </MenuItem>
+                                ))}
+                              </Select>
+                            </FormControl>
+                          )}
+                        />
                       </Grid>
                       <Grid item xs={1}>
                         <Button
