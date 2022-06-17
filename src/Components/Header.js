@@ -38,7 +38,7 @@ const Header = () => {
       if (auth.isLoggedIn && auth.userId) {
         try {
           const responseData = await sendRequest(
-            `https://api-tcc-unicamp.herokuapp.com/api/users/${auth.userId}`,
+            `http://localhost:3000/api/users/${auth.userId}`,
             'GET',
           );
           setNomeUser(responseData);

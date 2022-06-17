@@ -14,7 +14,6 @@ import {
 import GoogleIcon from '@mui/icons-material/Google';
 import undraw_create from '../../Assets/undraw_medical_research_qg4d 1.svg';
 import Head from '../Head';
-// import { AuthContext } from '../Hooks/AuthContext';
 
 //MODAL:
 import LoadingSpinner from '../IUElements/LoadingSpinner';
@@ -35,8 +34,6 @@ const style = {
 };
 
 const CreateAccount = () => {
-  // const auth = useContext(AuthContext);
-
   const [firstName, setFirstName] = useState('');
   const [password, setPassword] = useState('');
   const [lastName, setLastName] = useState('');
@@ -64,7 +61,7 @@ const CreateAccount = () => {
 
     try {
       const responseData = await sendRequest(
-        'https://api-tcc-unicamp.herokuapp.com/api/users/signup',
+        'http://localhost:3000/api/users/signup',
         'POST',
         JSON.stringify({
           name: firstName,
@@ -78,7 +75,6 @@ const CreateAccount = () => {
       );
       setCadastro(true);
       if (cadastro) setOpen(true);
-      // auth.login(responseData.user.id); Login pós cadastro
       console.log(responseData);
     } catch (err) {}
   }

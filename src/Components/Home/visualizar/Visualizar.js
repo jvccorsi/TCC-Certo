@@ -28,7 +28,7 @@ const Visualizar = () => {
     const fetchUserById = async (valor) => {
       try {
         const responseData = await sendRequest(
-          `https://api-tcc-unicamp.herokuapp.com/api/users/${valor.updateby}`,
+          `http://localhost:3000/api/users/${valor.updateby}`,
           'GET',
         );
         setEmailUser(responseData.email);
@@ -40,7 +40,7 @@ const Visualizar = () => {
     const fetchFichas = async () => {
       try {
         const responseData = await sendRequest(
-          `https://api-tcc-unicamp.herokuapp.com/api/fichas/${id}`,
+          `http://localhost:3000/api/fichas/${id}`,
           'GET',
         );
         setLoadedFicha(responseData);
