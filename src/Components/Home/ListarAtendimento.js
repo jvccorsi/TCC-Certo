@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 
 import { DataGrid, GridToolbar } from '@mui/x-data-grid';
 import { useNavigate } from 'react-router-dom';
@@ -9,6 +9,7 @@ import EditSharpIcon from '@mui/icons-material/EditSharp';
 import RemoveRedEyeSharpIcon from '@mui/icons-material/RemoveRedEyeSharp';
 import { useHttpClient } from '../Hooks/http-hook';
 import LoadingSpinner from '../IUElements/LoadingSpinner';
+import { AuthContext } from '../Hooks/AuthContext';
 
 const style = {
   position: 'absolute',
@@ -36,6 +37,7 @@ const ListarAtendimento = () => {
   const [rows, setRows] = useState([]);
   let navigate = useNavigate();
   const { isLoading, sendRequest } = useHttpClient();
+  const auth = useContext(AuthContext);
 
   const columns = [
     {
@@ -185,6 +187,7 @@ const ListarAtendimento = () => {
         null,
         {
           'Content-Type': 'application/json',
+          Authorization: 'Bearer ' + auth.token,
         },
       );
       setDeleted(Math.random());

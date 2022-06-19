@@ -327,6 +327,7 @@ const Editar = () => {
           JSON.stringify(data_post),
           {
             'Content-Type': 'application/json',
+            Authorization: 'Bearer ' + auth.token,
           },
         );
         setUpdate(true);

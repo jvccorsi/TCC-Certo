@@ -9,21 +9,25 @@ import { AuthContext } from '../Hooks/AuthContext';
 import Header from '../Header';
 
 const Login = () => {
-  const [isLoggedIn, setIsLogged] = useState(false);
+  const [token, setToken] = useState(false);
   const [userId, setUserID] = useState(false);
-  const login = useCallback((uid) => {
-    setIsLogged(true);
+  const login = useCallback((uid, token) => {
+    setToken(token);
+    localStorage.setItem(
+      'userData',
+      JSON.stringify({ userId: uid, token: token }),
+    );
     setUserID(uid);
   }, []);
 
   const logout = useCallback(() => {
-    setIsLogged(false);
+    setToken(null);
     setUserID(null);
   }, []);
 
   let routes;
 
-  if (isLoggedIn) {
+  if (token) {
     routes = (
       <>
         {' '}
@@ -50,7 +54,8 @@ const Login = () => {
     <section>
       <AuthContext.Provider
         value={{
-          isLoggedIn: isLoggedIn,
+          isLoggedIn: !!token,
+          token: token,
           userId: userId,
           login: login,
           logout: logout,
