@@ -301,6 +301,7 @@ const Editar = () => {
           `https://api-tcc-unicamp.herokuapp.com/api/users/${auth.userId}`,
           'GET',
         );
+
         setEmailUser(responseData);
       } catch (error) {
         console.log(error);
