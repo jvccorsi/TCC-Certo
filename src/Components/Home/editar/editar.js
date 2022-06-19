@@ -282,7 +282,7 @@ const Editar = () => {
     const fetchFichas = async () => {
       try {
         const responseData = await sendRequest(
-          `http://localhost:3000/api/fichas/${id}`,
+          `https://api-tcc-unicamp.herokuapp.com/api/fichas/${id}`,
           'GET',
         );
         setLoadedFicha(responseData);
@@ -298,7 +298,7 @@ const Editar = () => {
     const fetchUserById = async () => {
       try {
         const responseData = await sendRequest(
-          `http://localhost:3000/api/users/${auth.userId}`,
+          `https://api-tcc-unicamp.herokuapp.com/api/users/${auth.userId}`,
           'GET',
         );
         setEmailUser(responseData);
@@ -314,7 +314,7 @@ const Editar = () => {
     data_post.updateby = auth.userId;
     try {
       const responseData = await sendRequest(
-        `http://localhost:3000/api/fichas/${id}`,
+        `https://api-tcc-unicamp.herokuapp.com/api/fichas/${id}`,
         'GET',
       );
       const version2 = responseData.__v;
@@ -322,7 +322,7 @@ const Editar = () => {
 
       try {
         await sendRequest(
-          `http://localhost:3000/api/fichas/${id}`,
+          `https://api-tcc-unicamp.herokuapp.com/api/fichas/${id}`,
           'PATCH',
           JSON.stringify(data_post),
           {

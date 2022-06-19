@@ -165,7 +165,7 @@ const ListarAtendimento = () => {
     const fetchFichas = async () => {
       try {
         const responseData = await sendRequest(
-          `http://localhost:3000/api/fichas`,
+          `https://api-tcc-unicamp.herokuapp.com/api/fichas`,
           'GET',
         );
         setLoadedFicha(responseData);
@@ -182,7 +182,7 @@ const ListarAtendimento = () => {
     handleClose();
     try {
       await sendRequest(
-        `http://localhost:3000/api/fichas/${idExcluir}`,
+        `https://api-tcc-unicamp.herokuapp.com/api/fichas/${idExcluir}`,
         'DELETE',
         null,
         {

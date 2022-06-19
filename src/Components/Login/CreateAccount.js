@@ -61,7 +61,7 @@ const CreateAccount = () => {
 
     try {
       const responseData = await sendRequest(
-        'http://localhost:3000/api/users/signup',
+        'https://api-tcc-unicamp.herokuapp.com/api/users/signup',
         'POST',
         JSON.stringify({
           name: firstName,
