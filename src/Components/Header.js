@@ -11,6 +11,7 @@ import {
   Avatar,
   useMediaQuery,
   useTheme,
+  ListItemButton,
 } from '@mui/material';
 import { ReactComponent as Logo } from '../Assets/logo.svg'; // Transformar o svg em components
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
@@ -63,6 +64,11 @@ const Header = () => {
 
   const handleClose = () => {
     setAnchorEl(null);
+  };
+
+  const handleLogout = () => {
+    console.log('logout');
+    auth.logout();
   };
   return (
     <header className={styles.header}>
@@ -184,10 +190,12 @@ const Header = () => {
                               }}
                             >
                               <MenuItem>
-                                <ListItemIcon>
-                                  <Logout fontSize="small" />
-                                </ListItemIcon>
-                                Logout
+                                <ListItemButton onClick={handleLogout}>
+                                  <ListItemIcon>
+                                    <Logout fontSize="small" />
+                                  </ListItemIcon>
+                                  Logout
+                                </ListItemButton>
                               </MenuItem>
                             </Menu>
                           </Box>
