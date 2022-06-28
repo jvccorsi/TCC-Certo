@@ -194,7 +194,7 @@ const LoginForm = () => {
                       <Grid item xs={5} sm={6}>
                         <Link
                           className={styles.styles_link}
-                          to="/reset-password"
+                          to="/forgot-password"
                           style={{ color: '#01A8FF' }}
                         >
                           Esqueci minha senha

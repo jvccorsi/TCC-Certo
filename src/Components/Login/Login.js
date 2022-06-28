@@ -1,12 +1,14 @@
 import React, { useState, useCallback, useEffect } from 'react';
 import LoginForm from './LoginForm';
-import ResetPassword from './ResetPassword';
+
 import { Route, Routes } from 'react-router-dom';
 
 import CreateAccount from './CreateAccount';
 import Home from '../Home/Home';
 import { AuthContext } from '../Hooks/AuthContext';
 import Header from '../Header';
+import ForgotPassword from './ForgotPassword';
+import ResetPassword from './ForgotPasswordForm/ResetPassword';
 
 let logoutTimer;
 
@@ -78,8 +80,12 @@ const Login = () => {
           element={<CreateAccount></CreateAccount>}
         ></Route>
         <Route
-          path="reset-password"
+          path="/reset-password/:tokenUsuario/:idUsuario"
           element={<ResetPassword></ResetPassword>}
+        ></Route>
+        <Route
+          path="forgot-password"
+          element={<ForgotPassword></ForgotPassword>}
         ></Route>
       </>
     );
