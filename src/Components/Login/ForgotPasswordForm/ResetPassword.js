@@ -1,10 +1,12 @@
-import { Container, TextField, Typography, Box, Button } from '@mui/material';
 import React from 'react';
-import style from './ResetPassword.module.css';
-import { Link } from 'react-router-dom';
-import Head from '../Head';
+import { Container, TextField, Typography, Box, Button } from '@mui/material';
+import style from '../ResetPassword.module.css';
+import { Link, useParams } from 'react-router-dom';
+import Head from '../../Head';
 
 const ResetPassword = () => {
+  const { tokenUsuario, idUsuario } = useParams();
+
   return (
     <>
       <Head title="Reset"></Head>
@@ -16,27 +18,27 @@ const ResetPassword = () => {
             align="left"
             style={{ fontFamily: 'Alice', fontWeight: 'bold' }}
           >
-            Esqueceu sua senha?
+            id: {idUsuario}, Redefina sua senha aqui ! Token: {tokenUsuario}
           </Typography>
-          <Typography
-            variant="h6"
-            component="h1"
-            align="left"
-            style={{ fontFamily: 'Alice' }}
-          >
-            Por favor, entre com o endereço de email associado a sua conta e nos
-            enviaremos um email com um link para você alterar sua senha!
-          </Typography>
-
           <form>
             <Box mt={2}>
               <TextField
                 required
-                id="Email address"
-                label="Endereço de email"
-                defaultValue=" "
+                id="Nova senha"
+                label="Nova senha"
+                defaultValue=""
                 fullWidth
-                type="email"
+                type="password"
+              />
+            </Box>
+            <Box mt={2}>
+              <TextField
+                required
+                id="Repita sua nova senha"
+                label="Repita sua nova senha"
+                defaultValue=""
+                fullWidth
+                type="password"
               />
             </Box>
 
@@ -60,7 +62,7 @@ const ResetPassword = () => {
             mt={2}
           >
             <Link className={style.styles_link} to="/">
-              Voltar ao login
+              Cancelar e voltar ao login
             </Link>
           </Typography>
         </div>
