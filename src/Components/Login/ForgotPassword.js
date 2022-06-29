@@ -29,7 +29,7 @@ const ForgotPassword = () => {
     event.preventDefault();
 
     try {
-      const responseData = await sendRequest(
+      await sendRequest(
         'https://api-tcc-unicamp.herokuapp.com/api/users/forgotPassword',
         'POST',
         JSON.stringify({
@@ -41,8 +41,6 @@ const ForgotPassword = () => {
       );
       setEmailEnviado(true);
       setOpen(true);
-
-      console.log(responseData);
     } catch (err) {}
   }
 
