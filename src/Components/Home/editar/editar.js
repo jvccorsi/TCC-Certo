@@ -241,6 +241,8 @@ const Editar = () => {
   const { id } = useParams();
   const [loadedFicha, setLoadedFicha] = useState();
   const [emailUser, setEmailUser] = useState();
+  const [isAdminUser, setIsAdminUser] = useState();
+  const [statusFicha, setStatusFicha] = useState();
   const [controller, setController] = useState(0);
   const { register, handleSubmit, reset, control } = useForm({});
   const { isLoading, sendRequest, clearError, error } = useHttpClient();
@@ -286,6 +288,8 @@ const Editar = () => {
           'GET',
         );
         setLoadedFicha(responseData);
+        setStatusFicha(responseData.atendimentoStatus);
+
         reset(responseData);
       } catch (error) {
         console.log(error);
@@ -301,8 +305,8 @@ const Editar = () => {
           `https://api-tcc-unicamp.herokuapp.com/api/users/${auth.userId}`,
           'GET',
         );
-
         setEmailUser(responseData);
+        setIsAdminUser(responseData.isAdmin);
       } catch (error) {
         console.log(error);
       }
@@ -311,31 +315,37 @@ const Editar = () => {
   }, [sendRequest, auth.userId]);
 
   const submitFormRequest = async (data) => {
-    var data_post = data;
-    data_post.updateby = auth.userId;
-    try {
-      const responseData = await sendRequest(
-        `https://api-tcc-unicamp.herokuapp.com/api/fichas/${id}`,
-        'GET',
+    if (!isAdminUser && statusFicha === 'fechado') {
+      alert(
+        'Você não pode editar essa ficha, pois não é adminstrador(a) e ela está fechada!',
       );
-      const version2 = responseData.__v;
-      data_post.__v = version2;
-
+    } else {
+      var data_post = data;
+      data_post.updateby = auth.userId;
       try {
-        await sendRequest(
+        const responseData = await sendRequest(
           `https://api-tcc-unicamp.herokuapp.com/api/fichas/${id}`,
-          'PATCH',
-          JSON.stringify(data_post),
-          {
-            'Content-Type': 'application/json',
-            Authorization: 'Bearer ' + auth.token,
-          },
+          'GET',
         );
-        setUpdate(true);
+        const version2 = responseData.__v;
+        data_post.__v = version2;
+
+        try {
+          await sendRequest(
+            `https://api-tcc-unicamp.herokuapp.com/api/fichas/${id}`,
+            'PATCH',
+            JSON.stringify(data_post),
+            {
+              'Content-Type': 'application/json',
+              Authorization: 'Bearer ' + auth.token,
+            },
+          );
+          setUpdate(true);
+        } catch (err) {}
+        setController(Math.random());
       } catch (err) {}
-      setController(Math.random());
-    } catch (err) {}
-    setOpen(true);
+      setOpen(true);
+    }
   };
 
   return (
