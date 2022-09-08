@@ -2,7 +2,7 @@ import React from 'react';
 
 const Head = (props) => {
   React.useEffect(() => {
-    document.title = props.title + ' | DataTox';
+    document.title = props.title + ' | UniTox';
   }, [props]);
 
   return <></>;

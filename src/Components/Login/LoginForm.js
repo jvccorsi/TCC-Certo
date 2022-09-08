@@ -120,7 +120,7 @@ const LoginForm = () => {
             <div className={styles.flex_direction_centralize}>
               <div className={styles.infos_login}>
                 <div className={styles.title_home}>
-                  <h1 className={styles.text}>Bem vindo ao DataTox</h1>
+                  <h1 className={styles.text}>Bem vindo ao UniTox</h1>
                   <h3 className={styles.text}>
                     Você é novo aqui?{' '}
                     <Link className={styles.styles_link} to="/create-account">
