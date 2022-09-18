@@ -16,16 +16,16 @@ import {
 import { ReactComponent as Logo } from '../Assets/logo.svg'; // Transformar o svg em components
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import DrawerComp from './DrawerComp';
-
+import { useNavigate } from 'react-router-dom';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import ListItemIcon from '@mui/material/ListItemIcon';
-
 import Logout from '@mui/icons-material/Logout';
 import { AuthContext } from './Hooks/AuthContext';
 import { useHttpClient } from './Hooks/http-hook';
 
 const Header = () => {
+  let navigate = useNavigate();
   const [value, setValue] = React.useState(0);
   const [nomeUser, setNomeUser] = React.useState();
   const auth = useContext(AuthContext);
@@ -33,6 +33,9 @@ const Header = () => {
   const open = Boolean(anchorEl);
 
   const { sendRequest } = useHttpClient();
+  const navigateByHome = () => {
+    navigate('/', { replace: true });
+  };
 
   useEffect(() => {
     const fetchUserById = async () => {
@@ -67,7 +70,7 @@ const Header = () => {
   };
 
   const handleLogout = () => {
-    console.log('logout');
+    navigateByHome();
     auth.logout();
   };
   return (

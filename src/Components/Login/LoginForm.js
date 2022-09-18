@@ -2,14 +2,12 @@ import React, { useContext, useState } from 'react';
 import minhaImagem from '../../Assets/Research_Undraw.svg';
 import Grid from '@mui/material/Grid';
 import styles from './LoginForm.module.css';
-import GoogleIcon from '@mui/icons-material/Google';
 import { Link } from 'react-router-dom';
 import {
   TextField,
   Button,
   Container,
   Box,
-  Divider,
   Modal,
   Typography,
 } from '@mui/material';
@@ -127,24 +125,6 @@ const LoginForm = () => {
                       Crie sua aconta agora{' '}
                     </Link>
                   </h3>
-                  <Button
-                    style={{
-                      color: 'black',
-                      fontWeight: 'bold',
-                      fontFamily: 'Alice',
-                    }}
-                    variant="outlined"
-                    size="large"
-                    className={styles.google_button}
-                    startIcon={<GoogleIcon style={{ color: 'red' }} />}
-                  >
-                    Google
-                  </Button>
-                  <Box mt={3}>
-                    <Divider className={styles.Divider}>
-                      Ou faça seu login com seu email
-                    </Divider>
-                  </Box>
                 </div>
 
                 <div className={styles.form_login}>

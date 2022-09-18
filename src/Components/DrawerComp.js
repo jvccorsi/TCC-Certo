@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import {
   Drawer,
   IconButton,
@@ -9,10 +9,16 @@ import {
 } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import { useNavigate } from 'react-router-dom';
+import { AuthContext } from './Hooks/AuthContext';
 
 const DrawerComp = () => {
+  const auth = useContext(AuthContext);
+
   const [openDrawer, setOpenDrawer] = useState(false);
   let navigate = useNavigate();
+  const navigateByLogout = () => {
+    navigate('/', { replace: true });
+  };
 
   const navigateByHome = () => {
     navigate('../home', { replace: true });
@@ -24,6 +30,11 @@ const DrawerComp = () => {
   const navigateByAtendimentoe = () => {
     navigate('../home/listar', { replace: true });
   };
+  const handleLogout = () => {
+    navigateByLogout();
+    auth.logout();
+  };
+
   return (
     <>
       <Drawer open={openDrawer} onClose={() => setOpenDrawer(false)}>
@@ -45,6 +56,11 @@ const DrawerComp = () => {
               <ListItemText onClick={navigateByAtendimentoe}>
                 Atendimento
               </ListItemText>
+            </ListItemIcon>
+          </ListItemButton>
+          <ListItemButton onClick={() => setOpenDrawer(false)}>
+            <ListItemIcon>
+              <ListItemText onClick={handleLogout}>Logout</ListItemText>
             </ListItemIcon>
           </ListItemButton>
         </List>

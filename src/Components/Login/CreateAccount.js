@@ -6,12 +6,10 @@ import {
   Button,
   Container,
   Grid,
-  Divider,
   Box,
   Modal,
   Typography,
 } from '@mui/material';
-import GoogleIcon from '@mui/icons-material/Google';
 import undraw_create from '../../Assets/undraw_medical_research_qg4d 1.svg';
 import Head from '../Head';
 
@@ -154,25 +152,6 @@ const CreateAccount = () => {
                         Faça seu login{' '}
                       </Link>
                     </h3>
-
-                    <Button
-                      style={{
-                        color: 'black',
-                        fontWeight: 'bold',
-                        fontFamily: 'Alice',
-                      }}
-                      variant="outlined"
-                      size="large"
-                      className={styles.google_button}
-                      startIcon={<GoogleIcon style={{ color: 'red' }} />}
-                    >
-                      Google
-                    </Button>
-                    <Box mt={3}>
-                      <Divider className={styles.Divider}>
-                        Ou se cadastre com seu email e senha
-                      </Divider>
-                    </Box>
                   </div>
 
                   <div className={styles.form_login}>
