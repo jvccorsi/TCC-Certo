@@ -122,7 +122,7 @@ const LoginForm = () => {
                   <h3 className={styles.text}>
                     Você é novo aqui?{' '}
                     <Link className={styles.styles_link} to="/create-account">
-                      Crie sua aconta agora{' '}
+                      Crie sua conta agora{' '}
                     </Link>
                   </h3>
                 </div>
